@@ -24,15 +24,15 @@
 				</div>
 				<div class="rhs" id="rhs">
 					<ul>
-						<li><a href="javascript:;">Home</a></li>
-						<li><a href="javascript:;">Pages</a></li>
-						<li><a href="javascript:;">Portfolio</a></li>
-						<li><a href="javascript:;">Blog</a></li>
-						<li><a href="javascript:;">Shop</a></li>
-						<li><a href="javascript:;">travel</a></li>
-						<li><a href="javascript:;">shortcodes</a></li>
-						<li><a href="javascript:;">Features</a></li>
-						<li><a href="javascript:;">Contact</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks0" class="active">Home</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks1" class="">Pages</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks2">Portfolio</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks3">Blog</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks4">Shop</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks5">travel</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks6">shortcodes</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks7">Features</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks8">Contact</a></li>
 					</ul>
 					<img
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
@@ -136,11 +136,16 @@
 				<img src="../imgs/diamond.png" alt="diamond">
 				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, totam.</p>
 				<div class="portfolioHeadLinks">
-					<a href="javascript:;" class="large secondaryButton cyan">All</a>
-					<a href="javascript:;" class="large primaryButton">Web Design</a>
-					<a href="javascript:;" class="large primaryButton">Graphic Design</a>
-					<a href="javascript:;" class="large primaryButton">WordPress</a>
-					<a href="javascript:;" class="large primaryButton">Photography</a>
+					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink0"
+						class="large secondaryButton cyan">All</a>
+					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink1" class="large primaryButton">Web
+						Design</a>
+					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink2"
+						class="large primaryButton">Graphic Design</a>
+					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink3"
+						class="large primaryButton">WordPress</a>
+					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink4"
+						class="large primaryButton">Photography</a>
 				</div>
 			</div>
 			<div class="portfolioContent">
@@ -637,12 +642,12 @@
 					<div class="footerSection section3">
 						<h5>tags widget</h5>
 						<div class="footerWidgets">
-							<a href="javascript:;" class="primaryButton">awesome</a>
-							<a href="javascript:;" class="primaryButton">beautiful</a>
-							<a href="javascript:;" class="primaryButton">flat design</a>
-							<a href="javascript:;" class="secondaryButton cyan">ios</a>
-							<a href="javascript:;" class="primaryButton">themeforest</a>
-							<a href="javascript:;" class="primaryButton">mass</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink0" class="primaryButton">awesome</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink1" class="primaryButton">beautiful</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink2" class="primaryButton">flat design</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink3" class="secondaryButton cyan">ios</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink4" class="primaryButton">themeforest</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink5" class="primaryButton">mass</a>
 						</div>
 						<h5>useful links</h5>
 						<div class="footerLinks">
@@ -692,8 +697,8 @@
 							<li><a href="javascript:;">Portfolio</a></li>
 							<li><a href="javascript:;">Blog</a></li>
 							<li><a href="javascript:;">Shop</a></li>
-							<li><a href="javascript:;">Home</a></li>
-							<li><a href="javascript:;">Home</a></li>
+							<li><a href="javascript:;">travel</a></li>
+							<li><a href="javascript:;">shortcodes</a></li>
 							<li><a href="javascript:;">Features</a></li>
 							<li><a href="javascript:;">Contact</a></li>
 						</ul>
@@ -712,10 +717,76 @@
 		function showMenu() {
 			menuList.classList.toggle("rhsActive")
 		}
+
 		let banner = document.getElementById("banner")
-		function changeBanner(){
+		function changeBanner() {
 			banner.classList.toggle("banner1")
-}
+		}
+		let headerActiveLinks0 = document.getElementById("headerLinks0")
+		let headerActiveLinks1 = document.getElementById("headerLinks1")
+		let headerActiveLinks2 = document.getElementById("headerLinks2")
+		let headerActiveLinks3 = document.getElementById("headerLinks3")
+		let headerActiveLinks4 = document.getElementById("headerLinks4")
+		let headerActiveLinks5 = document.getElementById("headerLinks5")
+		let headerActiveLinks6 = document.getElementById("headerLinks6")
+		let headerActiveLinks7 = document.getElementById("headerLinks7")
+		let headerActiveLinks8 = document.getElementById("headerLinks8")
+		function activeLink(element) {
+			headerActiveLinks0.classList.remove("active")
+			headerActiveLinks1.classList.remove("active")
+			headerActiveLinks2.classList.remove("active")
+			headerActiveLinks3.classList.remove("active")
+			headerActiveLinks4.classList.remove("active")
+			headerActiveLinks5.classList.remove("active")
+			headerActiveLinks6.classList.remove("active")
+			headerActiveLinks7.classList.remove("active")
+			headerActiveLinks8.classList.remove("active")
+			element.classList.add("active")
+		}
+
+		let portfolioLink0 = document.getElementById("portfolioLink0")
+		let portfolioLink1 = document.getElementById("portfolioLink1")
+		let portfolioLink2 = document.getElementById("portfolioLink2")
+		let portfolioLink3 = document.getElementById("portfolioLink3")
+		let portfolioLink4 = document.getElementById("portfolioLink4")
+		function portfolioActiveLink(element) {
+			portfolioLink0.classList.remove("secondaryButton", "cyan")
+			portfolioLink0.classList.add("primaryButton")
+			portfolioLink1.classList.remove("secondaryButton", "cyan")
+			portfolioLink1.classList.add("primaryButton")
+			portfolioLink2.classList.remove("secondaryButton", "cyan")
+			portfolioLink2.classList.add("primaryButton")
+			portfolioLink3.classList.remove("secondaryButton", "cyan")
+			portfolioLink3.classList.add("primaryButton")
+			portfolioLink4.classList.remove("secondaryButton", "cyan")
+			portfolioLink4.classList.add("primaryButton")
+			element.classList.remove("primaryButton")
+			element.classList.add("secondaryButton", "cyan")
+		}
+
+
+		let footerLink0 = document.getElementById("footerLink0")
+		let footerLink1 = document.getElementById("footerLink1")
+		let footerLink2 = document.getElementById("footerLink2")
+		let footerLink3 = document.getElementById("footerLink3")
+		let footerLink4 = document.getElementById("footerLink4")
+		let footerLink5 = document.getElementById("footerLink5")
+		function footerActiveLink(element) {
+				footerLink0.classList.remove("secondaryButton", "cyan")
+				footerLink0.classList.add("primaryButton")
+				footerLink1.classList.remove("secondaryButton", "cyan")
+				footerLink1.classList.add("primaryButton")
+				footerLink2.classList.remove("secondaryButton", "cyan")
+				footerLink2.classList.add("primaryButton")
+				footerLink3.classList.remove("secondaryButton", "cyan")
+				footerLink3.classList.add("primaryButton")
+				footerLink4.classList.remove("secondaryButton", "cyan")
+				footerLink4.classList.add("primaryButton")
+				footerLink5.classList.remove("secondaryButton", "cyan")
+				footerLink5.classList.add("primaryButton")
+				element.classList.remove("primaryButton")
+				element.classList.add("secondaryButton", "cyan")
+		}
 	</script>
 </body>
 

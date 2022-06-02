@@ -1130,7 +1130,7 @@ header {
     height: 100%;
     position: absolute;
     background-image: url(../imgs/man-using-laptop.png);
-    background-color: purple;
+    /* background-color: purple; */
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -1370,6 +1370,7 @@ footer {
 .primaryFooterInnerWrapper .section3 .footerWidgets {
     display: flex;
     flex-wrap: wrap;
+    padding-bottom: 20px;
 }
 
 .primaryFooterInnerWrapper .section3 .footerWidgets a {
@@ -1509,7 +1510,8 @@ footer {
 .secondaryFooterInnerWrapper .rhs a {
     text-decoration: none;
     color: #a1b2bc;
-    transition-timing-function: ease-out 1s;
+    transition: ease-in-out .5s;
+    text-transform: capitalize;
 }
 
 .secondaryFooterInnerWrapper .rhs a:hover {
