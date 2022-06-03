@@ -790,18 +790,12 @@
 		let portfolioLink3 = document.getElementById("portfolioLink3")
 		let portfolioLink4 = document.getElementById("portfolioLink4")
 		function portfolioActiveLink(element) {
-			portfolioLink0.classList.remove("secondaryButton", "cyan")
-			portfolioLink0.classList.add("primaryButton")
-			portfolioLink1.classList.remove("secondaryButton", "cyan")
-			portfolioLink1.classList.add("primaryButton")
-			portfolioLink2.classList.remove("secondaryButton", "cyan")
-			portfolioLink2.classList.add("primaryButton")
-			portfolioLink3.classList.remove("secondaryButton", "cyan")
-			portfolioLink3.classList.add("primaryButton")
-			portfolioLink4.classList.remove("secondaryButton", "cyan")
-			portfolioLink4.classList.add("primaryButton")
-			element.classList.remove("primaryButton")
-			element.classList.add("secondaryButton", "cyan")
+			portfolioLink0.classList = "primaryButton"
+			portfolioLink1.classList = "primaryButton"
+			portfolioLink2.classList = "primaryButton"
+			portfolioLink3.classList = "primaryButton"
+			portfolioLink4.classList = "primaryButton"
+			element.classList = "secondaryButton cyan"
 		}
 
 
@@ -812,20 +806,13 @@
 		let footerLink4 = document.getElementById("footerLink4")
 		let footerLink5 = document.getElementById("footerLink5")
 		function footerActiveLink(element) {
-			footerLink0.classList.remove("secondaryButton", "cyan")
-			footerLink0.classList.add("primaryButton")
-			footerLink1.classList.remove("secondaryButton", "cyan")
-			footerLink1.classList.add("primaryButton")
-			footerLink2.classList.remove("secondaryButton", "cyan")
-			footerLink2.classList.add("primaryButton")
-			footerLink3.classList.remove("secondaryButton", "cyan")
-			footerLink3.classList.add("primaryButton")
-			footerLink4.classList.remove("secondaryButton", "cyan")
-			footerLink4.classList.add("primaryButton")
-			footerLink5.classList.remove("secondaryButton", "cyan")
-			footerLink5.classList.add("primaryButton")
-			element.classList.remove("primaryButton")
-			element.classList.add("secondaryButton", "cyan")
+			footerLink0.classList = "primaryButton"
+			footerLink1.classList = "primaryButton"
+			footerLink2.classList = "primaryButton"
+			footerLink3.classList = "primaryButton"
+			footerLink4.classList = "primaryButton"
+			footerLink5.classList = "primaryButton"
+			element.classList = "secondaryButton cyan"
 		}
 	</script>
 </body>
