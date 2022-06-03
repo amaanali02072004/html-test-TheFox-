@@ -9,7 +9,7 @@
 
 body {
     background-color: white;
-    /* background-image: url(../imgs/test\ 1.jpg); */
+    /* background-image: url(../images/test\ 1.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 5880px;
@@ -20,7 +20,6 @@ body {
     /* max-width: 860px; */
     max-width: 1150px;
     width: 100%;
-    /* border: 1px red solid; */
 }
 
 @media only screen and (max-width: 900px) {
@@ -216,16 +215,15 @@ header {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: purple;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
     filter: brightness(.5);
-    background-image: url(../imgs/banner.jpg);
+    background-image: url(../images/banner.jpg);
 }
 
 .banner1::before {
-    background-image: url(../imgs/banner2.png);
+    background-image: url(../images/banner2.png);
 }
 
 .bannerInnerWrapper {
@@ -376,7 +374,7 @@ header {
 }
 
 .portfolioOuterWrapper {
-    background: linear-gradient(rgb(0 0 0 / 75%), rgba(0, 0, 0, 0.5)), url(../imgs/bg.jpg);
+    background: linear-gradient(rgb(0 0 0 / 75%), rgba(0, 0, 0, 0.5)), url(../images/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -428,6 +426,11 @@ header {
 
 .portfolioHeadLinks a {
     border: 1px #3f556a solid;
+    margin: 3px 6px 3px 0;
+}
+.portfolioHeadLinks a:last-child{
+    margin-right: 0;
+    margin-bottom: 0;
 }
 
 /* .portfolioContent {
@@ -509,6 +512,8 @@ header {
     .portfolioHeadLinks {
         padding: 20px 0 0;
         width: 83%;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .portfolioHeadLinks a {
@@ -728,7 +733,7 @@ header {
 
 .advertisementOuterWrapper {
     /* display: none; */
-    background-image: url(../imgs/advertisement.png);
+    background-image: url(../images/advertisement.png);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -784,6 +789,7 @@ header {
     .advertisementInnerWrapper .rhs img {
         object-fit: scale-down;
         width: 80px;
+        width: 30%;
     }
 }
 
@@ -854,23 +860,23 @@ header {
 }
 
 .woman1 {
-    background-image: url(../imgs/woman4.png);
+    background-image: url(../images/woman4.png);
 }
 
 .woman2 {
-    background-image: url(../imgs/woman4.png);
+    background-image: url(../images/woman4.png);
 }
 
 .woman3 {
-    background-image: url(../imgs/woman4.png);
+    background-image: url(../images/woman4.png);
 }
 
 .woman4 {
-    background-image: url(../imgs/woman4.png);
+    background-image: url(../images/woman4.png);
 }
 
 .woman5 {
-    background-image: url(../imgs/woman4.png);
+    background-image: url(../images/woman4.png);
 }
 
 .blogHeader {
@@ -944,7 +950,6 @@ header {
     width: 33.33%;
     padding: 45px 55px;
     color: white;
-    /* border: 1px red solid; */
 }
 
 .featuresCard .title {
@@ -981,7 +986,7 @@ header {
 
 .formOuterWrapper {
     background-color: blue;
-    background-image: url(../imgs/formBg.png);
+    background-image: url(../images/formBg.png);
     background-size: cover;
     background-repeat: no-repeat;
     /* border: 5px blue solid; */
@@ -1106,8 +1111,7 @@ header {
 }
 
 .mapWrapper {
-    background-color: red;
-    background-image: url(../imgs/map.png);
+    background-image: url(../images/map.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 325px;
@@ -1129,7 +1133,7 @@ header {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url(../imgs/man-using-laptop.png);
+    background-image: url(../images/man-using-laptop.png);
     /* background-color: purple; */
     background-repeat: no-repeat;
     background-position: center top;
