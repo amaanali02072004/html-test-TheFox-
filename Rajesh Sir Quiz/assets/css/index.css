@@ -159,6 +159,7 @@ header {
         position: fixed;
         z-index: 3;
         filter: drop-shadow(0 0 0.75rem #464646cb);
+
     }
 
     .hamburger {
@@ -207,6 +208,7 @@ header {
         transition: var(--transition) var(--transitionTime2);
         opacity: 0;
         margin-top: -100%;
+        margin-top: -370px;
         height: 370px;
         align-items: flex-start;
         overflow: scroll;
