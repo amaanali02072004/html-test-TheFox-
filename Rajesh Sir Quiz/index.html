@@ -25,7 +25,7 @@
 				<div class="rhs" id="rhs">
 					<ul>
 						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks0" class="active">Home</a></li>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks1" class="">Pages</a></li>
+						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks1">Pages</a></li>
 						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks2">Portfolio</a></li>
 						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks3">Blog</a></li>
 						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks4">Shop</a></li>
@@ -41,18 +41,18 @@
 			</div>
 		</div>
 	</header>
-	<section class="bannerOuterWrapper" id="banner">
+	<section class="bannerOuterWrapper banner0" id="banner" onclick="hideMenu(this)">
 		<div class="bannerInnerWrapper">
-			<img src="./assets/images/left.png" alt="left" id="left" onclick="changeBanner()">
+			<img src="./assets/images/left.png" alt="left" id="left" onclick="changeBanner0()">
 			<div class="bannerHeading">
 				<h5>would you like to be</h5>
 				<img src="./assets/images/creative.png" alt="creative">
 				<h5>with amazing fox design</h5>
 			</div>
-			<img src="./assets/images/right.png" alt="right" id="right" onclick="changeBanner()">
+			<img src="./assets/images/right.png" alt="right" id="right" onclick="changeBanner2()">
 		</div>
 	</section>
-	<section class="cardsSectionOuterWrapper">
+	<section class="cardsSectionOuterWrapper" onclick="hideMenu(this)">
 		<div class="container">
 			<div class="cardsSectionInnerWrapper">
 				<div class="lhs">
@@ -173,9 +173,19 @@
 						<img src="./assets/images/8.png" alt="8.png">
 					</div>
 				</div>
+				<div class="uhs hidden" id="uhsHidden">
+					<div>
+						<img src="./assets/images/1.png" alt="1.png">
+						<img src="./assets/images/2.png" alt="2.png">
+					</div>
+					<div>
+						<img src="./assets/images/3.png" alt="3.png">
+						<img src="./assets/images/4.png" alt="4.png">
+					</div>
+				</div>
 			</div>
 			<div class="portfolioFoot">
-				<a href="javascript:;" class="secondaryButton cyan xLarge">Load More</a>
+				<a href="javascript:;" class="secondaryButton cyan xLarge" onclick="loadMore(this)">Load More</a>
 			</div>
 		</div>
 		<!-- </div> -->
@@ -643,10 +653,14 @@
 						<h5>tags widget</h5>
 						<div class="footerWidgets">
 							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink0" class="primaryButton">awesome</a>
-							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink1" class="primaryButton">beautiful</a>
-							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink2" class="primaryButton">flat design</a>
-							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink3" class="secondaryButton cyan">ios</a>
-							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink4" class="primaryButton">themeforest</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink1"
+								class="primaryButton">beautiful</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink2" class="primaryButton">flat
+								design</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink3"
+								class="secondaryButton cyan">ios</a>
+							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink4"
+								class="primaryButton">themeforest</a>
 							<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink5" class="primaryButton">mass</a>
 						</div>
 						<h5>useful links</h5>
@@ -714,14 +728,35 @@
 	<script>
 		let burger = document.getElementById("hamburger")
 		let menuList = document.getElementById("rhs")
+		function hideMenu() {
+			menuList.classList.remove("rhsActive")
+		}
 		function showMenu() {
 			menuList.classList.toggle("rhsActive")
 		}
 
 		let banner = document.getElementById("banner")
-		function changeBanner() {
-			banner.classList.toggle("banner1")
+		let bannerLength = 0
+		let bannerLengthMin = -1
+		let bannerLengthMax = 2
+		let bannerDuration = 5000;
+		setInterval(
+			function changeBanner0() {
+				if (bannerLength == bannerLengthMin) {
+					bannerLength = bannerLengthMax
+				}
+				bannerLength--
+				banner.classList = `bannerOuterWrapper banner${bannerLength}`
+			}
+			, bannerDuration);
+		function changeBanner2() {
+			bannerLength++
+			if (bannerLength == bannerLengthMax) {
+				bannerLength = bannerLengthMin
+			}
+			banner.classList = `bannerOuterWrapper banner${bannerLength}`
 		}
+
 		let headerActiveLinks0 = document.getElementById("headerLinks0")
 		let headerActiveLinks1 = document.getElementById("headerLinks1")
 		let headerActiveLinks2 = document.getElementById("headerLinks2")
@@ -742,6 +777,11 @@
 			headerActiveLinks7.classList.remove("active")
 			headerActiveLinks8.classList.remove("active")
 			element.classList.add("active")
+		}
+
+		let uhsHidden = document.getElementById("uhsHidden")
+		function loadMore() {
+			uhsHidden.classList.remove("hidden")
 		}
 
 		let portfolioLink0 = document.getElementById("portfolioLink0")
@@ -772,20 +812,20 @@
 		let footerLink4 = document.getElementById("footerLink4")
 		let footerLink5 = document.getElementById("footerLink5")
 		function footerActiveLink(element) {
-				footerLink0.classList.remove("secondaryButton", "cyan")
-				footerLink0.classList.add("primaryButton")
-				footerLink1.classList.remove("secondaryButton", "cyan")
-				footerLink1.classList.add("primaryButton")
-				footerLink2.classList.remove("secondaryButton", "cyan")
-				footerLink2.classList.add("primaryButton")
-				footerLink3.classList.remove("secondaryButton", "cyan")
-				footerLink3.classList.add("primaryButton")
-				footerLink4.classList.remove("secondaryButton", "cyan")
-				footerLink4.classList.add("primaryButton")
-				footerLink5.classList.remove("secondaryButton", "cyan")
-				footerLink5.classList.add("primaryButton")
-				element.classList.remove("primaryButton")
-				element.classList.add("secondaryButton", "cyan")
+			footerLink0.classList.remove("secondaryButton", "cyan")
+			footerLink0.classList.add("primaryButton")
+			footerLink1.classList.remove("secondaryButton", "cyan")
+			footerLink1.classList.add("primaryButton")
+			footerLink2.classList.remove("secondaryButton", "cyan")
+			footerLink2.classList.add("primaryButton")
+			footerLink3.classList.remove("secondaryButton", "cyan")
+			footerLink3.classList.add("primaryButton")
+			footerLink4.classList.remove("secondaryButton", "cyan")
+			footerLink4.classList.add("primaryButton")
+			footerLink5.classList.remove("secondaryButton", "cyan")
+			footerLink5.classList.add("primaryButton")
+			element.classList.remove("primaryButton")
+			element.classList.add("secondaryButton", "cyan")
 		}
 	</script>
 </body>
