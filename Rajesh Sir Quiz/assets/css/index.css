@@ -1,3 +1,10 @@
+:root {
+    --transition: ease-in-out;
+    --transitionTime1: .25s;
+    --transitionTime2: .5s;
+    --transitionTime3: 1s;
+}
+
 * {
     margin: 0;
     list-style: none;
@@ -103,7 +110,7 @@ header {
     text-decoration: none;
     color: white;
     font-size: 14px;
-    transition: ease-in-out .25s;
+    transition: var(--transition) var(--transitionTime1);
     border: 1px rgba(255, 255, 255, 0) solid;
 }
 
@@ -192,7 +199,7 @@ header {
     }
 
     .headerWrapper .rhs {
-        transition: ease-in-out 1s;
+        transition: var(--transition) var(--transitionTime3);
         opacity: 0;
         margin-top: -370px;
         align-items: flex-start;
@@ -243,7 +250,7 @@ header {
 
 .bannerOuterWrapper::before {
     content: "";
-    transition: ease-in-out 1s;
+    transition: var(--transition) var(--transitionTime3);
     top: 0;
     left: 0;
     width: 100%;
@@ -474,13 +481,9 @@ header {
     margin-bottom: 0;
 }
 
-/* .portfolioContent {
-    display: flex;
-} */
-
 .portfolioContent .uhs {
     display: flex;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
 }
 
 .portfolioContent .uhs>div {
@@ -879,7 +882,7 @@ header {
     content: "▮  ";
     color: #a3b1ba;
     text-decoration: none;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
     margin-left: 5px;
 }
 
@@ -942,7 +945,7 @@ header {
     align-items: center;
     position: absolute;
     bottom: 20px;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
 }
 
 .blog:hover .blogHeader {
@@ -974,7 +977,7 @@ header {
     bottom: -20px;
     opacity: 0;
     display: flex;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
     z-index: -1;
 }
 
@@ -1313,7 +1316,7 @@ footer {
 .primaryFooterInnerWrapper .section1 .lhs ul li a {
     color: #1abe9c;
     text-decoration: none;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
 }
 
 .primaryFooterInnerWrapper .section1>img {
@@ -1476,7 +1479,7 @@ footer {
 
 .primaryFooterInnerWrapper .section3 .footerLinks ul li::marker {
     color: #1abe9c;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
 }
 
 .primaryFooterInnerWrapper .section3 .footerLinks ul li:hover::marker {
@@ -1487,7 +1490,7 @@ footer {
     text-decoration: none;
     text-transform: capitalize;
     color: #89969f;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
     font-size: 14px;
 }
 
@@ -1554,7 +1557,7 @@ footer {
 .secondaryFooterInnerWrapper .lhs a {
     font-size: 11px;
     text-decoration: none;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
     text-transform: capitalize;
     color: white;
     border-bottom: 0 solid rgba(255, 255, 255, 0);
@@ -1587,7 +1590,7 @@ footer {
 .secondaryFooterInnerWrapper .rhs a {
     text-decoration: none;
     color: #a1b2bc;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
     text-transform: capitalize;
 }
 
@@ -1603,7 +1606,7 @@ footer {
     border-radius: 3px;
     text-transform: uppercase;
     font-size: 12px;
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
     /* min-width: fit-content; */
     /* align-self: center; */
 }
@@ -1622,7 +1625,7 @@ footer {
     text-transform: uppercase;
     font-size: 15px;
     /* max-width: fit-content; */
-    transition: ease-in-out .5s;
+    transition: var(--transition) var(--transitionTime2);
     /* align-self: center; */
 }
 
