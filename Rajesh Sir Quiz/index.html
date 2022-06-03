@@ -188,7 +188,6 @@
 				<a href="javascript:;" class="secondaryButton cyan xLarge" onclick="loadMore(this)">Load More</a>
 			</div>
 		</div>
-		<!-- </div> -->
 	</section>
 	<section class="purchaseOuterWrapper">
 		<div class="container">
@@ -739,16 +738,17 @@
 		let bannerLength = 0
 		let bannerLengthMin = -1
 		let bannerLengthMax = 2
-		let bannerDuration = 5000;
-		setInterval(
-			function changeBanner0() {
-				if (bannerLength == bannerLengthMin) {
-					bannerLength = bannerLengthMax
-				}
-				bannerLength--
-				banner.classList = `bannerOuterWrapper banner${bannerLength}`
+		let seconds = 5;
+		let bannerDuration = seconds * 1000;
+		function changeBanner0() {
+			if (bannerLength == bannerLengthMin) {
+				bannerLength = bannerLengthMax
 			}
-			, bannerDuration);
+			bannerLength--
+			banner.classList = `bannerOuterWrapper banner${bannerLength}`
+			
+		}
+		setInterval(function(){changeBanner0()}, bannerDuration)
 		function changeBanner2() {
 			bannerLength++
 			if (bannerLength == bannerLengthMax) {

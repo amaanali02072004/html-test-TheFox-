@@ -575,6 +575,9 @@ header {
     .portfolioContent .uhs {
         flex-direction: column-reverse;
     }
+    .portfolioContent .uhs.hidden {
+        margin-top: -63%;
+    }
 
     .portfolioContent .bhs {
         flex-direction: column-reverse;
@@ -1009,7 +1012,6 @@ header {
 }
 
 .featuresOuterWrapper {
-    /* margin-top: 981px; */
 }
 
 .featuresInnerWrapper {
@@ -1046,6 +1048,7 @@ header {
 
     .featuresCard {
         width: 100%;
+        z-index: 2;
     }
 
     .featuresCard:nth-last-child(odd) {

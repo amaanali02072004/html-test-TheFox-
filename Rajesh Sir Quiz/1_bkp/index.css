@@ -9,7 +9,7 @@
 
 body {
     background-color: white;
-    /* background-image: url(../imgs/test\ 1.jpg); */
+    /* background-image: url(../assets/images/test\ 1.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     height: 5880px;
@@ -100,7 +100,7 @@ header {
     height: 100%;
     position: absolute;
     background-color: purple;
-    background-image: url(../imgs/banner.jpg);
+    background-image: url(../assets/images/banner0.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
@@ -244,7 +244,7 @@ header {
 }
 
 .portfolioOuterWrapper {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../imgs/bg.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/images/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -440,7 +440,7 @@ header {
 
 .advertisementOuterWrapper {
     /* display: none; */
-    background-image: url(../imgs/advertisement.png);
+    background-image: url(../assets/images/advertisement.png);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -542,23 +542,23 @@ header {
 }
 
 .woman1 {
-    background-image: url(../imgs/woman1.png);
+    background-image: url(../assets/images/woman1.png);
 }
 
 .woman2 {
-    background-image: url(../imgs/woman2.png);
+    background-image: url(../assets/images/woman2.png);
 }
 
 .woman3 {
-    background-image: url(../imgs/woman3.png);
+    background-image: url(../assets/images/woman3.png);
 }
 
 .woman4 {
-    background-image: url(../imgs/woman4.png);
+    background-image: url(../assets/images/woman4.png);
 }
 
 .woman5 {
-    background-image: url(../imgs/woman5.png);
+    background-image: url(../assets/images/woman5.png);
 }
 
 .blogHeader {
@@ -650,7 +650,7 @@ header {
 
 .formOuterWrapper {
     background-color: blue;
-    background-image: url(../imgs/formBg.png);
+    background-image: url(../assets/images/formBg.png);
     background-size: cover;
     background-repeat: no-repeat;
     /* border: 5px blue solid; */
@@ -757,7 +757,7 @@ header {
 
 .mapWrapper {
     background-color: red;
-    background-image: url(../imgs/map.png);
+    background-image: url(../assets/images/map.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 325px;
@@ -779,7 +779,7 @@ header {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-image: url(../imgs/man-using-laptop.png);
+    background-image: url(../assets/images/man-using-laptop.png);
     background-color: purple;
     background-repeat: no-repeat;
     background-position: center top;
