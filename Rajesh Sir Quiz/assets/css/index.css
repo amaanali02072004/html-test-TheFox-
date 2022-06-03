@@ -196,12 +196,17 @@ header {
         padding: 15px 10px;
     }
 
+    .headerWrapper .lhs{
+        padding: 15px;
+    }
+
     .headerWrapper .lhs .whiteLogo {
         display: none;
     }
 
     .headerWrapper .lhs .blackLogo {
         display: flex;
+        width: 130px;
     }
 
     .headerWrapper .lhs {
@@ -213,12 +218,18 @@ header {
     .headerWrapper .rhs {
         transition: var(--transition) var(--transitionTime2);
         opacity: 0;
-        margin-top: -100%;
-        margin-top: -370px;
-        height: 370px;
+        max-height: 300px;
+        margin-top: -300px;
         align-items: flex-start;
         overflow: scroll;
         justify-content: space-between;
+        visibility: hidden;
+    }
+
+    .headerWrapper .rhsActive {
+        opacity: 1;
+        margin-top: 0;
+        visibility: visible;
     }
 
     .headerWrapper .rhs>img {
@@ -229,11 +240,6 @@ header {
         border-color: black;
     }
 
-    .headerWrapper .rhsActive {
-        opacity: 1;
-        margin-top: 0;
-        height: 300px;
-    }
 
     .headerWrapper .rhs ul {
         flex-direction: column;
@@ -344,6 +350,7 @@ header {
 
     .bannerInnerWrapper {
         padding: 0 20px;
+        margin-top: 15%;
     }
 
     .bannerHeading {

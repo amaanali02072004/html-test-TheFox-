@@ -128,7 +128,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="portfolioOuterWrapper">
+	<section class="portfolioOuterWrapper" onclick="hideMenu(this)">
 		<!-- <div class="container"> -->
 		<div class="portfolioInnerWrapper">
 			<div class="portfolioHead">
@@ -189,7 +189,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="purchaseOuterWrapper">
+	<section class="purchaseOuterWrapper" onclick="hideMenu(this)">
 		<div class="container">
 			<div class="purchaseInnerWrapper">
 				<div class="lhs">
@@ -201,7 +201,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="skillsServicesOuterWrapper">
+	<section class="skillsServicesOuterWrapper" onclick="hideMenu(this)">
 		<div class="container">
 			<div class="skillsServicesInnerWrapper">
 				<div class="skillsOuterWrapper">
@@ -245,7 +245,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="statsOuterWrapper">
+	<section class="statsOuterWrapper" onclick="hideMenu(this)">
 		<div class="container">
 			<div class="statsInnerWrapper small">
 				<div>
@@ -267,7 +267,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="advertisementOuterWrapper">
+	<section class="advertisementOuterWrapper" onclick="hideMenu(this)">
 		<div class="container">
 			<div class="advertisementInnerWrapper">
 				<div class="lhs">
@@ -287,7 +287,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="linksOuterWrapper">
+	<section class="linksOuterWrapper" onclick="hideMenu(this)">
 		<div class="container">
 			<div class="linksInnerWrapper">
 				<div class="linkWrapper">
@@ -349,7 +349,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="blogOuterWrapper">
+	<section class="blogOuterWrapper" onclick="hideMenu(this)">
 		<div class="blogInnerWrapper">
 			<div class="blog woman1">
 				<div class="blogHeader">
@@ -433,7 +433,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="featuresOuterWrapper">
+	<section class="featuresOuterWrapper" onclick="hideMenu(this)">
 		<div class="featuresInnerWrapper">
 			<div class="featuresCard violet">
 				<p class="title">Unlimited Colors</p>
@@ -461,7 +461,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="formOuterWrapper">
+	<section class="formOuterWrapper" onclick="hideMenu(this)">
 		<div class="container">
 			<div class="formInnerWrapper">
 				<div class="formHeadingWrapper">
@@ -513,21 +513,21 @@
 			</div>
 		</div>
 	</section>
-	<section class="mapWrapper">
+	<section class="mapWrapper" onclick="hideMenu(this)">
 	</section>
-	<section class="bannerSecondaryOuterWrapper">
+	<section class="bannerSecondaryOuterWrapper" onclick="hideMenu(this)">
 		<div class="bannerSecondaryInnerWrapper">
 			<h5>need to grow <span>your creative</span> site</h5>
 			<p class="small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ut.</p>
 			<a href="javascript:;" class="secondaryButton large white">purchase</a>
 		</div>
 	</section>
-	<footer>
+	<footer onclick="hideMenu(this)">
 		<div class="primaryFooterOuterWrapper">
 			<div class="container">
 				<div class="primaryFooterInnerWrapper">
 					<div class="footerSection section1">
-						<img src="./assets/images/logo-footer.png" alt="logo">
+						<img src="./assets/images/fox-logo.png" alt="logo">
 						<div class="lhs">
 							<p>
 								Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, inventore?
@@ -746,7 +746,6 @@
 			}
 			bannerLength--
 			banner.classList = `bannerOuterWrapper banner${bannerLength}`
-
 		}
 		setInterval(function () { changeBanner2() }, bannerDuration)
 		function changeBanner2() {
@@ -790,12 +789,12 @@
 		let portfolioLink3 = document.getElementById("portfolioLink3")
 		let portfolioLink4 = document.getElementById("portfolioLink4")
 		function portfolioActiveLink(element) {
-			portfolioLink0.classList = "primaryButton"
-			portfolioLink1.classList = "primaryButton"
-			portfolioLink2.classList = "primaryButton"
-			portfolioLink3.classList = "primaryButton"
-			portfolioLink4.classList = "primaryButton"
-			element.classList = "secondaryButton cyan"
+			portfolioLink0.classList = "large primaryButton"
+			portfolioLink1.classList = "large primaryButton"
+			portfolioLink2.classList = "large primaryButton"
+			portfolioLink3.classList = "large primaryButton"
+			portfolioLink4.classList = "large primaryButton"
+			element.classList = "large secondaryButton cyan"
 		}
 
 
