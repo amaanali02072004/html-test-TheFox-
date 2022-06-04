@@ -283,10 +283,11 @@ header {
     background-repeat: no-repeat;
     background-position: center top;
     filter: brightness(.5);
+    background-image: url(../images/banner0.jpg);
 }
 
 .banner-1::before {
-    background-image: url(../images/banner-1.png);
+    background-image: url(../images/banner-1.jpg);
 }
 
 .banner0::before {
@@ -295,6 +296,12 @@ header {
 
 .banner1::before {
     background-image: url(../images/banner1.png);
+}
+.banner2::before {
+    background-image: url(../images/banner2.jpg);
+}
+.banner3::before {
+    background-image: url(../images/banner3.png);
 }
 
 .bannerInnerWrapper {
@@ -502,7 +509,7 @@ header {
 
 .portfolioHeadLinks a:last-child {
     margin-right: 0;
-    margin-bottom: 0;
+    /* margin-bottom: 0; */
 }
 
 .portfolioContent .uhs {
@@ -1490,9 +1497,6 @@ footer {
     font-size: 10px;
 }
 
-.primaryFooterInnerWrapper .section3 .footerWidgets a:last-child {
-    margin: 0;
-}
 
 .primaryFooterInnerWrapper .section3 .footerLinks {
     width: 100%;

@@ -526,6 +526,7 @@
 		<div class="primaryFooterOuterWrapper">
 			<div class="container">
 				<div class="primaryFooterInnerWrapper">
+
 					<div class="footerSection section1">
 						<img src="./assets/images/fox-logo.png" alt="logo">
 						<div class="lhs">
@@ -648,6 +649,8 @@
 							</div>
 						</div>
 					</div>
+
+
 					<div class="footerSection section3">
 						<h5>tags widget</h5>
 						<div class="footerWidgets">
@@ -692,6 +695,7 @@
 							<p>vietnam</p>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</div>
@@ -735,25 +739,25 @@
 		}
 
 		let banner = document.getElementById("banner")
-		let bannerLength = 0
+		let bannerPosition = 0
 		let bannerLengthMin = -1
-		let bannerLengthMax = 2
+		let bannerLengthMax = 4
 		let seconds = 5;
 		let bannerDuration = seconds * 1000;
 		function changeBanner0() {
-			if (bannerLength == bannerLengthMin) {
-				bannerLength = bannerLengthMax
+			if (bannerPosition == bannerLengthMin) {
+				bannerPosition = bannerLengthMax
 			}
-			bannerLength--
-			banner.classList = `bannerOuterWrapper banner${bannerLength}`
+			bannerPosition--
+			banner.classList = `bannerOuterWrapper banner${bannerPosition}`
 		}
 		setInterval(function () { changeBanner2() }, bannerDuration)
 		function changeBanner2() {
-			bannerLength++
-			if (bannerLength == bannerLengthMax) {
-				bannerLength = bannerLengthMin
+			bannerPosition++
+			if (bannerPosition == bannerLengthMax) {
+				bannerPosition = bannerLengthMin
 			}
-			banner.classList = `bannerOuterWrapper banner${bannerLength}`
+			banner.classList = `bannerOuterWrapper banner${bannerPosition}`
 		}
 
 		let headerActiveLinks0 = document.getElementById("headerLinks0")
