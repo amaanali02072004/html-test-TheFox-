@@ -317,9 +317,15 @@ header {
     background-color: #6a6c783d;
 }
 
+
 .bannerInnerWrapper>img {
     width: 30px;
-    padding: 50px 0;
+    margin: 50px 0;
+    transition: var(--transition) var(--transitionTime1);
+}
+.bannerInnerWrapper>img:hover{
+    margin: 45px 0;
+    cursor: pointer;
 }
 
 .bannerHeading {
@@ -1196,7 +1202,6 @@ header {
     padding: 10px;
     border-radius: 3px;
     resize: none;
-    /* font-family: Lato; */
 }
 
 .formContent .rhs input[type=submit] {
@@ -1580,7 +1585,8 @@ footer {
         width: 100%;
         margin-bottom: 30px;
     }
-    .primaryFooterInnerWrapper .footerSection:last-child{
+
+    .primaryFooterInnerWrapper .footerSection:last-child {
         margin-bottom: 0;
     }
 }

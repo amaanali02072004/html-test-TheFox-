@@ -504,10 +504,10 @@
 						</div>
 					</div>
 					<div class="rhs">
-						<input type="text" placeholder="Name">
-						<input type="email" placeholder="Email">
-						<textarea placeholder="Message" cols="30" rows="10"></textarea>
-						<input type="submit" value="Submit" class="secondaryButton cyan large">
+						<input type="text" placeholder="Name" id="Name">
+						<input type="email" placeholder="Email" id="Email">
+						<textarea placeholder="Message" cols="30" rows="10" id="Message"></textarea>
+						<input type="submit" value="Submit" class="secondaryButton cyan large" id="Submit" onclick="submitForm()">
 					</div>
 				</div>
 			</div>
@@ -744,6 +744,7 @@
 		let bannerLengthMax = 4
 		let seconds = 5;
 		let bannerDuration = seconds * 1000;
+		let timer = setInterval(function () { changeBanner2() }, bannerDuration)
 		function changeBanner0() {
 			if (bannerPosition == bannerLengthMin) {
 				bannerPosition = bannerLengthMax
@@ -751,7 +752,6 @@
 			bannerPosition--
 			banner.classList = `bannerOuterWrapper banner${bannerPosition}`
 		}
-		setInterval(function () { changeBanner2() }, bannerDuration)
 		function changeBanner2() {
 			bannerPosition++
 			if (bannerPosition == bannerLengthMax) {
@@ -816,6 +816,48 @@
 			footerLink4.classList = "primaryButton"
 			footerLink5.classList = "primaryButton"
 			element.classList = "secondaryButton cyan"
+		}
+
+		let Name = document.getElementById("Name")
+		let Email = document.getElementById("Email")
+		let Message = document.getElementById("Message")
+
+		Name.addEventListener("keypress", function (event) {
+			if (event.key === "Enter") {
+				document.getElementById("Submit").click();
+			}
+		});
+		Email.addEventListener("keypress", function (event) {
+			if (event.key === "Enter") {
+				document.getElementById("Submit").click();
+			}
+		});
+		// Message.addEventListener("keypress", function (event) {
+		// 	if (event.key === "Enter") {
+		// 		document.getElementById("Submit").click();
+		// 	}
+		// });
+		function submitForm() {
+			if (Name.value == "") {
+				alert("Enter Your Name!")
+				Name.focus()
+			} else
+				if (Email.value == "") {
+					alert("Enter Your Email!")
+					Email.focus()
+				} else
+					if (Message.value == "") {
+						alert("Enter Your Message!")
+						Message.focus()
+					} else {
+						alert("Your Form has been submitted")
+						console.log(`Name: ${Name.value}`)
+						console.log(`Email: ${Email.value}`)
+						console.log(`Message: ${Message.value}`)
+						Name.value = ""
+						Email.value = ""
+						Message.value = ""
+					}
 		}
 	</script>
 </body>
