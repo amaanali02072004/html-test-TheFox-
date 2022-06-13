@@ -127,17 +127,7 @@
 				<p class="heading">Special <b>Portfolio</b> Design</p>
 				<img src="./assets/images/diamond.png" alt="diamond">
 				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Architecto, totam.</p>
-				<div class="portfolioHeadLinks">
-					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink0"
-						class="large secondaryButton cyan">All</a>
-					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink1" class="large primaryButton">Web
-						Design</a>
-					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink2"
-						class="large primaryButton">Graphic Design</a>
-					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink3"
-						class="large primaryButton">WordPress</a>
-					<a href="javascript:;" onclick="portfolioActiveLink(this)" id="portfolioLink4"
-						class="large primaryButton">Photography</a>
+				<div class="portfolioHeadLinks" id="portfolioHeadLinks">
 				</div>
 			</div>
 			<div class="portfolioContent">
@@ -714,50 +704,84 @@
 			{
 				title: 'Pages',
 				href: 'javascript:;',
-				onclick: 'activeLink(this)'
+				onclick: 'activeLink(this)',
+				class: ''
 			},
 			{
 				title: 'Portfolio',
 				href: 'javascript:;',
-				onclick: 'activeLink(this)'
+				onclick: 'activeLink(this)',
+				class: ''
 			},
 			{
 				title: 'Blog',
 				href: 'javascript:;',
-				onclick: 'activeLink(this)'
+				onclick: 'activeLink(this)',
+				class: ''
 			},
 			{
 				title: 'Shop',
 				href: 'javascript:;',
-				onclick: 'activeLink(this)'
+				onclick: 'activeLink(this)',
+				class: ''
 			},
 			{
 				title: 'travel',
 				href: 'javascript:;',
-				onclick: 'activeLink(this)'
+				onclick: 'activeLink(this)',
+				class: ''
 			},
 			{
 				title: 'shortcodes',
 				href: 'javascript:;',
-				onclick: 'activeLink(this)'
+				onclick: 'activeLink(this)',
+				class: ''
 			},
 			{
 				title: 'Features',
 				href: 'javascript:;',
-				onclick: 'activeLink(this)'
+				onclick: 'activeLink(this)',
+				class: ''
 			},
 			{
 				title: 'Contact',
 				href: 'javascript:;',
-				onclick: 'activeLink(this)'
+				onclick: 'activeLink(this)',
+				class: ''
 			}
 		]
-		let hUl = document.getElementById('headerLinks')
-		let fUl = document.getElementById('footerLinks')
-		for (let i = 0; i < Links.length; i++) {
-			hUl.innerHTML += `<li><a title='${Links[i].title}' id='headerLinks${i}' class='${Links[i].class}' onclick='${Links[i].onclick}' href=${Links[i].href}>${Links[i].title}</a></li>`
-			fUl.innerHTML += `<li><a title='${Links[i].title}' id='headerLinks${i}' class='${Links[i].class}' onclick='${Links[i].onclick}' href=${Links[i].href}>${Links[i].title}</a></li>`
-		}
+		let PortfolioHeadLinks = [
+			{
+				title: 'all',
+				href: 'javascript:;',
+				onclick: 'portfolioActiveLink(this)',
+				class: 'large secondaryButton cyan'
+			},
+			{
+				title: 'Web Design',
+				href: 'javascript:;',
+				onclick: 'portfolioActiveLink(this)',
+				class: 'large primaryButton'
+			},
+			{
+				title: 'Graphic Design',
+				href: 'javascript:;',
+				onclick: 'portfolioActiveLink(this)',
+				class: 'large primaryButton'
+			},
+			{
+				title: 'WordPress',
+				href: 'javascript:;',
+				onclick: 'portfolioActiveLink(this)',
+				class: 'large primaryButton'
+			},
+			{
+				title: 'Photography',
+				href: 'javascript:;',
+				onclick: 'portfolioActiveLink(this)',
+				class: 'large primaryButton'
+			}
+		]
 		let FooterWidgetLinks = [
 			{
 				title: 'awesome',
@@ -796,6 +820,13 @@
 				class: 'primaryButton'
 			}
 		]
+		let hUl = document.getElementById('headerLinks')
+		let fUl = document.getElementById('footerLinks')
+		for (let i = 0; i < Links.length; i++) {
+			hUl.innerHTML += `<li><a title='${Links[i].title}' id='headerLinks${i}' class='${Links[i].class}' onclick='${Links[i].onclick}' href=${Links[i].href}>${Links[i].title}</a></li>`
+			fUl.innerHTML += `<li><a title='${Links[i].title}' id='footerLinks${i}' class='${Links[i].class}' onclick='${Links[i].onclick}' href=${Links[i].href}>${Links[i].title}</a></li>`
+		}
+
 		let footerWidgets = document.getElementById('footerWidgets')
 		for (let i = 0; i < FooterWidgetLinks.length; i++) {
 			footerWidgets.innerHTML += `<li><a title='${FooterWidgetLinks[i].title}' id='FooterWidgetLinks${i}' class='${FooterWidgetLinks[i].class}' onclick='${FooterWidgetLinks[i].onclick}' href=${FooterWidgetLinks[i].href}>${FooterWidgetLinks[i].title}</a></li>`
@@ -832,26 +863,22 @@
 			banner.classList = `bannerOuterWrapper banner${bannerPosition}`
 		}
 
-		let headerActiveLinks0 = document.getElementById("headerLinks0")
-		let headerActiveLinks1 = document.getElementById("headerLinks1")
-		let headerActiveLinks2 = document.getElementById("headerLinks2")
-		let headerActiveLinks3 = document.getElementById("headerLinks3")
-		let headerActiveLinks4 = document.getElementById("headerLinks4")
-		let headerActiveLinks5 = document.getElementById("headerLinks5")
-		let headerActiveLinks6 = document.getElementById("headerLinks6")
-		let headerActiveLinks7 = document.getElementById("headerLinks7")
-		let headerActiveLinks8 = document.getElementById("headerLinks8")
+		let headerActiveLinks = [], footerActiveLinks = []
+		for (var i = 0; i <= Links.length; ++i) {
+			headerActiveLinks[i] = document.getElementById(`headerLinks${i}`);
+			footerActiveLinks[i] = document.getElementById(`footerLinks${i}`);
+		}
 		function activeLink(element) {
-			headerActiveLinks0.classList.remove("active")
-			headerActiveLinks1.classList.remove("active")
-			headerActiveLinks2.classList.remove("active")
-			headerActiveLinks3.classList.remove("active")
-			headerActiveLinks4.classList.remove("active")
-			headerActiveLinks5.classList.remove("active")
-			headerActiveLinks6.classList.remove("active")
-			headerActiveLinks7.classList.remove("active")
-			headerActiveLinks8.classList.remove("active")
-			element.classList.add("active")
+			for (let i = 0; i < Links.length; i++) {
+				headerActiveLinks[i].classList = ""
+				footerActiveLinks[i].classList = ""
+				element.classList.add("active")
+				if (headerActiveLinks[i].classList == "active") {
+					footerActiveLinks[i].classList.add("active")
+				} else if (footerActiveLinks[i].classList == "active") {
+					headerActiveLinks[i].classList.add("active")
+				}
+			}
 		}
 
 		let uhsHidden = document.getElementById("uhsHidden")
@@ -859,17 +886,19 @@
 			uhsHidden.classList.remove("hidden")
 		}
 
-		let portfolioLink0 = document.getElementById("portfolioLink0")
-		let portfolioLink1 = document.getElementById("portfolioLink1")
-		let portfolioLink2 = document.getElementById("portfolioLink2")
-		let portfolioLink3 = document.getElementById("portfolioLink3")
-		let portfolioLink4 = document.getElementById("portfolioLink4")
+		let portfolioHead = document.getElementById('portfolioHeadLinks')
+		console.log("🚀 ~ file: index.html ~ line 901 ~ PortfolioHeadLinks.length", PortfolioHeadLinks.length)
+		for (let i = 0; i < PortfolioHeadLinks.length; i++) {
+			portfolioHead.innerHTML += `<a title='${PortfolioHeadLinks[i].title}' id='portfolioLink${i}' class='${PortfolioHeadLinks[i].class}' onclick='${PortfolioHeadLinks[i].onclick}' href=${PortfolioHeadLinks[i].href}>${PortfolioHeadLinks[i].title}</a>`
+		}
+		let portfolioLink = []
+		for (var i = 0; i < PortfolioHeadLinks.length; ++i) {
+			portfolioLink[i] = document.getElementById(`portfolioLink${i}`);
+		}
 		function portfolioActiveLink(element) {
-			portfolioLink0.classList = "large primaryButton"
-			portfolioLink1.classList = "large primaryButton"
-			portfolioLink2.classList = "large primaryButton"
-			portfolioLink3.classList = "large primaryButton"
-			portfolioLink4.classList = "large primaryButton"
+			for (let i = 0; i < PortfolioHeadLinks.length; i++) {
+				portfolioLink[i].classList = "large primaryButton"
+			}
 			element.classList = "large secondaryButton cyan"
 		}
 
@@ -923,9 +952,9 @@
 						Message.focus()
 					} else {
 						alert("Your Form has been submitted")
-						console.log(`Name: ${Name.value}`)
-						console.log(`Email: ${Email.value}`)
-						console.log(`Message: ${Message.value}`)
+						console.log(`Name: ${Name.value},
+${Email.value},
+${Message.value}`)
 						Name.value = ""
 						Email.value = ""
 						Message.value = ""

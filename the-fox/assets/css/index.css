@@ -1658,6 +1658,10 @@ footer {
 }
 
 .secondaryFooterInnerWrapper .rhs a:hover {
+    color: #57a193;
+}
+
+.secondaryFooterInnerWrapper .rhs .active {
     color: #1ba186;
 }
 
