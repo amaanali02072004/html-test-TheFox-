@@ -34,10 +34,12 @@ body {
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
+    margin-left: -10px;
 }
 
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
+    opacity: 0;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -157,7 +159,7 @@ header {
 }
 
 .hamburger>img {
-    transition: ease-in-out .1s;
+    transition: var(--transition) .1s;
 }
 
 @media only screen and (max-width: 900px) {
@@ -166,7 +168,6 @@ header {
         position: fixed;
         z-index: 3;
         filter: drop-shadow(0 0 0.75rem #464646cb);
-
     }
 
     .hamburger {
@@ -726,7 +727,7 @@ header {
     text-transform: uppercase;
     font-size: 13px;
     font-weight: 700;
-    transition: cubic-bezier(0, 0, 0.66, 1.38) 1s;
+    transition: cubic-bezier(0, 0, 0.66, 1.38) var(--transitionTime3);
 }
 
 .bargraphsWrapper .bargraph .g2o {
