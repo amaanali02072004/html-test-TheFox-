@@ -24,16 +24,7 @@
 					</a>
 				</div>
 				<div class="rhs" id="rhs">
-					<ul>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks0" class="active">Home</a></li>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks1">Pages</a></li>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks2">Portfolio</a></li>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks3">Blog</a></li>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks4">Shop</a></li>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks5">travel</a></li>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks6">shortcodes</a></li>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks7">Features</a></li>
-						<li><a href="javascript:;" onclick="activeLink(this)" id="headerLinks8">Contact</a></li>
+					<ul id="headerLinks">
 					</ul>
 					<img
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
@@ -655,17 +646,8 @@
 						<div class="footerSection section3">
 							<h5>tags widget</h5>
 							<div class="footerWidgets">
-								<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink0"
-									class="primaryButton">awesome</a>
-								<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink1"
-									class="primaryButton">beautiful</a>
-								<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink2" class="primaryButton">flat
-									design</a>
-								<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink3"
-									class="secondaryButton cyan">ios</a>
-								<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink4"
-									class="primaryButton">themeforest</a>
-								<a href="javascript:;" onclick="footerActiveLink(this)" id="footerLink5" class="primaryButton">mass</a>
+								<ul id="footerWidgets">
+								</ul>
 							</div>
 							<h5>useful links</h5>
 							<div class="footerLinks">
@@ -710,16 +692,7 @@
 							<p>designed by <a href="https://github.com/Killer-Amaan-Ali/" target="_blank">Amaan</a></p>
 						</div>
 						<div class="rhs">
-							<ul>
-								<li><a href="javascript:;">Home</a></li>
-								<li><a href="javascript:;">Pages</a></li>
-								<li><a href="javascript:;">Portfolio</a></li>
-								<li><a href="javascript:;">Blog</a></li>
-								<li><a href="javascript:;">Shop</a></li>
-								<li><a href="javascript:;">travel</a></li>
-								<li><a href="javascript:;">shortcodes</a></li>
-								<li><a href="javascript:;">Features</a></li>
-								<li><a href="javascript:;">Contact</a></li>
+							<ul id="footerLinks">
 							</ul>
 						</div>
 					</div>
@@ -731,6 +704,103 @@
 
 
 	<script>
+		let Links = [
+			{
+				title: 'Home',
+				href: 'javascript:;',
+				onclick: 'activeLink(this)',
+				class: 'active'
+			},
+			{
+				title: 'Pages',
+				href: 'javascript:;',
+				onclick: 'activeLink(this)'
+			},
+			{
+				title: 'Portfolio',
+				href: 'javascript:;',
+				onclick: 'activeLink(this)'
+			},
+			{
+				title: 'Blog',
+				href: 'javascript:;',
+				onclick: 'activeLink(this)'
+			},
+			{
+				title: 'Shop',
+				href: 'javascript:;',
+				onclick: 'activeLink(this)'
+			},
+			{
+				title: 'travel',
+				href: 'javascript:;',
+				onclick: 'activeLink(this)'
+			},
+			{
+				title: 'shortcodes',
+				href: 'javascript:;',
+				onclick: 'activeLink(this)'
+			},
+			{
+				title: 'Features',
+				href: 'javascript:;',
+				onclick: 'activeLink(this)'
+			},
+			{
+				title: 'Contact',
+				href: 'javascript:;',
+				onclick: 'activeLink(this)'
+			}
+		]
+		let hUl = document.getElementById('headerLinks')
+		let fUl = document.getElementById('footerLinks')
+		for (let i = 0; i < Links.length; i++) {
+			hUl.innerHTML += `<li><a title='${Links[i].title}' id='headerLinks${i}' class='${Links[i].class}' onclick='${Links[i].onclick}' href=${Links[i].href}>${Links[i].title}</a></li>`
+			fUl.innerHTML += `<li><a title='${Links[i].title}' id='headerLinks${i}' class='${Links[i].class}' onclick='${Links[i].onclick}' href=${Links[i].href}>${Links[i].title}</a></li>`
+		}
+		let FooterWidgetLinks = [
+			{
+				title: 'awesome',
+				href: 'javascript:;',
+				onclick: 'footerActiveLink(this)',
+				class: 'primaryButton'
+			},
+			{
+				title: 'beautiful',
+				href: 'javascript:;',
+				onclick: 'footerActiveLink(this)',
+				class: 'primaryButton'
+			},
+			{
+				title: 'flat design',
+				href: 'javascript:;',
+				onclick: 'footerActiveLink(this)',
+				class: 'primaryButton'
+			},
+			{
+				title: 'ios',
+				href: 'javascript:;',
+				onclick: 'footerActiveLink(this)',
+				class: 'secondaryButton cyan'
+			},
+			{
+				title: 'themeforest',
+				href: 'javascript:;',
+				onclick: 'footerActiveLink(this)',
+				class: 'primaryButton'
+			},
+			{
+				title: 'mass',
+				href: 'javascript:;',
+				onclick: 'footerActiveLink(this)',
+				class: 'primaryButton'
+			}
+		]
+		let footerWidgets = document.getElementById('footerWidgets')
+		for (let i = 0; i < FooterWidgetLinks.length; i++) {
+			footerWidgets.innerHTML += `<li><a title='${FooterWidgetLinks[i].title}' id='FooterWidgetLinks${i}' class='${FooterWidgetLinks[i].class}' onclick='${FooterWidgetLinks[i].onclick}' href=${FooterWidgetLinks[i].href}>${FooterWidgetLinks[i].title}</a></li>`
+		}
+
 		let burger = document.getElementById("hamburger")
 		let menuList = document.getElementById("rhs")
 		function hideMenu() {
@@ -804,19 +874,19 @@
 		}
 
 
-		let footerLink0 = document.getElementById("footerLink0")
-		let footerLink1 = document.getElementById("footerLink1")
-		let footerLink2 = document.getElementById("footerLink2")
-		let footerLink3 = document.getElementById("footerLink3")
-		let footerLink4 = document.getElementById("footerLink4")
-		let footerLink5 = document.getElementById("footerLink5")
+		let footerWidgetLink0 = document.getElementById("FooterWidgetLinks0")
+		let footerWidgetLink1 = document.getElementById("FooterWidgetLinks1")
+		let footerWidgetLink2 = document.getElementById("FooterWidgetLinks2")
+		let footerWidgetLink3 = document.getElementById("FooterWidgetLinks3")
+		let footerWidgetLink4 = document.getElementById("FooterWidgetLinks4")
+		let footerWidgetLink5 = document.getElementById("FooterWidgetLinks5")
 		function footerActiveLink(element) {
-			footerLink0.classList = "primaryButton"
-			footerLink1.classList = "primaryButton"
-			footerLink2.classList = "primaryButton"
-			footerLink3.classList = "primaryButton"
-			footerLink4.classList = "primaryButton"
-			footerLink5.classList = "primaryButton"
+			footerWidgetLink0.classList = "primaryButton"
+			footerWidgetLink1.classList = "primaryButton"
+			footerWidgetLink2.classList = "primaryButton"
+			footerWidgetLink3.classList = "primaryButton"
+			footerWidgetLink4.classList = "primaryButton"
+			footerWidgetLink5.classList = "primaryButton"
 			element.classList = "secondaryButton cyan"
 		}
 
