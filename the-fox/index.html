@@ -862,19 +862,15 @@
 				if (Email.value == "") {
 					alert("Enter Your Email!")
 					Email.focus()
-				} else
-					if (Message.value == "") {
-						alert("Enter Your Message!")
-						Message.focus()
-					} else {
-						alert("Your Form has been submitted")
-						console.log(`Name: ${Name.value},
+				} else {
+					alert("Your Form has been submitted")
+					console.log(`Name: ${Name.value},
 												Email: ${Email.value},
 												Message: ${Message.value || 'No data'}`)
-						Name.value = ""
-						Email.value = ""
-						Message.value = ""
-					}
+					Name.value = ""
+					Email.value = ""
+					Message.value = ""
+				}
 		}
 	</script>
 </body>
