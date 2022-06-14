@@ -870,7 +870,7 @@
 						alert("Your Form has been submitted")
 						console.log(`Name: ${Name.value},
 												Email: ${Email.value},
-												Message: ${Message.value}`)
+												Message: ${Message.value || 'No data'}`)
 						Name.value = ""
 						Email.value = ""
 						Message.value = ""
