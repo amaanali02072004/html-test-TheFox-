@@ -201,7 +201,7 @@ const FRhs = [
 	},
 ]
 const FS2Img = './assets/images/footer-blog.png'
-FS2 = [
+const FS2 = [
 	'latest news',
 	{
 		title: 'title here',
@@ -223,6 +223,24 @@ FS2 = [
 		date: '21 december 2017',
 		img: FS2Img,
 		alt: 'twitter',
+	},
+]
+const FS4 = [
+	'Contact Info',
+	{
+		title: 'office 1',
+		para: 'Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Perferendis, Eius.',
+		loc: 'vietnam',
+	},
+	{
+		title: 'office 1',
+		para: 'Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Perferendis, Eius.',
+		loc: 'vietnam',
+	},
+	{
+		title: 'office 1',
+		para: 'Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Perferendis, Eius.',
+		loc: 'vietnam',
 	},
 ]
 
@@ -438,6 +456,17 @@ for (let i = 1; i < FS2.length; i++) {
 				<p>${FS2[i].para}</p>
 				<p>${FS2[i].date}</p>
 			</div>
+		</div>
+`
+}
+let fs4 = document.getElementById('fs4')
+fs4.innerHTML = `<h5>${FS4[0]}</h5>`
+for (let i = 1; i < FS4.length; i++) {
+	fs4.innerHTML += `
+		<div class="contact">
+			<p class="title">${FS4[i].title}</p>
+			<p>${FS4[i].para}</p>
+			<p>${FS4[i].loc}</p>
 		</div>
 `
 }
