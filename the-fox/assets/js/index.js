@@ -1,112 +1,113 @@
+const javascript = 'javascript:;'
 const AdLinks = [
 	{
 		title: 'Fully responsive',
-		href: 'javascript:;',
+		href: javascript,
 	},
 ]
 const Links = [
 	{
 		title: 'Home',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'active',
 	},
 	{
 		title: 'Pages',
-		href: 'javascript:;',
+		href: javascript,
 		class: '',
 	},
 	{
 		title: 'Portfolio',
-		href: 'javascript:;',
+		href: javascript,
 		class: '',
 	},
 	{
 		title: 'Blog',
-		href: 'javascript:;',
+		href: javascript,
 		class: '',
 	},
 	{
 		title: 'Shop',
-		href: 'javascript:;',
+		href: javascript,
 		class: '',
 	},
 	{
 		title: 'travel',
-		href: 'javascript:;',
+		href: javascript,
 		class: '',
 	},
 	{
 		title: 'shortcodes',
-		href: 'javascript:;',
+		href: javascript,
 		class: '',
 	},
 	{
 		title: 'Features',
-		href: 'javascript:;',
+		href: javascript,
 		class: '',
 	},
 	{
 		title: 'Contact',
-		href: 'javascript:;',
+		href: javascript,
 		class: '',
 	},
 ]
 const PortfolioHeadLinks = [
 	{
 		title: 'all',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'large secondaryButton cyan',
 	},
 	{
 		title: 'Web Design',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'large primaryButton',
 	},
 	{
 		title: 'Graphic Design',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'large primaryButton',
 	},
 	{
 		title: 'WordPress',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'large primaryButton',
 	},
 	{
 		title: 'Photography',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'large primaryButton',
 	},
 ]
 const FooterWidgetLinks = [
 	{
 		title: 'awesome',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'primaryButton',
 	},
 	{
 		title: 'beautiful',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'primaryButton',
 	},
 	{
 		title: 'flat design',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'primaryButton',
 	},
 	{
 		title: 'ios',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'secondaryButton cyan',
 	},
 	{
 		title: 'themeforest',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'primaryButton',
 	},
 	{
 		title: 'mass',
-		href: 'javascript:;',
+		href: javascript,
 		class: 'primaryButton',
 	},
 ]
@@ -146,6 +147,57 @@ const Cards = [
 		img: './assets/images/camera.png',
 		alt: 'camera icon',
 		para: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos minima nam praesentium laborum quisquam, consequuntur laboriosam fugiat cupiditate.Nostrum, error? quisquam, consequuntur laboriosam fugiat cupiditate.Nostrum, error?',
+	},
+]
+const LRhsImg = './assets/images/twitter.png'
+const FLhs = [
+	'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, inventore? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, inventore?',
+	'Lorem ipsum, dolor sit amet consecteturadipisicing elit.',
+	javascript,
+	'Read More',
+]
+const FRhs = [
+	{
+		title: 'Subscribe',
+		para: 'to RSS feed',
+		img: LRhsImg,
+		alt: 'twitter',
+		href: javascript,
+	},
+	{
+		title: 'Subscribe',
+		para: 'to RSS feed',
+		img: LRhsImg,
+		alt: 'twitter',
+		href: javascript,
+	},
+	{
+		title: 'Subscribe',
+		para: 'to RSS feed',
+		img: LRhsImg,
+		alt: 'twitter',
+		href: javascript,
+	},
+	{
+		title: 'Subscribe',
+		para: 'to RSS feed',
+		img: LRhsImg,
+		alt: 'twitter',
+		href: javascript,
+	},
+	{
+		title: 'Subscribe',
+		para: 'to RSS feed',
+		img: LRhsImg,
+		alt: 'twitter',
+		href: javascript,
+	},
+	{
+		title: 'Subscribe',
+		para: 'to RSS feed',
+		img: LRhsImg,
+		alt: 'twitter',
+		href: javascript,
 	},
 ]
 
@@ -220,13 +272,15 @@ function activeLink(element) {
 let cardsSection = document.getElementById('cardsSectionInnerWrapper')
 
 for (let i = 0; i < Cards.length; i++) {
-	cardsSection.innerHTML += `<div class="cardWrapper">
+	cardsSection.innerHTML += `
+				<div class="cardWrapper">
 					<div class="cardHeadWrapper">
 						<img src=${Cards[i].img} alt='${Cards[i].alt}'>
 						<h5>${Cards[i].heading}</h5>
 					</div>
 					<p>${Cards[i].para}</p>
-				</div>`
+				</div>
+`
 }
 let uhsHidden = document.getElementById('uhsHidden')
 function loadMore() {
@@ -235,7 +289,16 @@ function loadMore() {
 
 let portfolioHead = document.getElementById('portfolioHeadLinks')
 for (let i = 0; i < PortfolioHeadLinks.length; i++) {
-	portfolioHead.innerHTML += `<a title='${PortfolioHeadLinks[i].title}' id='portfolioLink${i}' class='${PortfolioHeadLinks[i].class}' onclick='portfolioActiveLink(this)' href=${PortfolioHeadLinks[i].href}>${PortfolioHeadLinks[i].title}</a>`
+	portfolioHead.innerHTML += `
+		<a title='${PortfolioHeadLinks[i].title}'
+			id='portfolioLink${i}'
+			class='${PortfolioHeadLinks[i].class}'
+			onclick='portfolioActiveLink(this)'
+			href=${PortfolioHeadLinks[i].href}
+		>
+			${PortfolioHeadLinks[i].title}
+		</a>
+`
 }
 let portfolioLink = []
 for (var i = 0; i < PortfolioHeadLinks.length; ++i) {
@@ -302,4 +365,37 @@ ${Message.value}`)
 		Email.value = ''
 		Message.value = ''
 	}
+}
+let fLhs = document.getElementById('fLhs')
+fLhs.innerHTML = `
+	<p>
+	${FLhs[0]}
+		<br>
+		<br>
+	${FLhs[1]}
+	</p>
+	<ul>
+		<li>
+			<a href=${FLhs[2]}>
+				${FLhs[3]}
+			</a>
+		</li>
+	</ul>
+`
+
+let fRhs = document.getElementById('fRhs')
+for (let i = 0; i < FRhs.length; i++) {
+	fRhs.innerHTML += `
+		<div class="socialLinks">
+			<div class="linkLhs">
+				<a href=${FRhs[i].javascript} class="cyan">
+					<img src=${FRhs[i].img} alt=${FRhs[i].alt}>
+				</a>
+			</div>
+			<div class="linkRhs">
+				<p>${FRhs[i].title}</p>
+				<p>${FRhs[i].para}</p>
+			</div>
+		</div>
+`
 }
