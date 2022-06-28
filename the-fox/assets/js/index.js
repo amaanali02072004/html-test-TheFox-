@@ -111,6 +111,32 @@ const FooterWidgetLinks = [
 		class: 'primaryButton',
 	},
 ]
+const FooterUsefulLinks = [
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+]
 const Cards = [
 	{
 		heading: 'Creative Team profile',
@@ -251,10 +277,6 @@ for (let i = 0; i < Links.length; i++) {
 	fUl.innerHTML += `<li><a title='${Links[i].title}' id='footerLinks${i}' class='${Links[i].class}' onclick='activeLink(this)' href=${Links[i].href}>${Links[i].title}</a></li>`
 }
 
-let footerWidgets = document.getElementById('footerWidgets')
-for (let i = 0; i < FooterWidgetLinks.length; i++) {
-	footerWidgets.innerHTML += `<li><a title='${FooterWidgetLinks[i].title}' id='FooterWidgetLinks${i}' class='${FooterWidgetLinks[i].class}' onclick='footerActiveLink(this)' href=${FooterWidgetLinks[i].href}>${FooterWidgetLinks[i].title}</a></li>`
-}
 let advertLinks = document.getElementById('adLinks')
 for (let i = 0; i < 40; i++) {
 	advertLinks.innerHTML += `<li><a title='${AdLinks[0].title}' href=${AdLinks[0].href}>${AdLinks[0].title}</a></li>`
@@ -457,6 +479,23 @@ for (let i = 1; i < FS2.length; i++) {
 				<p>${FS2[i].date}</p>
 			</div>
 		</div>
+`
+}
+let footerWidgets = document.getElementById('footerWidgets')
+for (let i = 0; i < FooterWidgetLinks.length; i++) {
+	footerWidgets.innerHTML += `<li><a title='${FooterWidgetLinks[i].title}' id='FooterWidgetLinks${i}' class='${FooterWidgetLinks[i].class}' onclick='footerActiveLink(this)' href=${FooterWidgetLinks[i].href}>${FooterWidgetLinks[i].title}</a></li>`
+}
+let footerUsefulLinks = document.getElementById('footerUsefulLinks')
+for (let i = 0; i < FooterUsefulLinks.length; i++) {
+	footerUsefulLinks.innerHTML += `
+<li>
+	<a
+		title='${FooterUsefulLinks[i].title}'
+		href=${FooterUsefulLinks[i].href}
+	>
+	${FooterUsefulLinks[i].title}
+	</a>
+</li>
 `
 }
 let fs4 = document.getElementById('fs4')
