@@ -202,6 +202,7 @@ const FRhs = [
 ]
 const FS2Img = './assets/images/footer-blog.png'
 FS2 = [
+	'latest news',
 	{
 		title: 'title here',
 		para: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, eius.',
@@ -412,7 +413,7 @@ for (let i = 0; i < FRhs.length; i++) {
 	fRhs.innerHTML += `
 		<div class="socialLinks">
 			<div class="linkLhs">
-				<a href=${FRhs[i].javascript} class="cyan">
+				<a href=${FRhs[i].href} class="cyan">
 					<img src=${FRhs[i].img} alt=${FRhs[i].alt}>
 				</a>
 			</div>
@@ -425,7 +426,8 @@ for (let i = 0; i < FRhs.length; i++) {
 }
 
 let fs2 = document.getElementById('fs2')
-for (let i = 0; i < FS2.length; i++) {
+fs2.innerHTML = `<h5>${FS2[0]}</h5>`
+for (let i = 1; i < FS2.length; i++) {
 	fs2.innerHTML += `
 		<div class="blog">
 			<div class="blogLhs">
