@@ -79,64 +79,6 @@ const PortfolioHeadLinks = [
 		class: 'large primaryButton',
 	},
 ]
-const FooterWidgetLinks = [
-	{
-		title: 'awesome',
-		href: javascript,
-		class: 'primaryButton',
-	},
-	{
-		title: 'beautiful',
-		href: javascript,
-		class: 'primaryButton',
-	},
-	{
-		title: 'flat design',
-		href: javascript,
-		class: 'primaryButton',
-	},
-	{
-		title: 'ios',
-		href: javascript,
-		class: 'secondaryButton cyan',
-	},
-	{
-		title: 'themeforest',
-		href: javascript,
-		class: 'primaryButton',
-	},
-	{
-		title: 'mass',
-		href: javascript,
-		class: 'primaryButton',
-	},
-]
-const FooterUsefulLinks = [
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-]
 const Cards = [
 	{
 		heading: 'Creative Team profile',
@@ -175,53 +117,53 @@ const Cards = [
 		para: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos minima nam praesentium laborum quisquam, consequuntur laboriosam fugiat cupiditate.Nostrum, error? quisquam, consequuntur laboriosam fugiat cupiditate.Nostrum, error?',
 	},
 ]
-const LRhsImg = './assets/images/twitter.png'
-const FLhs = [
+const FS1Lhs = [
 	'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, inventore? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem, inventore?',
 	'Lorem ipsum, dolor sit amet consecteturadipisicing elit.',
 	javascript,
 	'Read More',
 ]
-const FRhs = [
+const RhsImg = './assets/images/twitter.png'
+const FS1Rhs = [
 	{
 		title: 'Subscribe',
 		para: 'to RSS feed',
-		img: LRhsImg,
+		img: RhsImg,
 		alt: 'twitter',
 		href: javascript,
 	},
 	{
 		title: 'Subscribe',
 		para: 'to RSS feed',
-		img: LRhsImg,
+		img: RhsImg,
 		alt: 'twitter',
 		href: javascript,
 	},
 	{
 		title: 'Subscribe',
 		para: 'to RSS feed',
-		img: LRhsImg,
+		img: RhsImg,
 		alt: 'twitter',
 		href: javascript,
 	},
 	{
 		title: 'Subscribe',
 		para: 'to RSS feed',
-		img: LRhsImg,
+		img: RhsImg,
 		alt: 'twitter',
 		href: javascript,
 	},
 	{
 		title: 'Subscribe',
 		para: 'to RSS feed',
-		img: LRhsImg,
+		img: RhsImg,
 		alt: 'twitter',
 		href: javascript,
 	},
 	{
 		title: 'Subscribe',
 		para: 'to RSS feed',
-		img: LRhsImg,
+		img: RhsImg,
 		alt: 'twitter',
 		href: javascript,
 	},
@@ -249,6 +191,65 @@ const FS2 = [
 		date: '21 december 2017',
 		img: FS2Img,
 		alt: 'twitter',
+	},
+]
+
+const FS3Widget = [
+	{
+		title: 'awesome',
+		href: javascript,
+		class: 'primaryButton',
+	},
+	{
+		title: 'beautiful',
+		href: javascript,
+		class: 'primaryButton',
+	},
+	{
+		title: 'flat design',
+		href: javascript,
+		class: 'primaryButton',
+	},
+	{
+		title: 'ios',
+		href: javascript,
+		class: 'secondaryButton cyan',
+	},
+	{
+		title: 'themeforest',
+		href: javascript,
+		class: 'primaryButton',
+	},
+	{
+		title: 'mass',
+		href: javascript,
+		class: 'primaryButton',
+	},
+]
+const FS3Useful = [
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
 	},
 ]
 const FS4 = [
@@ -376,12 +377,12 @@ function portfolioActiveLink(element) {
 	element.classList = 'large secondaryButton cyan'
 }
 
-let footerWidgetLink0 = document.getElementById('FooterWidgetLinks0')
-let footerWidgetLink1 = document.getElementById('FooterWidgetLinks1')
-let footerWidgetLink2 = document.getElementById('FooterWidgetLinks2')
-let footerWidgetLink3 = document.getElementById('FooterWidgetLinks3')
-let footerWidgetLink4 = document.getElementById('FooterWidgetLinks4')
-let footerWidgetLink5 = document.getElementById('FooterWidgetLinks5')
+let footerWidgetLink0 = document.getElementById('FS23Widget')
+let footerWidgetLink1 = document.getElementById('FS23Widget')
+let footerWidgetLink2 = document.getElementById('FS23Widget')
+let footerWidgetLink3 = document.getElementById('FS23Widget')
+let footerWidgetLink4 = document.getElementById('FS23Widget')
+let footerWidgetLink5 = document.getElementById('FS23Widget')
 function footerActiveLink(element) {
 	footerWidgetLink0.classList = 'primaryButton'
 	footerWidgetLink1.classList = 'primaryButton'
@@ -434,32 +435,32 @@ ${Message.value}`)
 let fLhs = document.getElementById('fLhs')
 fLhs.innerHTML = `
 	<p>
-	${FLhs[0]}
+	${FS1Lhs[0]}
 		<br>
 		<br>
-	${FLhs[1]}
+	${FS1Lhs[1]}
 	</p>
 	<ul>
 		<li>
-			<a href=${FLhs[2]}>
-				${FLhs[3]}
+			<a href=${FS1Lhs[2]}>
+				${FS1Lhs[3]}
 			</a>
 		</li>
 	</ul>
 `
 
 let fRhs = document.getElementById('fRhs')
-for (let i = 0; i < FRhs.length; i++) {
+for (let i = 0; i < FS1Rhs.length; i++) {
 	fRhs.innerHTML += `
 		<div class="socialLinks">
 			<div class="linkLhs">
-				<a href=${FRhs[i].href} class="cyan">
-					<img src=${FRhs[i].img} alt=${FRhs[i].alt}>
+				<a href=${FS1Rhs[i].href} class="cyan">
+					<img src=${FS1Rhs[i].img} alt=${FS1Rhs[i].alt}>
 				</a>
 			</div>
 			<div class="linkRhs">
-				<p>${FRhs[i].title}</p>
-				<p>${FRhs[i].para}</p>
+				<p>${FS1Rhs[i].title}</p>
+				<p>${FS1Rhs[i].para}</p>
 			</div>
 		</div>
 `
@@ -482,18 +483,18 @@ for (let i = 1; i < FS2.length; i++) {
 `
 }
 let footerWidgets = document.getElementById('footerWidgets')
-for (let i = 0; i < FooterWidgetLinks.length; i++) {
-	footerWidgets.innerHTML += `<li><a title='${FooterWidgetLinks[i].title}' id='FooterWidgetLinks${i}' class='${FooterWidgetLinks[i].class}' onclick='footerActiveLink(this)' href=${FooterWidgetLinks[i].href}>${FooterWidgetLinks[i].title}</a></li>`
+for (let i = 0; i < FS3Widget.length; i++) {
+	footerWidgets.innerHTML += `<li><a title='${FS3Widget[i].title}' id='FS3Widget${i}' class='${FS3Widget[i].class}' onclick='footerActiveLink(this)' href=${FS3Widget[i].href}>${FS3Widget[i].title}</a></li>`
 }
 let footerUsefulLinks = document.getElementById('footerUsefulLinks')
-for (let i = 0; i < FooterUsefulLinks.length; i++) {
+for (let i = 0; i < FS3Useful.length; i++) {
 	footerUsefulLinks.innerHTML += `
 <li>
 	<a
-		title='${FooterUsefulLinks[i].title}'
-		href=${FooterUsefulLinks[i].href}
+		title='${FS3Useful[i].title}'
+		href=${FS3Useful[i].href}
 	>
-	${FooterUsefulLinks[i].title}
+	${FS3Useful[i].title}
 	</a>
 </li>
 `
