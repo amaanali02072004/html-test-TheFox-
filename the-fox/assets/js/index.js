@@ -200,6 +200,30 @@ const FRhs = [
 		href: javascript,
 	},
 ]
+const FS2Img = './assets/images/footer-blog.png'
+FS2 = [
+	{
+		title: 'title here',
+		para: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, eius.',
+		date: '21 december 2017',
+		img: FS2Img,
+		alt: 'twitter',
+	},
+	{
+		title: 'title here',
+		para: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, eius.',
+		date: '21 december 2017',
+		img: FS2Img,
+		alt: 'twitter',
+	},
+	{
+		title: 'title here',
+		para: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis, eius.',
+		date: '21 december 2017',
+		img: FS2Img,
+		alt: 'twitter',
+	},
+]
 
 let hUl = document.getElementById('headerLinks')
 let fUl = document.getElementById('footerLinks')
@@ -395,6 +419,22 @@ for (let i = 0; i < FRhs.length; i++) {
 			<div class="linkRhs">
 				<p>${FRhs[i].title}</p>
 				<p>${FRhs[i].para}</p>
+			</div>
+		</div>
+`
+}
+
+let fs2 = document.getElementById('fs2')
+for (let i = 0; i < FS2.length; i++) {
+	fs2.innerHTML += `
+		<div class="blog">
+			<div class="blogLhs">
+				<img src=${FS2[i].img} alt=${FS2[i].alt}>
+			</div>
+			<div class="blogRhs">
+				<p class="title">${FS2[i].title}</p>
+				<p>${FS2[i].para}</p>
+				<p>${FS2[i].date}</p>
 			</div>
 		</div>
 `
