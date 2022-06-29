@@ -16,12 +16,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+#noscript {
+    color: red;
+    font-size: 20px;
+}
+
 body {
     background-color: white;
     /* background-image: url(../images/test\ 1.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
-    height: 5880px;
+    /* height: 5880px; */
 }
 
 .container {
