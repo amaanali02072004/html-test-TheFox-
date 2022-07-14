@@ -510,3 +510,6 @@ for (let i = 1; i < FS4.length; i++) {
 		</div>
 `
 }
+let date = document.getElementById('__date')
+let currentDate = new Date().getFullYear()
+date.innerHTML = ` ${currentDate} `
