@@ -273,12 +273,15 @@ const FS4 = [
 
 let hUl = document.getElementById('headerLinks')
 let fUl = document.getElementById('footerLinks')
+hUl.innerHTML = ''
+fUl.innerHTML = ''
 for (let i = 0; i < Links.length; i++) {
 	hUl.innerHTML += `<li><a title='${Links[i].title}' id='headerLinks${i}' class='${Links[i].class}' onclick='activeLink(this)' href=${Links[i].href}>${Links[i].title}</a></li>`
 	fUl.innerHTML += `<li><a title='${Links[i].title}' id='footerLinks${i}' class='${Links[i].class}' onclick='activeLink(this)' href=${Links[i].href}>${Links[i].title}</a></li>`
 }
 
 let advertLinks = document.getElementById('adLinks')
+advertLinks.innerHTML = ''
 for (let i = 0; i < 40; i++) {
 	advertLinks.innerHTML += `<li><a title='${AdLinks[0].title}' href=${AdLinks[0].href}>${AdLinks[0].title}</a></li>`
 }
@@ -336,6 +339,7 @@ function activeLink(element) {
 }
 
 let cardsSection = document.getElementById('cardsSectionInnerWrapper')
+cardsSection.innerHTML = ''
 
 for (let i = 0; i < Cards.length; i++) {
 	cardsSection.innerHTML += `
@@ -354,6 +358,7 @@ function loadMore() {
 }
 
 let portfolioHead = document.getElementById('portfolioHeadLinks')
+portfolioHead.innerHTML = ``
 for (let i = 0; i < PortfolioHeadLinks.length; i++) {
 	portfolioHead.innerHTML += `
 		<a title='${PortfolioHeadLinks[i].title}'
@@ -378,6 +383,7 @@ function portfolioActiveLink(element) {
 }
 
 let footerWidgets = document.getElementById('footerWidgets')
+footerWidgets.innerHTML = ''
 for (let i = 0; i < FS3Widget.length; i++) {
 	footerWidgets.innerHTML += `<li><a title='${FS3Widget[i].title}' id='FS3Widget${i}' class='${FS3Widget[i].class}' onclick='footerActiveLink(this)' href=${FS3Widget[i].href}>${FS3Widget[i].title}</a></li>`
 }
@@ -434,6 +440,7 @@ ${Message.value}`)
 	}
 }
 let fLhs = document.getElementById('fLhs')
+fLhs.innerHTML = ``
 fLhs.innerHTML = `
 	<p>
 	${FS1Lhs[0]}
@@ -451,6 +458,7 @@ fLhs.innerHTML = `
 `
 
 let fRhs = document.getElementById('fRhs')
+fRhs.innerHTML = ``
 for (let i = 0; i < FS1Rhs.length; i++) {
 	fRhs.innerHTML += `
 		<div class="socialLinks">
@@ -468,6 +476,7 @@ for (let i = 0; i < FS1Rhs.length; i++) {
 }
 
 let fs2 = document.getElementById('fs2')
+fs2.innerHTML = ``
 fs2.innerHTML = `<h5>${FS2[0]}</h5>`
 for (let i = 1; i < FS2.length; i++) {
 	fs2.innerHTML += `
@@ -484,6 +493,7 @@ for (let i = 1; i < FS2.length; i++) {
 `
 }
 let footerUsefulLinks = document.getElementById('footerUsefulLinks')
+footerUsefulLinks.innerHTML = ``
 for (let i = 0; i < FS3Useful.length; i++) {
 	footerUsefulLinks.innerHTML += `
 <li>
