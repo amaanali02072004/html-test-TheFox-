@@ -377,19 +377,20 @@ function portfolioActiveLink(element) {
 	element.classList = 'large secondaryButton cyan'
 }
 
-let footerWidgetLink0 = document.getElementById('FS23Widget')
-let footerWidgetLink1 = document.getElementById('FS23Widget')
-let footerWidgetLink2 = document.getElementById('FS23Widget')
-let footerWidgetLink3 = document.getElementById('FS23Widget')
-let footerWidgetLink4 = document.getElementById('FS23Widget')
-let footerWidgetLink5 = document.getElementById('FS23Widget')
+let footerWidgets = document.getElementById('footerWidgets')
+for (let i = 0; i < FS3Widget.length; i++) {
+	footerWidgets.innerHTML += `<li><a title='${FS3Widget[i].title}' id='FS3Widget${i}' class='${FS3Widget[i].class}' onclick='footerActiveLink(this)' href=${FS3Widget[i].href}>${FS3Widget[i].title}</a></li>`
+}
+
+let footerWidgetLink = []
+for (var i = 0; i < FS3Widget.length; ++i) {
+	footerWidgetLink[i] = document.getElementById(`FS3Widget${i}`)
+}
+
 function footerActiveLink(element) {
-	footerWidgetLink0.classList = 'primaryButton'
-	footerWidgetLink1.classList = 'primaryButton'
-	footerWidgetLink2.classList = 'primaryButton'
-	footerWidgetLink3.classList = 'primaryButton'
-	footerWidgetLink4.classList = 'primaryButton'
-	footerWidgetLink5.classList = 'primaryButton'
+	for (var i = 0; i < FS3Widget.length; ++i) {
+		footerWidgetLink[i].classList = 'primaryButton'
+	}
 	element.classList = 'secondaryButton cyan'
 }
 
@@ -481,10 +482,6 @@ for (let i = 1; i < FS2.length; i++) {
 			</div>
 		</div>
 `
-}
-let footerWidgets = document.getElementById('footerWidgets')
-for (let i = 0; i < FS3Widget.length; i++) {
-	footerWidgets.innerHTML += `<li><a title='${FS3Widget[i].title}' id='FS3Widget${i}' class='${FS3Widget[i].class}' onclick='footerActiveLink(this)' href=${FS3Widget[i].href}>${FS3Widget[i].title}</a></li>`
 }
 let footerUsefulLinks = document.getElementById('footerUsefulLinks')
 for (let i = 0; i < FS3Useful.length; i++) {
