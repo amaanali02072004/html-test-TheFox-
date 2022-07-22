@@ -134,9 +134,6 @@ header {
     margin-right: 10px;
 }
 
-.headerWrapper .rhs ul li {
-    /* padding: 0 20px; */
-}
 
 .headerWrapper .rhs ul li a {
     text-transform: capitalize;
@@ -793,10 +790,6 @@ header {
     padding-bottom: 25px;
 }
 
-.servicesInnerWrapper .lhs img {
-    /* width: 120px; */
-    /* width: 135px; */
-}
 
 @media only screen and (max-width: 900px) {
     .skillsServicesOuterWrapper {
@@ -921,8 +914,6 @@ header {
         font-size: 12px;
     }
 
-    .advertisementInnerWrapper .lhs p:last-child {}
-
     .advertisementInnerWrapper .rhs img {
         object-fit: scale-down;
         width: 80px;
@@ -983,8 +974,6 @@ header {
         margin-right: 8%;
     }
 }
-
-.blogOuterWrapper {}
 
 .blogInnerWrapper {
     display: flex;
@@ -1092,8 +1081,6 @@ header {
     }
 
 }
-
-.featuresOuterWrapper {}
 
 .featuresInnerWrapper {
     display: flex;
@@ -1360,9 +1347,6 @@ footer {
     width: 100%;
 }
 
-.primaryFooterOuterWrapper {
-    /* padding: 60px 0; */
-}
 
 .primaryFooterInnerWrapper {
     /* padding: 0 20px; */
