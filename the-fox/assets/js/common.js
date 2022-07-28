@@ -1,49 +1,50 @@
+const fileName = document.body.attributes.page.nodeValue
 const javascript = 'javascript:;'
 const ext = './'
 const Links = [
 	{
 		title: 'home',
-		href: `index.html`,
+		href: `index`,
 		class: '',
 	},
 	{
-		title: 'Pages',
-		href: 'Pages.html',
+		title: 'pages',
+		href: 'pages',
 		class: '',
 	},
 	{
-		title: 'Portfolio',
-		href: 'Portfolio.html',
+		title: 'portfolio',
+		href: 'portfolio',
 		class: '',
 	},
 	{
-		title: 'Blog',
-		href: 'Blog.html',
+		title: 'blog',
+		href: 'blog',
 		class: '',
 	},
 	{
-		title: 'Shop',
-		href: 'Shop.html',
+		title: 'shop',
+		href: 'shop',
 		class: '',
 	},
 	{
 		title: 'travel',
-		href: 'travel.html',
+		href: 'travel',
 		class: '',
 	},
 	{
 		title: 'shortcodes',
-		href: 'shortcodes.html',
+		href: 'shortcodes',
 		class: '',
 	},
 	{
-		title: 'Features',
-		href: 'Features.html',
+		title: 'features',
+		href: 'features',
 		class: '',
 	},
 	{
 		title: 'contact',
-		href: `contact.html`,
+		href: `contact`,
 		class: '',
 	},
 ]
@@ -218,8 +219,6 @@ let fUl = document.getElementById('footerLinks')
 hUl.innerHTML = ''
 fUl.innerHTML = ''
 
-let fileName = hUl.attributes.page.nodeValue
-
 for (let i = 0; i < Links.length; i++) {
 	if (Links[i].title === fileName) {
 		Links[i].class = 'active'
@@ -230,7 +229,7 @@ for (let i = 0; i < Links.length; i++) {
         id='headerLinks${i}'
         class='${Links[i].class}'
         onclick='activeLink(this)'
-        href=${(ext, Links[i].href)}>
+        href=${`${ext}${Links[i].href || Links[i].title}.html`}>
         ${Links[i].title}
       </a>
     </li>
@@ -241,7 +240,7 @@ for (let i = 0; i < Links.length; i++) {
         id='footerLinks${i}'
         class='${Links[i].class}'
         onclick='activeLink(this)'
-        href=${(ext, Links[i].href)}>
+        href=${`${ext}${Links[i].href || Links[i].title}.html`}>
         ${Links[i].title}
       </a>
     </li>
