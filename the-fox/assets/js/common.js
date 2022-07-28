@@ -224,7 +224,6 @@ console.log('🚀 ~ file: common.js ~ line 211 ~ hUl', hUl.classList)
 let temp = hUl.classList.value
 for (let i = 0; i < Links.length; i++) {
 	if (hUl.classList.value === temp && Links[i].title === temp) {
-		console.log('hi')
 		Links[i].class = 'active'
 	}
 	hUl.innerHTML += `<li><a title='${Links[i].title}' id='headerLinks${i}' class='${Links[i].class}' onclick='activeLink(this)' href=${Links[i].href}>${Links[i].title}</a></li>`
