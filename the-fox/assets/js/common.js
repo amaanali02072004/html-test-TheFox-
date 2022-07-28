@@ -220,10 +220,6 @@ fUl.innerHTML = ''
 
 let fileName = hUl.attributes.page.nodeValue
 
-// console.log(
-// 	'🚀 ~ file: common.js ~ line 217 ~ hUl',
-// 	hUl.attributes.page.nodeValue
-// )
 for (let i = 0; i < Links.length; i++) {
 	if (Links[i].title === fileName) {
 		Links[i].class = 'active'
