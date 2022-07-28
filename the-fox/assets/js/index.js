@@ -419,6 +419,8 @@ Email.addEventListener('keypress', function (event) {
 // 		document.getElementById("Submit").click();
 // 	}
 // });
+
+let form = document.getElementById('form')
 function submitForm() {
 	if (Name.value == '') {
 		alert('Enter Your Name!')
@@ -430,6 +432,7 @@ function submitForm() {
 		alert('Enter Your Message!')
 		Message.focus()
 	} else {
+		// form
 		alert('Your Form has been submitted')
 		console.log(`Name: ${Name.value},
 ${Email.value},

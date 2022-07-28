@@ -1218,8 +1218,13 @@ header {
     padding-left: 10px;
 }
 
-.formContent .rhs input[type=text],
-.formContent .rhs input[type=email],
+.formContent .rhs form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formContent .rhs form input[type=text],
+.formContent .rhs form input[type=email],
 .formContent .rhs textarea {
     color: white;
     margin-bottom: 15px;
@@ -1229,7 +1234,7 @@ header {
     resize: none;
 }
 
-.formContent .rhs input[type=submit] {
+.formContent .rhs form input[type=submit] {
     max-width: fit-content;
 }
 
@@ -1257,10 +1262,14 @@ header {
 }
 
 .mapWrapper {
-    background-image: url(../images/map.png);
+    /* background-image: url(../images/map.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     height: 325px;
+}
+
+.mapWrapper iframe {
+    width: 100%;
 }
 
 
