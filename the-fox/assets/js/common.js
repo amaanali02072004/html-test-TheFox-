@@ -217,13 +217,15 @@ let hUl = document.getElementById('headerLinks')
 let fUl = document.getElementById('footerLinks')
 hUl.innerHTML = ''
 fUl.innerHTML = ''
-console.log('🚀 ~ file: common.js ~ line 211 ~ hUl', hUl.classList)
-// if (hUl.classList.value === 'home') {
-// 	Links[0].class = 'active'
-// }
-let temp = hUl.classList.value
+
+let fileName = hUl.attributes.page.nodeValue
+
+// console.log(
+// 	'🚀 ~ file: common.js ~ line 217 ~ hUl',
+// 	hUl.attributes.page.nodeValue
+// )
 for (let i = 0; i < Links.length; i++) {
-	if (hUl.classList.value === temp && Links[i].title === temp) {
+	if (Links[i].title === fileName) {
 		Links[i].class = 'active'
 	}
 	hUl.innerHTML += `<li><a title='${Links[i].title}' id='headerLinks${i}' class='${Links[i].class}' onclick='activeLink(this)' href=${Links[i].href}>${Links[i].title}</a></li>`
