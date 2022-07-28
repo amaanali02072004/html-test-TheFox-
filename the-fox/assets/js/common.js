@@ -3,47 +3,47 @@ const ext = './'
 const Links = [
 	{
 		title: 'home',
-		href: `${ext}index.html`,
+		href: `index.html`,
 		class: '',
 	},
 	{
 		title: 'Pages',
-		href: javascript,
+		href: 'Pages.html',
 		class: '',
 	},
 	{
 		title: 'Portfolio',
-		href: javascript,
+		href: 'Portfolio.html',
 		class: '',
 	},
 	{
 		title: 'Blog',
-		href: javascript,
+		href: 'Blog.html',
 		class: '',
 	},
 	{
 		title: 'Shop',
-		href: javascript,
+		href: 'Shop.html',
 		class: '',
 	},
 	{
 		title: 'travel',
-		href: javascript,
+		href: 'travel.html',
 		class: '',
 	},
 	{
 		title: 'shortcodes',
-		href: javascript,
+		href: 'shortcodes.html',
 		class: '',
 	},
 	{
 		title: 'Features',
-		href: javascript,
+		href: 'Features.html',
 		class: '',
 	},
 	{
 		title: 'contact',
-		href: `${ext}contact.html`,
+		href: `contact.html`,
 		class: '',
 	},
 ]
@@ -224,8 +224,28 @@ for (let i = 0; i < Links.length; i++) {
 	if (Links[i].title === fileName) {
 		Links[i].class = 'active'
 	}
-	hUl.innerHTML += `<li><a title='${Links[i].title}' id='headerLinks${i}' class='${Links[i].class}' onclick='activeLink(this)' href=${Links[i].href}>${Links[i].title}</a></li>`
-	fUl.innerHTML += `<li><a title='${Links[i].title}' id='footerLinks${i}' class='${Links[i].class}' onclick='activeLink(this)' href=${Links[i].href}>${Links[i].title}</a></li>`
+	hUl.innerHTML += `<li>
+      <a
+        title='${Links[i].title}'
+        id='headerLinks${i}'
+        class='${Links[i].class}'
+        onclick='activeLink(this)'
+        href=${(ext, Links[i].href)}>
+        ${Links[i].title}
+      </a>
+    </li>
+    `
+	fUl.innerHTML += `<li>
+      <a
+        title='${Links[i].title}'
+        id='footerLinks${i}'
+        class='${Links[i].class}'
+        onclick='activeLink(this)'
+        href=${(ext, Links[i].href)}>
+        ${Links[i].title}
+      </a>
+    </li>
+    `
 }
 
 let headerActiveLinks = [],
