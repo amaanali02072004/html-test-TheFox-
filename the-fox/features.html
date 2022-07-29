@@ -21,7 +21,7 @@
       This error cannot be dissmissed!
     </p>
   </noscript>
-  <header id="header" props=[{"title":"props","href":"","class":""}] style="background-color: red;">
+  <header id="header" props=[{"title":"props","href":"","class":""}]>
     <div class="container">
       <div class="headerWrapper">
         <div class="lhs">
@@ -46,37 +46,51 @@
       </div>
     </div>
   </header>
-  <br>
-  <br>
-  <br>
-  (ALMOST) EVERYTHING IS DYNAMICALLY GENERATED, WITH HTML COMPONENTS!!
-  <br>
-  header and footer are reusable components, u can use them anywhere!
-  just import
-  <br>
-  <code>
+  <section>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    (ALMOST) EVERYTHING IS DYNAMICALLY GENERATED, WITH HTML COMPONENTS!!
+    <br>
+    header and footer are reusable components, u can use them anywhere!
+    just import
+    <br>
+  </section>
+  <section>
+    <code>
 <span class="tag">&lt;</span class="tag">script src="./assets/js/header.js"<span class="tag">&gt;</span class="tag"> <span class="tag">&lt;</span class="tag">/script<span class="tag">&gt;</span class="tag">
   <br>
 <span class="tag">&lt;</span class="tag">script src="./assets/js/footer.js"<span class="tag">&gt;</span class="tag"> <span class="tag">&lt;</span class="tag">/script<span class="tag">&gt;</span class="tag">
   <br>
 <span class="tag">&lt;</span class="tag">script src="./assets/js/common.js"<span class="tag">&gt;</span class="tag"> <span class="tag">&lt;</span class="tag">/script<span class="tag">&gt;</span class="tag">
 </code>
-  <br>
-  and assign them in body!
-  <br>
-  <code>
-<span class="tag">&lt;</span class="tag">header id='header' props=[{"title":"props","href":"","class":""}]<span class="tag">&gt;</span class="tag"><span class="tag">&lt;</span class="tag">/header<span class="tag">&gt;</span class="tag">
+    <br>
+    and assign them in body!
+    <br>
+    <code>
+<span class="tag">&lt;</span class="tag"><span>header id='header' props=[{"title":"props","href":" ","class":" "}]</span><span class="tag">&gt;</span class="tag"><span class="tag">&lt;</span class="tag">/header<span class="tag">&gt;</span class="tag">
+    </code>
+    <br>
+    <span>(strict use of double quotes, " ")</span>
+    <code>
   <br>
 <span class="tag">&lt;</span class="tag">footer id='footer'<span class="tag">&gt;</span class="tag"><span class="tag">&lt;</span class="tag">/footer<span class="tag">&gt;</span class="tag">
 </code>
+    <br>
+    <br>
+    <span>notice how there is a new link in the header and footer now!</span>
+  </section>
 
-  <br>
-  <br>
-  <br>
-  this is dynamically produced (PROPS!)
-  (in dom structure, it is visible, but can be hidden too)
-  <div id="dynamic" array=["person1","person22","amaan12"]>hi</div>
-
+  <section>
+    <br>
+    <br>
+    <br>
+    this is dynamically produced (PROPS!)
+    (in dom structure, it is visible, but can be hidden too)
+    <div id="dynamic" array=["person1","person22","amaan12"]>hi</div>
+  </section>
   <footer id='footer'>
     <div class="primaryFooterOuterWrapper">
       <div class="container">

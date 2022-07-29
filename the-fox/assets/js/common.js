@@ -250,11 +250,13 @@ const FS4 = [
 ]
 
 let menuList = document.getElementById('rhs')
-const hideMenu = () => {
-	menuList.classList.remove('rhsActive')
-}
 const showMenu = () => {
 	menuList.classList.toggle('rhsActive')
+	// localStorage.setItem('drawer',true)
+}
+const hideMenu = () => {
+	menuList.classList.remove('rhsActive')
+	// localStorage.setItem('drawer',false)
 }
 
 let hUl = document.getElementById('headerLinks')
@@ -274,6 +276,7 @@ if (
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
 	Links[i].title === 'index' && (Links[i].title = 'home')
+	Links[i].title === 'features' && (Links[i].title = 'features !')
 	hUl.innerHTML += `<li>
       <a
         title='${Links[i].title}'
@@ -291,6 +294,7 @@ for (let i = 0; i < Links.length; i++) {
         title='${Links[i].title}'
         id='footerLinks${i}'
         class='${Links[i].class}'
+        style='${Links[i].style}'
         onclick='activeLink(this)'
         href=${`${ext}${Links[i].href || Links[i].title}.html`}>
         ${Links[i].title}
