@@ -233,10 +233,10 @@ const FS4 = [
 ]
 
 let menuList = document.getElementById('rhs')
-function hideMenu() {
+const hideMenu = () => {
 	menuList.classList.remove('rhsActive')
 }
-function showMenu() {
+const showMenu = () => {
 	menuList.classList.toggle('rhsActive')
 }
 
@@ -246,9 +246,8 @@ hUl.innerHTML = ''
 fUl.innerHTML = ''
 
 for (let i = 0; i < Links.length; i++) {
-	if (Links[i].title === fileName) {
-		Links[i].class = 'active'
-	}
+	Links[i].title === fileName && (Links[i].class = 'active')
+	Links[i].title === 'index' && (Links[i].title = 'home')
 	hUl.innerHTML += `<li>
       <a
         title='${Links[i].title}'
@@ -279,16 +278,16 @@ for (var i = 0; i <= Links.length; ++i) {
 	headerActiveLinks[i] = document.getElementById(`headerLinks${i}`)
 	footerActiveLinks[i] = document.getElementById(`footerLinks${i}`)
 }
-function activeLink(element) {
+const activeLink = (element) => {
 	for (let i = 0; i < Links.length; i++) {
 		headerActiveLinks[i].classList = ''
 		footerActiveLinks[i].classList = ''
 		element.classList.add('active')
-		if (headerActiveLinks[i].classList == 'active') {
-			footerActiveLinks[i].classList.add('active')
-		} else if (footerActiveLinks[i].classList == 'active') {
-			headerActiveLinks[i].classList.add('active')
-		}
+
+		headerActiveLinks[i].classList == 'active'
+			? footerActiveLinks[i].classList.add('active')
+			: footerActiveLinks[i].classList == 'active' &&
+			  headerActiveLinks[i].classList.add('active')
 	}
 }
 
@@ -306,7 +305,7 @@ for (let i = 1; i < FS3Widget.length; ++i) {
 	footerWidgetLink[i] = document.getElementById(`FS3Widget${i}`)
 }
 
-function footerActiveLink(element) {
+const footerActiveLink = (element) => {
 	for (var i = 1; i < FS3Widget.length; ++i) {
 		footerWidgetLink[i].classList = 'primaryButton'
 	}

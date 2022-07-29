@@ -87,21 +87,20 @@ let bannerLengthMin = -1
 let bannerLengthMax = 4
 let seconds = 5
 let bannerDuration = seconds * 1000
-let timer = setInterval(function () {
+let timer = setInterval(() => {
 	changeBanner2()
 }, bannerDuration)
-function changeBanner0() {
-	if (bannerPosition == bannerLengthMin) {
-		bannerPosition = bannerLengthMax
-	}
+
+const changeBanner0 = () => {
+	bannerPosition == bannerLengthMin && (bannerPosition = bannerLengthMax)
+
 	bannerPosition--
 	banner.classList = `bannerOuterWrapper banner${bannerPosition}`
 }
-function changeBanner2() {
+const changeBanner2 = () => {
 	bannerPosition++
-	if (bannerPosition == bannerLengthMax) {
-		bannerPosition = bannerLengthMin
-	}
+	bannerPosition == bannerLengthMax && (bannerPosition = bannerLengthMin)
+
 	banner.classList = `bannerOuterWrapper banner${bannerPosition}`
 }
 
@@ -120,7 +119,7 @@ for (let i = 0; i < Cards.length; i++) {
 `
 }
 let uhsHidden = document.getElementById('uhsHidden')
-function loadMore() {
+const loadMore = () => {
 	uhsHidden.classList.remove('hidden')
 }
 
@@ -142,7 +141,7 @@ let portfolioLink = []
 for (var i = 0; i < PortfolioHeadLinks.length; ++i) {
 	portfolioLink[i] = document.getElementById(`portfolioLink${i}`)
 }
-function portfolioActiveLink(element) {
+const portfolioActiveLink = (element) => {
 	for (let i = 0; i < PortfolioHeadLinks.length; i++) {
 		portfolioLink[i].classList = 'large primaryButton'
 	}
@@ -153,24 +152,18 @@ let Name = document.getElementById('Name')
 let Email = document.getElementById('Email')
 let Message = document.getElementById('Message')
 
-Name.addEventListener('keypress', function (event) {
-	if (event.key === 'Enter') {
-		document.getElementById('Submit').click()
-	}
+Name.addEventListener('keypress', (event) => {
+	event.key === 'Enter' && document.getElementById('Submit').click()
 })
-Email.addEventListener('keypress', function (event) {
-	if (event.key === 'Enter') {
-		document.getElementById('Submit').click()
-	}
+Email.addEventListener('keypress', (event) => {
+	event.key === 'Enter' && document.getElementById('Submit').click()
 })
-// Message.addEventListener("keypress", function (event) {
-// 	if (event.key === "Enter") {
-// 		document.getElementById("Submit").click();
-// 	}
+// Message.addEventListener("keypress",  (event)=> {
+// event.key === 'Enter' && document.getElementById('Submit').click()
 // });
 
 let form = document.getElementById('form')
-function submitForm(event) {
+const submitForm = (event) => {
 	if (Name.value == '') {
 		alert('Enter Your Name!')
 		Name.focus()
