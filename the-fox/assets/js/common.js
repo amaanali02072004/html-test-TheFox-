@@ -67,6 +67,7 @@ let Links = [
 		title: 'features',
 		href: 'features',
 		class: '',
+		style: 'font-weight:900;',
 	},
 	{
 		title: 'contact',
@@ -277,6 +278,7 @@ for (let i = 0; i < Links.length; i++) {
       <a
         title='${Links[i].title}'
         id='headerLinks${i}'
+        style='${Links[i].style}'
         class='${Links[i].class}'
         onclick='activeLink(this)'
         href=${`${ext}${Links[i].href || Links[i].title}.html`}>
