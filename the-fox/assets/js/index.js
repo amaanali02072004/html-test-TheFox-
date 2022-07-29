@@ -138,7 +138,7 @@ for (let i = 0; i < PortfolioHeadLinks.length; i++) {
 `
 }
 let portfolioLink = []
-for (var i = 0; i < PortfolioHeadLinks.length; ++i) {
+for (let i = 0; i < PortfolioHeadLinks.length; ++i) {
 	portfolioLink[i] = document.getElementById(`portfolioLink${i}`)
 }
 const portfolioActiveLink = (element) => {

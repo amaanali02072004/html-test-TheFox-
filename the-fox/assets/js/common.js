@@ -1,4 +1,19 @@
 const fileName = document.body.attributes.page.nodeValue
+
+let id = 'dynamic'
+if (document?.getElementById(id)?.innerHTML?.length > 0) {
+	let testDoc = document?.getElementById(id)
+	let test = JSON.parse(
+		document?.getElementById(id)?.attributes?.array?.nodeValue
+	)
+	test?.length > 0 && console.log('props (array)---', test)
+	testDoc.innerHTML = ``
+	for (let i = 0; i < test.length; i++) {
+		testDoc.innerHTML += `<p>Person ${i} :- ${test[i]}</p>`
+	}
+	// testDoc.removeAttribute('array')
+}
+
 const javascript = 'javascript:;'
 const ext = './'
 const head = document.getElementById('head')
@@ -274,7 +289,7 @@ for (let i = 0; i < Links.length; i++) {
 
 let headerActiveLinks = [],
 	footerActiveLinks = []
-for (var i = 0; i <= Links.length; ++i) {
+for (let i = 0; i <= Links.length; ++i) {
 	headerActiveLinks[i] = document.getElementById(`headerLinks${i}`)
 	footerActiveLinks[i] = document.getElementById(`footerLinks${i}`)
 }
@@ -306,7 +321,7 @@ for (let i = 1; i < FS3Widget.length; ++i) {
 }
 
 const footerActiveLink = (element) => {
-	for (var i = 1; i < FS3Widget.length; ++i) {
+	for (let i = 1; i < FS3Widget.length; ++i) {
 		footerWidgetLink[i].classList = 'primaryButton'
 	}
 	element.classList = 'secondaryButton cyan'
