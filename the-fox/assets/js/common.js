@@ -295,6 +295,7 @@ for (let i = 0; i < Links.length; i++) {
       </a>
     </li>
     `
+	header.removeAttribute('props')
 }
 
 let headerActiveLinks = [],
