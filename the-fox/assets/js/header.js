@@ -13,9 +13,15 @@ header.innerHTML = `
 				</div>
 				<div class="rhs" id="rhs">
 					<ul id="headerLinks">
-						<li>
-							<a><i>loading...</i></a>
-						</li>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Pages</a></li>
+						<li><a href="#">Portfolio</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Shop</a></li>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Features</a></li>
+						<li><a href="#">Contact</a></li>
 					</ul>
 					<img
 						src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
