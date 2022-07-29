@@ -1,9 +1,19 @@
 const fileName = document.body.attributes.page.nodeValue
 const javascript = 'javascript:;'
 const ext = './'
+const head = document.getElementById('head')
+head.innerHTML = `
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>The Fox | ${fileName}</title>
+	<link rel="icon" href="./assets/images/fox-icon.png">
+	<link rel="stylesheet" href="./assets/css/common.css" />
+	<link rel="stylesheet" href="./assets/css/${fileName}.css" />
+`
 const Links = [
 	{
-		title: 'home',
+		title: 'index',
 		href: `index`,
 		class: '',
 	},
@@ -162,6 +172,22 @@ const FS3Widget = [
 
 const FS3Useful = [
 	'Useful Links',
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
+	{
+		title: 'Web Design Resources',
+		href: javascript,
+	},
 	{
 		title: 'Web Design Resources',
 		href: javascript,
