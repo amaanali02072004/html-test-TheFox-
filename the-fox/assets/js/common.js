@@ -11,12 +11,13 @@ if (document?.getElementById(id)?.innerHTML?.length > 0) {
 	for (let i = 0; i < test.length; i++) {
 		testDoc.innerHTML += `<p>Person ${i} :- ${test[i]}</p>`
 	}
-	// testDoc.removeAttribute('array')
 }
+// testDoc.removeAttribute('array')
 
 const javascript = 'javascript:;'
 const ext = './'
 const head = document.getElementById('head')
+head.innerHTML = ``
 head.innerHTML = `
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,7 +27,7 @@ head.innerHTML = `
 	<link rel="stylesheet" href="./assets/css/common.css" />
 	<link rel="stylesheet" href="./assets/css/${fileName}.css" />
 `
-const Links = [
+let Links = [
 	{
 		title: 'index',
 		href: `index`,
@@ -259,7 +260,16 @@ let hUl = document.getElementById('headerLinks')
 let fUl = document.getElementById('footerLinks')
 hUl.innerHTML = ''
 fUl.innerHTML = ''
-
+if (
+	document?.getElementById('header')?.attributes?.props?.nodeValue.length > 0
+) {
+	let headerProps = JSON.parse(
+		document?.getElementById('header')?.attributes?.props?.nodeValue
+	)
+	if (headerProps.length !== 0) {
+		Links = Links.concat(headerProps)
+	}
+}
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
 	Links[i].title === 'index' && (Links[i].title = 'home')

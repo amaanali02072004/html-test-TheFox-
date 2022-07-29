@@ -1,4 +1,5 @@
 let header = document.getElementById('header')
+
 header.innerHTML = `
 		<div class="container">
 			<div class="headerWrapper">
