@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head id='head'>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./assets/css/common.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Fox</title>
+  <link rel="icon" href="./assets/images/fox-icon.png">
+  <link rel="stylesheet" href="./assets/css/common.css" />
+  <link rel="stylesheet" href="./assets/css/index.css" />
 </head>
 
 <body page="features">
@@ -19,7 +21,7 @@
       This error cannot be dissmissed!
     </p>
   </noscript>
-  <header id="header">
+  <header id="header" props=[{"title":"props","href":"","class":""}] style="background-color: red;">
     <div class="container">
       <div class="headerWrapper">
         <div class="lhs">
@@ -49,7 +51,7 @@
   <br>
   (ALMOST) EVERYTHING IS DYNAMICALLY GENERATED, WITH HTML COMPONENTS!!
   <br>
-  header and footer are components, u can use them anywhere!
+  header and footer are reusable components, u can use them anywhere!
   just import
   <br>
   <code>
@@ -63,7 +65,7 @@
   and assign them in body!
   <br>
   <code>
-<span class="tag">&lt;</span class="tag">header id='header'<span class="tag">&gt;</span class="tag"><span class="tag">&lt;</span class="tag">/header<span class="tag">&gt;</span class="tag">
+<span class="tag">&lt;</span class="tag">header id='header' props=[{"title":"props","href":"","class":""}]<span class="tag">&gt;</span class="tag"><span class="tag">&lt;</span class="tag">/header<span class="tag">&gt;</span class="tag">
   <br>
 <span class="tag">&lt;</span class="tag">footer id='footer'<span class="tag">&gt;</span class="tag"><span class="tag">&lt;</span class="tag">/footer<span class="tag">&gt;</span class="tag">
 </code>
