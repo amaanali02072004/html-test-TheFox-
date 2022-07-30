@@ -16,9 +16,11 @@ if (document?.getElementById(id)?.innerHTML?.length > 0) {
 
 const javascript = 'javascript:;'
 const ext = './'
-const head = document.getElementById('head')
-head.innerHTML = ``
-head.innerHTML = `
+let head
+if (document.getElementById('head')) {
+	head = document.getElementById('head')
+	head.innerHTML = ``
+	head.innerHTML = `
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,6 +29,7 @@ head.innerHTML = `
 	<link rel="stylesheet" href="./assets/css/common.css" />
 	<link rel="stylesheet" href="./assets/css/${fileName}.css" />
 `
+}
 let Links = [
 	{
 		title: 'index',
@@ -67,7 +70,7 @@ let Links = [
 		title: 'features',
 		href: 'features',
 		class: '',
-		style: 'font-weight:900;',
+		style: 'font-weight:900;color:var(--cyan);',
 	},
 	{
 		title: 'contact',

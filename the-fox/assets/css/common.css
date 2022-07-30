@@ -143,6 +143,7 @@ header {
 .headerWrapper .rhs ul {
   display: flex;
   justify-content: space-around;
+  align-items: baseline;
   width: 90%;
   margin-right: 10px;
 }
@@ -495,10 +496,15 @@ footer {
   width: 100%;
 }
 
+
 .primaryFooterInnerWrapper .section3 .footerLinks ul {
   overflow: auto;
   max-height: 200px;
   height: 100%;
+}
+
+ul::-webkit-scrollbar {
+  width: 2px;
 }
 
 .primaryFooterInnerWrapper .section3 .footerLinks ul li {
@@ -633,7 +639,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   font-size: 11px;
 }
 
