@@ -174,7 +174,6 @@ const submitForm = (event) => {
 		alert('Enter Your Message!')
 		Message.focus()
 	} else {
-		event.preventDefault()
 		// alert('Your Form has been submitted')
 		// form.setAttribute('action', 'php.php')
 		// form.setAttribute('method', 'post')

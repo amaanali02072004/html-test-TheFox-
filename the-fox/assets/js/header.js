@@ -1,22 +1,23 @@
-let header = document.getElementById('header')
-let indexLink = './'
-let searchDisplay = true
-if (
-	document?.getElementById('header')?.attributes?.search?.nodeValue.length > 0
-) {
-	searchDisplay = JSON.parse(
-		document?.getElementById('header')?.attributes?.search?.nodeValue
-	)
-}
-console.log('search icon', searchDisplay)
 let disabled = []
-let img = `
+if (document.getElementById('header')) {
+	let header = document.getElementById('header')
+	let indexLink = './'
+	let searchDisplay = true
+	if (
+		document?.getElementById('header')?.attributes?.search?.nodeValue.length > 0
+	) {
+		searchDisplay = JSON.parse(
+			document?.getElementById('header')?.attributes?.search?.nodeValue
+		)
+	}
+	console.log('search icon', searchDisplay)
+	let img = `
 <img
 	src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
 	class="search"
 	alt="search">
 `
-header.innerHTML = `
+	header.innerHTML = `
 		<div class="container">
 			<div class="headerWrapper">
 				<div class="lhs">
@@ -30,10 +31,12 @@ header.innerHTML = `
 				</div>
 				<div class="rhs" id="rhs">
 					<ul id="headerLinks">
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
 					</ul>
 					${searchDisplay === false ? (img = '') : img}
 				</div>
 			</div>
 		</div>
 `
-header.removeAttribute('search')
+	header.removeAttribute('search')
+}

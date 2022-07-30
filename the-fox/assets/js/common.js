@@ -252,17 +252,14 @@ const FS4 = [
 let menuList = document.getElementById('rhs')
 const showMenu = () => {
 	menuList.classList.toggle('rhsActive')
-	// localStorage.setItem('drawer',true)
-}
-const hideMenu = () => {
-	menuList.classList.remove('rhsActive')
-	// localStorage.setItem('drawer',false)
+	localStorage.setItem('drawer', true)
 }
 
-let hUl = document.getElementById('headerLinks')
-let fUl = document.getElementById('footerLinks')
-hUl.innerHTML = ''
-fUl.innerHTML = ''
+const hideMenu = () => {
+	menuList.classList.remove('rhsActive')
+	localStorage.setItem('drawer', false)
+}
+
 if (
 	document?.getElementById('header')?.attributes?.headerLinks?.nodeValue
 		.length > 0
@@ -276,12 +273,29 @@ if (
 	}
 }
 console.log('header links---', Links)
+
+let hUl
+if (document.getElementById('header')) {
+	hUl = document.getElementById('headerLinks')
+	hUl.innerHTML = ''
+}
+
+let fUl
+if (
+	document.getElementById('footer') ||
+	document.getElementById('footerLinks')
+) {
+	fUl = document.getElementById('footerLinks')
+	fUl.innerHTML = ''
+}
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
 	Links[i].title === 'index' && (Links[i].title = 'home')
 	Links[i].title === 'features' && (Links[i].title = 'features !')
 	Links[i].class === 'active' && (disabled[i] = 'true')
-	hUl.innerHTML += `<li>
+
+	if (document.getElementById('header')) {
+		hUl.innerHTML += `<li>
       <a
         title='${Links[i].title}'
         id='headerLinks${i}'
@@ -297,7 +311,13 @@ for (let i = 0; i < Links.length; i++) {
       </a>
     </li>
     `
-	fUl.innerHTML += `<li>
+	}
+
+	if (
+		document.getElementById('footer') ||
+		document.getElementById('footerLinks')
+	) {
+		fUl.innerHTML += `<li>
       <a
         title='${Links[i].title}'
         id='footerLinks${i}'
@@ -313,9 +333,11 @@ for (let i = 0; i < Links.length; i++) {
       </a>
     </li>
     `
-	header.removeAttribute('headerLinks')
+	}
 }
-
+if (document.getElementById('header')) {
+	header?.removeAttribute('headerLinks')
+}
 let headerActiveLinks = [],
 	footerActiveLinks = []
 for (let i = 0; i <= Links.length; ++i) {
@@ -335,30 +357,38 @@ const activeLink = (element) => {
 	}
 }
 
-let footerWidgets = document.getElementById('footerWidgets')
-let footerWidgetsTitle = document.getElementById('footerWidgetsTitle')
-footerWidgetsTitle.innerHTML = ''
-footerWidgets.innerHTML = ''
+let footerWidgets
+let footerWidgetsTitle
 
-let footerWidgetLink = []
-footerWidgetsTitle.innerHTML = FS3Widget[0]
-for (let i = 1; i < FS3Widget.length; i++) {
-	footerWidgets.innerHTML += `<li><a title='${FS3Widget[i].title}' id='FS3Widget${i}' class='${FS3Widget[i].class}' onclick='footerActiveLink(this)' href=${FS3Widget[i].href}>${FS3Widget[i].title}</a></li>`
-}
-for (let i = 1; i < FS3Widget.length; ++i) {
-	footerWidgetLink[i] = document.getElementById(`FS3Widget${i}`)
-}
+if (
+	document.getElementById('footer') ||
+	document.getElementById('footerWidgets') ||
+	document.getElementById('footerWidgetsTitle')
+) {
+	footerWidgets = document.getElementById('footerWidgets')
+	footerWidgets.innerHTML = ''
+	footerWidgetsTitle = document.getElementById('footerWidgetsTitle')
+	footerWidgetsTitle.innerHTML = ''
 
-const footerActiveLink = (element) => {
-	for (let i = 1; i < FS3Widget.length; ++i) {
-		footerWidgetLink[i].classList = 'primaryButton'
+	let footerWidgetLink = []
+	footerWidgetsTitle.innerHTML = FS3Widget[0]
+	for (let i = 1; i < FS3Widget.length; i++) {
+		footerWidgets.innerHTML += `<li><a title='${FS3Widget[i].title}' id='FS3Widget${i}' class='${FS3Widget[i].class}' onclick='footerActiveLink(this)' href=${FS3Widget[i].href}>${FS3Widget[i].title}</a></li>`
 	}
-	element.classList = 'secondaryButton cyan'
-}
+	for (let i = 1; i < FS3Widget.length; ++i) {
+		footerWidgetLink[i] = document.getElementById(`FS3Widget${i}`)
+	}
 
-let fLhs = document.getElementById('fLhs')
-fLhs.innerHTML = ``
-fLhs.innerHTML = `
+	const footerActiveLink = (element) => {
+		for (let i = 1; i < FS3Widget.length; ++i) {
+			footerWidgetLink[i].classList = 'primaryButton'
+		}
+		element.classList = 'secondaryButton cyan'
+	}
+
+	let fLhs = document.getElementById('fLhs')
+	fLhs.innerHTML = ``
+	fLhs.innerHTML = `
 	<p>
 	${FS1Lhs[0]}
 		<br>
@@ -374,10 +404,10 @@ fLhs.innerHTML = `
 	</ul>
 `
 
-let fRhs = document.getElementById('fRhs')
-fRhs.innerHTML = ``
-for (let i = 0; i < FS1Rhs.length; i++) {
-	fRhs.innerHTML += `
+	let fRhs = document.getElementById('fRhs')
+	fRhs.innerHTML = ``
+	for (let i = 0; i < FS1Rhs.length; i++) {
+		fRhs.innerHTML += `
 		<div class="socialLinks">
 			<div class="linkLhs">
 				<a href=${FS1Rhs[i].href} class="cyan">
@@ -390,13 +420,13 @@ for (let i = 0; i < FS1Rhs.length; i++) {
 			</div>
 		</div>
 `
-}
+	}
 
-let fs2 = document.getElementById('fs2')
-fs2.innerHTML = ``
-fs2.innerHTML = `<h5>${FS2[0]}</h5>`
-for (let i = 1; i < FS2.length; i++) {
-	fs2.innerHTML += `
+	let fs2 = document.getElementById('fs2')
+	fs2.innerHTML = ``
+	fs2.innerHTML = `<h5>${FS2[0]}</h5>`
+	for (let i = 1; i < FS2.length; i++) {
+		fs2.innerHTML += `
 		<div class="blog">
 			<div class="blogLhs">
 				<img src=${FS2[i].img} alt=${FS2[i].alt}>
@@ -408,15 +438,15 @@ for (let i = 1; i < FS2.length; i++) {
 			</div>
 		</div>
 `
-}
-let footerUsefulLinks = document.getElementById('footerUsefulLinks')
-let footerUsefulLinksTitle = document.getElementById('footerUsefulLinksTitle')
-footerUsefulLinks.innerHTML = ``
-footerUsefulLinksTitle.innerHTML = ``
+	}
+	let footerUsefulLinks = document.getElementById('footerUsefulLinks')
+	let footerUsefulLinksTitle = document.getElementById('footerUsefulLinksTitle')
+	footerUsefulLinks.innerHTML = ``
+	footerUsefulLinksTitle.innerHTML = ``
 
-footerUsefulLinksTitle.innerHTML = FS3Useful[0]
-for (let i = 1; i < FS3Useful.length; i++) {
-	footerUsefulLinks.innerHTML += `
+	footerUsefulLinksTitle.innerHTML = FS3Useful[0]
+	for (let i = 1; i < FS3Useful.length; i++) {
+		footerUsefulLinks.innerHTML += `
 <li>
 	<a
 		title='${FS3Useful[i].title}'
@@ -426,19 +456,20 @@ for (let i = 1; i < FS3Useful.length; i++) {
 	</a>
 </li>
 `
-}
-let fs4 = document.getElementById('fs4')
-fs4.innerHTML = ``
-fs4.innerHTML = `<h5>${FS4[0]}</h5>`
-for (let i = 1; i < FS4.length; i++) {
-	fs4.innerHTML += `
+	}
+	let fs4 = document.getElementById('fs4')
+	fs4.innerHTML = ``
+	fs4.innerHTML = `<h5>${FS4[0]}</h5>`
+	for (let i = 1; i < FS4.length; i++) {
+		fs4.innerHTML += `
 		<div class="contact">
 			<p class="title">${FS4[i].title}</p>
 			<p>${FS4[i].para}</p>
 			<p>${FS4[i].loc}</p>
 		</div>
 `
+	}
+	let date = document.getElementById('__date')
+	let currentDate = new Date().getFullYear()
+	date.innerHTML = ` ${currentDate} `
 }
-let date = document.getElementById('__date')
-let currentDate = new Date().getFullYear()
-date.innerHTML = ` ${currentDate} `

@@ -937,6 +937,8 @@
     flex-direction: column;
 }
 
+.formContent .rhs input[type=text],
+.formContent .rhs input[type=email],
 .formContent .rhs form input[type=text],
 .formContent .rhs form input[type=email],
 .formContent .rhs textarea {
@@ -948,6 +950,7 @@
     resize: none;
 }
 
+.formContent .rhs input[type=submit],
 .formContent .rhs form input[type=submit] {
     max-width: fit-content;
 }

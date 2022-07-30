@@ -1,6 +1,7 @@
-let footer = document.getElementById('footer')
-footer.setAttribute('onclick', 'hideMenu(this)')
-footer.innerHTML = `
+if (document.getElementById('footer')) {
+	let footer = document.getElementById('footer')
+	footer.setAttribute('onclick', 'hideMenu(this)')
+	footer.innerHTML = `
 		<div class="primaryFooterOuterWrapper">
 			<div class="container">
 				<div class="primaryFooterInnerWrapper">
@@ -8,38 +9,18 @@ footer.innerHTML = `
 						<div class="footerSection section1">
 							<img src="./assets/images/fox-logo.png" alt="logo">
 							<div class="lhs" id="fLhs">
-								<p><i>loading...</i></p>
-								<p><i>loading...</i></p>
 								<ul>
-									<li>
-										<a><i>loading...</i></a>
-									</li>
+									(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
 								</ul>
 							</div>
 							<div class="rhs" id="fRhs">
-								<i>loading...</i>
 							</div>
 						</div>
 						<div class="footerSection section2" id="fs2">
-							<h5><i>loading...</i></h5>
 							<div class="blog">
 								<div class="blogLhs">
-									<img src="" alt="blog img">
 								</div>
 								<div class="blogRhs">
-									<p class="title"><i>loading...</i></p>
-									<p><i>loading...</i></p>
-									<p><i>loading...</i></p>
-								</div>
-							</div>
-							<div class="blog">
-								<div class="blogLhs">
-									<img src="" alt="blog img">
-								</div>
-								<div class="blogRhs">
-									<p class="title"><i>loading...</i></p>
-									<p><i>loading...</i></p>
-									<p><i>loading...</i></p>
 								</div>
 							</div>
 						</div>
@@ -49,43 +30,20 @@ footer.innerHTML = `
 							<h5 id="footerWidgetsTitle"><i>loading...</i></h5>
 							<div class="footerWidgets">
 								<ul id="footerWidgets">
-									<li>
-										<a><i>loading...</i></a>
-									</li>
-									<li>
-										<a><i>loading...</i></a>
-									</li>
-									<li>
-										<a><i>loading...</i></a>
-									</li>
+
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
 								</ul>
 							</div>
 							<h5 id="footerUsefulLinksTitle"><i>loading...</i></h5>
 							<div class="footerLinks">
 								<ul id="footerUsefulLinks">
-									<li>
-										<i>loading...</i>
-									</li>
-									<li>
-										<i>loading...</i>
-									</li>
-									<li>
-										<i>loading...</i>
-									</li>
+
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
 								</ul>
 							</div>
 						</div>
 						<div class="footerSection section4" id="fs4">
-							<h5><i>loading...</i></h5>
 							<div class="contact">
-								<p class="title"><i>loading...</i></p>
-								<p><i>loading...</i></p>
-								<p><i>loading...</i></p>
-							</div>
-							<div class="contact">
-								<p class="title"><i>loading...</i></p>
-								<p><i>loading...</i></p>
-								<p><i>loading...</i></p>
 							</div>
 						</div>
 					</div>
@@ -104,10 +62,12 @@ footer.innerHTML = `
 						</div>
 						<div class="rhs">
 							<ul id="footerLinks">
-								<li><a><i>loading...</i></a></li>
+
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 `
+}
