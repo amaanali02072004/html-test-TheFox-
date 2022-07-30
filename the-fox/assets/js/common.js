@@ -264,27 +264,35 @@ let fUl = document.getElementById('footerLinks')
 hUl.innerHTML = ''
 fUl.innerHTML = ''
 if (
-	document?.getElementById('header')?.attributes?.props?.nodeValue.length > 0
+	document?.getElementById('header')?.attributes?.headerLinks?.nodeValue
+		.length > 0
 ) {
 	let headerProps = JSON.parse(
-		document?.getElementById('header')?.attributes?.props?.nodeValue
+		document?.getElementById('header')?.attributes?.headerLinks?.nodeValue
 	)
-	if (headerProps.length !== 0) {
-		Links = Links.concat(headerProps)
+	if (headerProps.length > 0) {
+		// Links = Links.concat(headerProps)
+		Links = headerProps
 	}
 }
+console.log('header links---', Links)
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
 	Links[i].title === 'index' && (Links[i].title = 'home')
 	Links[i].title === 'features' && (Links[i].title = 'features !')
+	Links[i].class === 'active' && (disabled[i] = 'true')
 	hUl.innerHTML += `<li>
       <a
         title='${Links[i].title}'
         id='headerLinks${i}'
-        style='${Links[i].style}'
-        class='${Links[i].class}'
+        ${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
+        ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
+        ${
+					disabled[i] !== 'true' &&
+					`href=${`${ext}${Links[i].href || Links[i].title}.html`}`
+				}
         onclick='activeLink(this)'
-        href=${`${ext}${Links[i].href || Links[i].title}.html`}>
+			>
         ${Links[i].title}
       </a>
     </li>
@@ -293,15 +301,19 @@ for (let i = 0; i < Links.length; i++) {
       <a
         title='${Links[i].title}'
         id='footerLinks${i}'
-        class='${Links[i].class}'
-        style='${Links[i].style}'
+        ${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
+        ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
+        ${
+					disabled[i] !== 'true' &&
+					`href=${`${ext}${Links[i].href || Links[i].title}.html`}`
+				}
         onclick='activeLink(this)'
-        href=${`${ext}${Links[i].href || Links[i].title}.html`}>
+			>
         ${Links[i].title}
       </a>
     </li>
     `
-	header.removeAttribute('props')
+	header.removeAttribute('headerLinks')
 }
 
 let headerActiveLinks = [],

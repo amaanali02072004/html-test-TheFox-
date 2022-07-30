@@ -21,7 +21,11 @@
       This error cannot be dissmissed!
     </p>
   </noscript>
-  <header id="header" props=[{"title":"props","href":"","class":""}]>
+  <header id="header"
+    headerLinks=[{"title":"index","href":"index","class":""},{"title":"features","href":"features","style":"font-weight:900;"}]
+    search="false">
+    <!--strictly search="false" to disable it-->
+    <!-- strict use of JSON!! -->
     <div class="container">
       <div class="headerWrapper">
         <div class="lhs">
@@ -68,7 +72,7 @@
     and assign them in body!
     <br>
     <code>
-<span class="tag">&lt;</span class="tag"><span>header id='header' props=[{"title":"props","href":" ","class":" "}]</span><span class="tag">&gt;</span class="tag"><span class="tag">&lt;</span class="tag">/header<span class="tag">&gt;</span class="tag">
+<span class="tag">&lt;</span class="tag"><span>header id='header' headerLinks=[{"title":"index","href":"index","class":""}] search="false"</span><span class="tag">&gt;</span class="tag"><span class="tag">&lt;</span class="tag">/header<span class="tag">&gt;</span class="tag">
     </code>
     <br>
     <span>(strict use of double quotes, " ")</span>
@@ -79,7 +83,8 @@
     <br>
     <br>
     <span>notice how there is a new link in the header and footer now!</span>
-
+    <br>
+    <span>and search icon in header is hidden. (not 'display:none;', it doesnt <b>RENDER</b> in the DOM)</span>
     <br>
     <br>
     <br>

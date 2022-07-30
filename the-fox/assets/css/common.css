@@ -150,6 +150,7 @@ header {
 
 .headerWrapper .rhs ul li a {
   text-transform: capitalize;
+  cursor: pointer;
   text-decoration: none;
   color: white;
   font-size: 14px;
@@ -164,11 +165,16 @@ header {
   opacity: .8;
 }
 
+
 .headerWrapper .rhs ul li a.active {
   border: 1px white solid;
   margin: 0 -10px;
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+.headerWrapper .rhs ul li a.active:hover {
+  border-radius: 10px;
 }
 
 .headerWrapper .rhs img {
@@ -179,9 +185,19 @@ header {
   border-radius: 50%;
 }
 
+input.searchField {
+  opacity: 0;
+}
+
+
 .headerWrapper .rhs img:hover {
   border: 1px white solid;
   padding: 5px;
+}
+
+img.search:hover input.searchField {
+  opacity: 1;
+  border: 1px red solid;
 }
 
 .hamburger {
@@ -247,6 +263,7 @@ header {
     justify-content: space-between;
     z-index: 2;
     background-color: white;
+    width: 100vw;
   }
 
   .headerWrapper .rhs {
@@ -256,7 +273,7 @@ header {
     max-height: var(--height);
     margin-top: calc(var(--height) - (var(--height)*2));
     align-items: flex-start;
-    overflow: scroll;
+    overflow: auto;
     justify-content: space-between;
     visibility: hidden;
   }
@@ -626,6 +643,7 @@ footer {
 
 .secondaryFooterInnerWrapper .rhs a {
   text-decoration: none;
+  cursor: pointer;
   color: #a1b2bc;
   transition: var(--transition) var(--transitionTime2);
   text-transform: capitalize;
@@ -637,6 +655,11 @@ footer {
 
 .secondaryFooterInnerWrapper .rhs .active {
   color: #1ba186;
+  border-bottom: 0px solid #61757100;
+}
+
+.secondaryFooterInnerWrapper .rhs .active:hover {
+  border-bottom: 1px solid #57a193;
 }
 
 @media only screen and (max-width: 900px) {
