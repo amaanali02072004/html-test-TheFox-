@@ -1,26 +1,4 @@
-let fileName = '404'
-if (document?.body?.attributes?.page?.nodeValue) {
-	fileName = document?.body?.attributes?.page?.nodeValue
-}
-
 const javascript = 'javascript:;'
-const ext = './'
-let head
-if (document.getElementById('head')) {
-	head = document.getElementById('head')
-	let title = fileName
-	title = title.charAt(0).toUpperCase() + title.slice(1)
-	head.innerHTML = ``
-	head.innerHTML = `
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>The Fox | ${title}</title>
-	<link rel="icon" href="./assets/images/fox-icon.png">
-	<link rel="stylesheet" href="./assets/css/common.css" />
-	<link rel="stylesheet" href="./assets/css/${fileName}.css" />
-`
-}
 let Links = [
 	{
 		title: 'index',
@@ -167,7 +145,7 @@ const FS3Widget = [
 	{
 		title: 'ios',
 		href: javascript,
-		class: 'secondaryButton cyan',
+		class: 'primaryButton',
 	},
 	{
 		title: 'themeforest',
@@ -242,8 +220,153 @@ const FS4 = [
 		loc: 'vietnam',
 	},
 ]
+let fileName = '404'
+const ext = './'
+let head
+if (document?.body?.attributes?.page?.nodeValue) {
+	fileName = document?.body?.attributes?.page?.nodeValue
+}
+
+if (document.getElementById('head')) {
+	head = document.getElementById('head')
+	let title = fileName
+	title = title.charAt(0).toUpperCase() + title.slice(1)
+	head.innerHTML = ``
+	head.innerHTML = `
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>The Fox | ${title}</title>
+	<link rel="icon" href="./assets/images/fox-icon.png">
+	<link rel="stylesheet" href="./assets/css/common.css" />
+	<link rel="stylesheet" href="./assets/css/${fileName}.css" />
+`
+}
+
+let disabled = []
+if (document.getElementById('header')) {
+	let header = document.getElementById('header')
+	let indexLink = './'
+	let searchDisplay = true
+	if (
+		document?.getElementById('header')?.attributes?.search?.nodeValue.length > 0
+	) {
+		searchDisplay = JSON.parse(
+			document?.getElementById('header')?.attributes?.search?.nodeValue
+		)
+	}
+	console.log('search icon', searchDisplay)
+	let img = `
+<img
+	src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
+	class="search"
+	alt="search">
+`
+	header.innerHTML = `
+		<div class="container">
+			<div class="headerWrapper">
+				<div class="lhs">
+					<a href = '${indexLink}' title="thefox">
+						<img src="./assets/images/fox-logo.png" class="logo whiteLogo" alt="Logo">
+						<img src="./assets/images/fox-logo-black.png" class="logo blackLogo" alt="Logo">
+					</a>
+					<a class="hamburger" id="hamburger" onclick="showMenu(this)">
+						<img src="./assets/images/hamburger.png" alt="hamburger">
+					</a>
+				</div>
+				<div class="rhs" id="rhs">
+					<ul id="headerLinks">
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
+					</ul>
+					${searchDisplay === false ? (img = '') : img}
+				</div>
+			</div>
+		</div>
+`
+	header.removeAttribute('search')
+}
+
+if (document.getElementById('footer')) {
+	let footer = document.getElementById('footer')
+	footer.setAttribute('onclick', 'hideMenu(this)')
+	footer.innerHTML = `
+		<div class="primaryFooterOuterWrapper">
+			<div class="container">
+				<div class="primaryFooterInnerWrapper">
+					<div>
+						<div class="footerSection section1">
+							<img src="./assets/images/fox-logo.png" alt="logo">
+							<div class="lhs" id="fLhs">
+								<ul>
+									(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
+								</ul>
+							</div>
+							<div class="rhs" id="fRhs">
+							</div>
+						</div>
+						<div class="footerSection section2" id="fs2">
+							<div class="blog">
+								<div class="blogLhs">
+								</div>
+								<div class="blogRhs">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="footerSection section3">
+							<h5 id="footerWidgetsTitle"></h5>
+							<div class="footerWidgets">
+								<ul id="footerWidgets">
+
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
+								</ul>
+							</div>
+							<h5 id="footerUsefulLinksTitle"></h5>
+							<div class="footerLinks">
+								<ul id="footerUsefulLinks">
+
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
+								</ul>
+							</div>
+						</div>
+						<div class="footerSection section4" id="fs4">
+							<div class="contact">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="secondaryFooterOuterWrapper">
+				<div class="container">
+					<div class="secondaryFooterInnerWrapper">
+						<div class="lhs">
+							<p>Copyright
+							<p id="__date" style="margin: 0 4px;">2014</p> <a href="https://github.com/Killer-Amaan-Ali/html-test"
+								target="_blank">the<b>fox</b></a></p>&nbsp|&nbsp
+							<p>All rights reserved</p>&nbsp|&nbsp
+							<p>designed by <a href="https://github.com/Killer-Amaan-Ali/" target="_blank">Amaan</a></p>
+						</div>
+						<div class="rhs">
+							<ul id="footerLinks">
+
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+`
+}
 
 let menuList = document.getElementById('rhs')
+
 const showMenu = () => {
 	menuList.classList.toggle('rhsActive')
 	localStorage.setItem('drawer', true)
@@ -375,14 +498,27 @@ if (
 
 	let footerWidgetLink = []
 	footerWidgetsTitle.innerHTML = FS3Widget[0]
+	let randomNo = Math.floor(Math.random() * FS3Widget.length)
+	FS3Widget[randomNo].class = `secondaryButton cyan`
 	for (let i = 1; i < FS3Widget.length; i++) {
-		footerWidgets.innerHTML += `<li><a title='${FS3Widget[i].title}' id='FS3Widget${i}' class='${FS3Widget[i].class}' onclick='footerActiveLink(this)' href=${FS3Widget[i].href}>${FS3Widget[i].title}</a></li>`
+		footerWidgets.innerHTML += `
+			<li>
+				<a
+					title='${FS3Widget[i].title}'
+					id='FS3Widget${i}'
+					class='${FS3Widget[i].class || 'primaryButton'}'
+					onclick='footerActiveLink(this)'
+					href=${FS3Widget[i].href}
+				>
+					${FS3Widget[i].title}
+				</a>
+			</li>`
 	}
 	for (let i = 1; i < FS3Widget.length; ++i) {
 		footerWidgetLink[i] = document.getElementById(`FS3Widget${i}`)
 	}
 
-	const footerActiveLink = (element) => {
+	function footerActiveLink(element) {
 		for (let i = 1; i < FS3Widget.length; ++i) {
 			footerWidgetLink[i].classList = 'primaryButton'
 		}
@@ -392,20 +528,20 @@ if (
 	let fLhs = document.getElementById('fLhs')
 	fLhs.innerHTML = ``
 	fLhs.innerHTML = `
-	<p>
-	${FS1Lhs[0]}
-		<br>
-		<br>
-	${FS1Lhs[1]}
-	</p>
-	<ul>
-		<li>
-			<a href=${FS1Lhs[2]}>
-				${FS1Lhs[3]}
-			</a>
-		</li>
-	</ul>
-`
+			<p>
+			${FS1Lhs[0]}
+				<br>
+				<br>
+			${FS1Lhs[1]}
+			</p>
+			<ul>
+				<li>
+					<a href=${FS1Lhs[2]}>
+						${FS1Lhs[3]}
+					</a>
+				</li>
+			</ul>
+		`
 
 	let fRhs = document.getElementById('fRhs')
 	fRhs.innerHTML = ``
