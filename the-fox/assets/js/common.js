@@ -512,6 +512,11 @@ if (
 	let footerWidgetLink = []
 	footerWidgetsTitle.innerHTML = FS3Widget[0]
 	let randomNo = Math.floor(Math.random() * FS3Widget.length)
+	randomNo <= 0
+		? (randomNo = 1)
+		: randomNo === FS3Widget.length
+		? (randomNo = FS3Widget.length - 1)
+		: randomNo
 	FS3Widget[randomNo].class = `secondaryButton cyan`
 	for (let i = 1; i < FS3Widget.length; i++) {
 		footerWidgets.innerHTML += `
@@ -614,12 +619,12 @@ if (
 	fs4.innerHTML = `<h5>${FS4[0]}</h5>`
 	for (let i = 1; i < FS4.length; i++) {
 		fs4.innerHTML += `
-		<div class="contact">
-			<p class="title">${FS4[i].title}</p>
-			<p>${FS4[i].para}</p>
-			<p>${FS4[i].loc}</p>
-		</div>
-`
+			<div class="contact">
+				<p class="title">${FS4[i].title}</p>
+				<p>${FS4[i].para}</p>
+				<p>${FS4[i].loc}</p>
+			</div>
+		`
 	}
 	let date = document.getElementById('__date')
 	let currentDate = new Date().getFullYear()
