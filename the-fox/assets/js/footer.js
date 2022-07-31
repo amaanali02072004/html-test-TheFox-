@@ -10,7 +10,8 @@ if (document.getElementById('footer')) {
 							<img src="./assets/images/fox-logo.png" alt="logo">
 							<div class="lhs" id="fLhs">
 								<ul>
-									(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
+									(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
 								</ul>
 							</div>
 							<div class="rhs" id="fRhs">
@@ -31,14 +32,16 @@ if (document.getElementById('footer')) {
 							<div class="footerWidgets">
 								<ul id="footerWidgets">
 
-(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
 								</ul>
 							</div>
 							<h5 id="footerUsefulLinksTitle"><i>loading...</i></h5>
 							<div class="footerLinks">
 								<ul id="footerUsefulLinks">
 
-(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
 								</ul>
 							</div>
 						</div>
@@ -63,7 +66,8 @@ if (document.getElementById('footer')) {
 						<div class="rhs">
 							<ul id="footerLinks">
 
-(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
 							</ul>
 						</div>
 					</div>

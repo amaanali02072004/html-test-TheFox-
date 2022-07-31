@@ -1,4 +1,7 @@
-const fileName = document.body.attributes.page.nodeValue
+let fileName = '404'
+if (document?.body?.attributes?.page?.nodeValue) {
+	fileName = document?.body?.attributes?.page?.nodeValue
+}
 
 let id = 'dynamic'
 if (document?.getElementById(id)?.innerHTML?.length > 0) {
@@ -19,12 +22,14 @@ const ext = './'
 let head
 if (document.getElementById('head')) {
 	head = document.getElementById('head')
+	let title = fileName
+	title = title.charAt(0).toUpperCase() + title.slice(1)
 	head.innerHTML = ``
 	head.innerHTML = `
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>The Fox | ${fileName}</title>
+	<title>The Fox | ${title}</title>
 	<link rel="icon" href="./assets/images/fox-icon.png">
 	<link rel="stylesheet" href="./assets/css/common.css" />
 	<link rel="stylesheet" href="./assets/css/${fileName}.css" />
@@ -70,7 +75,7 @@ let Links = [
 		title: 'features',
 		href: 'features',
 		class: '',
-		style: 'font-weight:900;color:var(--cyan);',
+		style: '',
 	},
 	{
 		title: 'contact',
@@ -278,26 +283,35 @@ if (
 console.log('header links---', Links)
 
 let hUl
-if (document.getElementById('header')) {
+if (
+	document.getElementById('header') &&
+	document.getElementById('headerLinks')
+) {
 	hUl = document.getElementById('headerLinks')
 	hUl.innerHTML = ''
 }
 
 let fUl
 if (
-	document.getElementById('footer') ||
+	document.getElementById('footer') &&
 	document.getElementById('footerLinks')
 ) {
 	fUl = document.getElementById('footerLinks')
 	fUl.innerHTML = ''
 }
+disabled = []
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
 	Links[i].title === 'index' && (Links[i].title = 'home')
-	Links[i].title === 'features' && (Links[i].title = 'features !')
+	Links[i].title === 'features' &&
+		((Links[i].title = 'features !'),
+		(Links[i].style = 'color:var(--cyan);font-weight:900;'))
 	Links[i].class === 'active' && (disabled[i] = 'true')
 
-	if (document.getElementById('header')) {
+	if (
+		document.getElementById('header') &&
+		document.getElementById('headerLinks')
+	) {
 		hUl.innerHTML += `<li>
       <a
         title='${Links[i].title}'
@@ -317,7 +331,7 @@ for (let i = 0; i < Links.length; i++) {
 	}
 
 	if (
-		document.getElementById('footer') ||
+		document.getElementById('footer') &&
 		document.getElementById('footerLinks')
 	) {
 		fUl.innerHTML += `<li>
@@ -364,8 +378,8 @@ let footerWidgets
 let footerWidgetsTitle
 
 if (
-	document.getElementById('footer') ||
-	document.getElementById('footerWidgets') ||
+	document.getElementById('footer') &&
+	document.getElementById('footerWidgets') &&
 	document.getElementById('footerWidgetsTitle')
 ) {
 	footerWidgets = document.getElementById('footerWidgets')

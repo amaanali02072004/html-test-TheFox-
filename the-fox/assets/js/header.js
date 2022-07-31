@@ -31,7 +31,8 @@ if (document.getElementById('header')) {
 				</div>
 				<div class="rhs" id="rhs">
 					<ul id="headerLinks">
-(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it)
+(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+or 'common.js' is imported first, import it last!)
 					</ul>
 					${searchDisplay === false ? (img = '') : img}
 				</div>
