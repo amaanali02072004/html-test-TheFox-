@@ -368,13 +368,26 @@ or 'common.js' is imported first, import it last!)
 let menuList = document.getElementById('rhs')
 
 const showMenu = () => {
+	for (let i = 0; i < menuList.classList.length; i++) {
+		if (menuList.classList[i] === 'rhsActive') {
+			localStorage.setItem('drawer', false)
+		} else {
+			localStorage.setItem('drawer', true)
+		}
+	}
 	menuList.classList.toggle('rhsActive')
-	localStorage.setItem('drawer', true)
 }
 
 const hideMenu = () => {
 	menuList.classList.remove('rhsActive')
 	localStorage.setItem('drawer', false)
+}
+
+if (localStorage.getItem('drawer') === 'true') {
+	menuList.classList.add('rhsActive')
+	console.log('first')
+} else {
+	menuList.classList.remove('rhsActive')
 }
 
 if (
