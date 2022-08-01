@@ -274,7 +274,7 @@ if (document.getElementById('header')) {
 		<div class="container">
 			<div class="headerWrapper">
 				<div class="lhs">
-					<a href = '${indexLink}' title="thefox">
+					<a href='${indexLink}' title="thefox" id="headerImg">
 						<img src="./assets/images/fox-logo.png" class="logo whiteLogo" alt="Logo">
 						<img src="./assets/images/fox-logo-black.png" class="logo blackLogo" alt="Logo">
 					</a>
@@ -443,10 +443,16 @@ if (
 disabled = []
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
+
 	Links[i].title === 'index' && (Links[i].title = 'home')
+	if (Links[i].title === 'home' && Links[i].class === 'active') {
+		document.getElementById('headerImg').removeAttribute('href')
+	}
+
 	Links[i].title === 'features' &&
 		((Links[i].title = 'features !'),
 		(Links[i].style = 'color:var(--cyan);font-weight:900;'))
+
 	Links[i].class === 'active' && (disabled[i] = 'true')
 
 	if (
