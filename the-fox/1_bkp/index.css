@@ -542,15 +542,15 @@ header {
 }
 
 .woman1 {
-    background-image: url(../assets/images/woman1.png);
+    background-image: url(../assets/images/woman4.png);
 }
 
 .woman2 {
-    background-image: url(../assets/images/woman2.png);
+    background-image: url(../assets/images/woman4.png);
 }
 
 .woman3 {
-    background-image: url(../assets/images/woman3.png);
+    background-image: url(../assets/images/woman4.png);
 }
 
 .woman4 {
@@ -558,7 +558,7 @@ header {
 }
 
 .woman5 {
-    background-image: url(../assets/images/woman5.png);
+    background-image: url(../assets/images/woman4.png);
 }
 
 .blogHeader {
@@ -984,11 +984,12 @@ footer {
     padding-bottom: 20px;
     text-transform: capitalize;
 }
+
 .primaryFooterInnerWrapper .section3 h5:last-of-type {
     padding-bottom: 10px;
 }
 
-.primaryFooterInnerWrapper .section3 .footerLinks{
+.primaryFooterInnerWrapper .section3 .footerLinks {
     width: 100%;
 }
 
@@ -997,7 +998,8 @@ footer {
     border-bottom: 1px solid #243141;
     width: 100%;
 }
-.primaryFooterInnerWrapper .section3 .footerLinks ul li:last-child{
+
+.primaryFooterInnerWrapper .section3 .footerLinks ul li:last-child {
     border-bottom: none;
 }
 

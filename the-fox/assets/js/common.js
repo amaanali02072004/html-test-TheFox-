@@ -1,4 +1,7 @@
 const javascript = 'javascript:;'
+
+// let attributesList = ['page', 'search', 'drawer', 'headerLinks']
+
 let Links = [
 	{
 		title: 'index',
@@ -220,16 +223,23 @@ const FS4 = [
 		loc: 'vietnam',
 	},
 ]
-let fileName = '404'
+let fileName
 const ext = './'
 let head
+let error404
 if (document?.body?.attributes?.page?.nodeValue) {
 	fileName = document?.body?.attributes?.page?.nodeValue
+} else {
+	error404 = `please provide an attribute to the <body> tag -- page="thisPageName"`
+	fileName = error404
+	console.error(
+		`${error404}. It may lead to inumerable errors (perhaps styling problems)`
+	)
 }
 
 if (document.getElementById('head')) {
 	head = document.getElementById('head')
-	let title = fileName
+	let title = fileName || error404
 	title = title.charAt(0).toUpperCase() + title.slice(1)
 	head.innerHTML = ``
 	head.innerHTML = `
@@ -239,7 +249,11 @@ if (document.getElementById('head')) {
 	<title>The Fox | ${title}</title>
 	<link rel="icon" href="./assets/images/fox-icon.png">
 	<link rel="stylesheet" href="./assets/css/common.css" />
-	<link rel="stylesheet" href="./assets/css/${fileName}.css" />
+	${
+		fileName !== error404
+			? `<link rel="stylesheet" href="./assets/css/${fileName}.css" />`
+			: ``
+	}
 `
 }
 
@@ -256,12 +270,6 @@ if (document.getElementById('header')) {
 		)
 	}
 	console.log('search icon', searchDisplay)
-	let img = `
-<img
-	src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
-	class="search"
-	alt="search">
-`
 	header.innerHTML = `
 		<div class="container">
 			<div class="headerWrapper">
@@ -276,10 +284,18 @@ if (document.getElementById('header')) {
 				</div>
 				<div class="rhs" id="rhs">
 					<ul id="headerLinks">
-(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
-or 'common.js' is imported first, import it last!)
+						(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
+						or 'common.js' is imported first, import it last!)
 					</ul>
-					${searchDisplay === false ? (img = '') : img}
+					${
+						searchDisplay === false
+							? ''
+							: `<img
+										src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
+										class="search"
+										alt="search"
+									/>`
+					}
 				</div>
 			</div>
 		</div>
@@ -383,11 +399,14 @@ const hideMenu = () => {
 	localStorage.setItem('drawer', false)
 }
 
-if (localStorage.getItem('drawer') === 'true') {
-	menuList.classList.add('rhsActive')
-	console.log('first')
-} else {
-	menuList.classList.remove('rhsActive')
+if (
+	document?.getElementById('header')?.attributes?.drawer?.nodeValue.length > 0
+) {
+	if (localStorage.getItem('drawer') === 'true') {
+		menuList.classList.add('rhsActive')
+	} else {
+		menuList.classList.remove('rhsActive')
+	}
 }
 
 if (
@@ -440,6 +459,7 @@ for (let i = 0; i < Links.length; i++) {
         id='headerLinks${i}'
         ${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
         ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
+        ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
         ${
 					disabled[i] !== 'true' &&
 					`href=${`${ext}${Links[i].href || Links[i].title}.html`}`
