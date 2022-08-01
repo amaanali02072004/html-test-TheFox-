@@ -488,6 +488,7 @@ for (let i = 0; i < Links.length; i++) {
         id='footerLinks${i}'
         ${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
         ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
+        ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
         ${
 					disabled[i] !== 'true' &&
 					`href=${`${ext}${Links[i].href || Links[i].title}.html`}`
