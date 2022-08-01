@@ -365,7 +365,7 @@ footer {
   transition: var(--transition) var(--transitionTime2);
 }
 
-.primaryFooterInnerWrapper .section1>img {
+.primaryFooterInnerWrapper .section1>a>img {
   width: 150px;
   padding-bottom: 20px;
 }

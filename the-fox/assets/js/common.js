@@ -312,9 +312,9 @@ if (document.getElementById('footer')) {
 				<div class="primaryFooterInnerWrapper">
 					<div>
 						<div class="footerSection section1">
-					<a href='${indexLink}' title="thefox" id="footerImg">
-							<img src="./assets/images/fox-logo.png" alt="logo">
-</a>
+							<a href='${indexLink}' title="thefox" id="footerImg">
+								<img src="./assets/images/fox-logo.png" alt="logo">
+							</a>
 							<div class="lhs" id="fLhs">
 								<ul>
 									(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
