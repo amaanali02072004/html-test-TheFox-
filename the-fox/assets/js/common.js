@@ -472,7 +472,9 @@ for (let i = 0; i < Links.length; i++) {
 	) {
 		hUl.innerHTML += `<li>
       <a
-        title='${Links[i].title}'
+        title='${
+					Links[i].title.charAt(0).toUpperCase() + Links[i].title.slice(1)
+				}'
         id='headerLinks${i}'
         ${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
         ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
@@ -495,7 +497,9 @@ for (let i = 0; i < Links.length; i++) {
 	) {
 		fUl.innerHTML += `<li>
       <a
-        title='${Links[i].title}'
+        title='${
+					Links[i].title.charAt(0).toUpperCase() + Links[i].title.slice(1)
+				}'
         id='footerLinks${i}'
         ${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
         ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
