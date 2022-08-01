@@ -97,7 +97,6 @@ const changeBanner0 = () => {
 }
 
 const changeBanner2 = () => {
-	console.log('🚀 ~ file: index.js ~ line 108 ~ bannerDuration', bannerDuration)
 	bannerPosition++
 	bannerPosition == bannerLengthMax && (bannerPosition = bannerLengthMin)
 
