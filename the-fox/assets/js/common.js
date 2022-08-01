@@ -227,6 +227,7 @@ let fileName
 const ext = './'
 let head
 let error404
+let errorTag = document.getElementById('errorTag')
 if (document?.body?.attributes?.page?.nodeValue) {
 	fileName = document?.body?.attributes?.page?.nodeValue
 } else {
@@ -235,6 +236,8 @@ if (document?.body?.attributes?.page?.nodeValue) {
 	console.error(
 		`${error404}. It may lead to inumerable errors (perhaps styling problems)`
 	)
+	errorTag.classList.add('script')
+	errorTag.innerHTML = `<p>${error404}</p>`
 }
 
 if (document.getElementById('head')) {
@@ -301,6 +304,7 @@ if (document.getElementById('header')) {
 		</div>
 `
 	header.removeAttribute('search')
+	header?.removeAttribute('headerLinks')
 }
 
 if (document.getElementById('footer')) {
@@ -443,13 +447,6 @@ if (
 }
 
 let fUl
-if (
-	document.getElementById('footer') &&
-	document.getElementById('footerLinks')
-) {
-	fUl = document.getElementById('footerLinks')
-	fUl.innerHTML = ''
-}
 disabled = []
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
@@ -495,6 +492,8 @@ for (let i = 0; i < Links.length; i++) {
 		document.getElementById('footer') &&
 		document.getElementById('footerLinks')
 	) {
+		fUl = document.getElementById('footerLinks')
+		fUl.innerHTML = ''
 		fUl.innerHTML += `<li>
       <a
         title='${
@@ -515,9 +514,6 @@ for (let i = 0; i < Links.length; i++) {
     </li>
     `
 	}
-}
-if (document.getElementById('header')) {
-	header?.removeAttribute('headerLinks')
 }
 let headerActiveLinks = [],
 	footerActiveLinks = []
