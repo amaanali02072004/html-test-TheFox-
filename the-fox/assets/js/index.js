@@ -87,9 +87,7 @@ let bannerLengthMin = -1
 let bannerLengthMax = 4
 let seconds = 5
 let bannerDuration = seconds * 1000
-let timer = setInterval(() => {
-	changeBanner2()
-}, bannerDuration)
+let timer
 
 const changeBanner0 = () => {
 	bannerPosition == bannerLengthMin && (bannerPosition = bannerLengthMax)
@@ -97,11 +95,19 @@ const changeBanner0 = () => {
 	bannerPosition--
 	banner.classList = `bannerOuterWrapper banner${bannerPosition}`
 }
+
 const changeBanner2 = () => {
+	console.log('🚀 ~ file: index.js ~ line 108 ~ bannerDuration', bannerDuration)
 	bannerPosition++
 	bannerPosition == bannerLengthMax && (bannerPosition = bannerLengthMin)
 
 	banner.classList = `bannerOuterWrapper banner${bannerPosition}`
+}
+
+if (banner?.attributes?.autoplay?.nodeValue === 'true') {
+	timer = setInterval(() => {
+		changeBanner2()
+	}, bannerDuration)
 }
 
 let cardsSection = document.getElementById('cardsSectionInnerWrapper')

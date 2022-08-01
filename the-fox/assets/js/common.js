@@ -1,5 +1,5 @@
 const javascript = 'javascript:;'
-
+// console.log(window.location.pathname)
 // let attributesList = ['page', 'search', 'drawer', 'headerLinks']
 
 let Links = [
@@ -258,9 +258,9 @@ if (document.getElementById('head')) {
 }
 
 let disabled = []
+let indexLink = './'
 if (document.getElementById('header')) {
 	let header = document.getElementById('header')
-	let indexLink = './'
 	let searchDisplay = true
 	if (
 		document?.getElementById('header')?.attributes?.search?.nodeValue.length > 0
@@ -312,7 +312,9 @@ if (document.getElementById('footer')) {
 				<div class="primaryFooterInnerWrapper">
 					<div>
 						<div class="footerSection section1">
+					<a href='${indexLink}' title="thefox" id="footerImg">
 							<img src="./assets/images/fox-logo.png" alt="logo">
+</a>
 							<div class="lhs" id="fLhs">
 								<ul>
 									(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
@@ -399,6 +401,14 @@ const hideMenu = () => {
 	localStorage.setItem('drawer', false)
 }
 
+if (document?.body.getElementsByTagName('section')) {
+	let section = document?.body.getElementsByTagName('section')
+	for (let i = 0; i < section.length; i++) {
+		// section[i].setAttribute('onclick', 'hideMenu(this)')
+		section[i].addEventListener('click', hideMenu(this))
+	}
+}
+
 if (
 	document?.getElementById('header')?.attributes?.drawer?.nodeValue.length > 0
 ) {
@@ -447,6 +457,7 @@ for (let i = 0; i < Links.length; i++) {
 	Links[i].title === 'index' && (Links[i].title = 'home')
 	if (Links[i].title === 'home' && Links[i].class === 'active') {
 		document.getElementById('headerImg').removeAttribute('href')
+		document.getElementById('footerImg').removeAttribute('href')
 	}
 
 	Links[i].title === 'features' &&
