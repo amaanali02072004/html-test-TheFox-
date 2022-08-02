@@ -535,13 +535,13 @@ for (let i = 0; i <= Links.length; ++i) {
 const activeLink = (element) => {
 	for (let i = 0; i < Links.length; i++) {
 		headerActiveLinks[i].classList = ''
-		footerActiveLinks[i].classList = ''
+		// footerActiveLinks[i].classList = ''
 		element.classList.add('active')
 
-		headerActiveLinks[i].classList == 'active'
-			? footerActiveLinks[i].classList.add('active')
-			: footerActiveLinks[i].classList == 'active' &&
-			  headerActiveLinks[i].classList.add('active')
+		headerActiveLinks[i]?.classList == 'active'
+			? footerActiveLinks[i]?.classList.add('active')
+			: footerActiveLinks[i]?.classList == 'active' &&
+			  headerActiveLinks[i]?.classList.add('active')
 	}
 }
 
@@ -679,4 +679,5 @@ if (
 	let currentDate = new Date().getFullYear()
 	date.innerHTML = ` ${currentDate} `
 }
-console.log(document.body.getElementsByTagName('header')[0].innerHTML)
+// console.log(document.body.getElementsByTagName('header')[0].innerHTML)
+// document.body.innerHTML += `<script src="./assets/js/${fileName}.js"></script>`
