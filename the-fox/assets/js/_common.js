@@ -261,19 +261,20 @@ if (document.getElementById('head')) {
 
 let disabled = []
 let indexLink = './'
-let header
-if (document.getElementById('header')) {
-	header = document.getElementById('header')
-	let searchDisplay = true
-	if (
-		document?.getElementById('header')?.attributes?.search?.nodeValue.length > 0
-	) {
-		searchDisplay = JSON.parse(
-			document?.getElementById('header')?.attributes?.search?.nodeValue
-		)
-	}
-	console.log('search icon', searchDisplay)
-	header.innerHTML = `
+let header = []
+for (
+	let index = 0;
+	index < document.body.getElementsByTagName('header').length;
+	index++
+) {
+	if (document.body.getElementsByTagName('header')[index]) {
+		header[index] = document.body.getElementsByTagName('header')[index]
+		let searchDisplay = true
+		if (header[index].attributes?.search?.nodeValue.length > 0) {
+			searchDisplay = JSON.parse(header[index].attributes?.search?.nodeValue)
+		}
+		console.log('search icon', searchDisplay)
+		header[index].innerHTML = `
 		<div class="container">
 			<div class="headerWrapper">
 				<div class="lhs">
@@ -303,11 +304,11 @@ if (document.getElementById('header')) {
 			</div>
 		</div>
 `
-	header.removeAttribute('search')
+		header[index].removeAttribute('search')
+	}
 }
-
-if (document.getElementById('footer')) {
-	let footer = document.getElementById('footer')
+if (document.body.getElementsByTagName('footer')) {
+	let footer = document.body.getElementsByTagName('footer')[0]
 	footer.setAttribute('onclick', 'hideMenu(this)')
 	footer.innerHTML = `
 		<div class="primaryFooterOuterWrapper">
@@ -403,6 +404,22 @@ const hideMenu = () => {
 	menuList?.classList?.remove('rhsActive')
 	localStorage.setItem('drawer', false)
 }
+for (
+	let index = 0;
+	index < document.body.getElementsByTagName('header').length;
+	index++
+) {
+	if (
+		document.body.getElementsByTagName('header')[index]?.attributes?.drawer
+			?.nodeValue === 'true'
+	) {
+		if (localStorage.getItem('drawer') === 'true') {
+			menuList.classList.add('rhsActive')
+		} else {
+			menuList.classList.remove('rhsActive')
+		}
+	}
+}
 
 if (document?.body.getElementsByTagName('section')) {
 	let section = document?.body.getElementsByTagName('section')
@@ -411,23 +428,14 @@ if (document?.body.getElementsByTagName('section')) {
 		section[i].addEventListener('click', hideMenu(this))
 	}
 }
-
+let headerProps = []
 if (
-	document?.getElementById('header')?.attributes?.drawer?.nodeValue.length > 0
+	document.body.getElementsByTagName('header')[0]?.attributes?.headerLinks
+		?.nodeValue.length > 0
 ) {
-	if (localStorage.getItem('drawer') === 'true') {
-		menuList.classList.add('rhsActive')
-	} else {
-		menuList.classList.remove('rhsActive')
-	}
-}
-
-if (
-	document?.getElementById('header')?.attributes?.headerLinks?.nodeValue
-		.length > 0
-) {
-	let headerProps = JSON.parse(
-		document?.getElementById('header')?.attributes?.headerLinks?.nodeValue
+	headerProps = JSON.parse(
+		document.body.getElementsByTagName('header')[0]?.attributes?.headerLinks
+			?.nodeValue
 	)
 	if (headerProps.length > 0) {
 		// Links = Links.concat(headerProps)
@@ -438,7 +446,7 @@ console.log('header links---', Links)
 
 let hUl
 if (
-	document.getElementById('header') &&
+	document.body.getElementsByTagName('header')[0] &&
 	document.getElementById('headerLinks')
 ) {
 	hUl = document.getElementById('headerLinks')
@@ -464,7 +472,7 @@ for (let i = 0; i < Links.length; i++) {
 	Links[i].class === 'active' && (disabled[i] = 'true')
 
 	if (
-		document.getElementById('header') &&
+		document.body.getElementsByTagName('header')[0] &&
 		document.getElementById('headerLinks')
 	) {
 		common += `<li>
@@ -492,7 +500,7 @@ for (let i = 0; i < Links.length; i++) {
 	}
 
 	if (
-		document.getElementById('footer') &&
+		document.body.getElementsByTagName('footer') &&
 		document.getElementById('footerLinks')
 	) {
 		fUl = document.getElementById('footerLinks')
@@ -520,10 +528,10 @@ for (let i = 0; i < Links.length; i++) {
 		// `
 	}
 	if (
-		document.getElementById('header') &&
+		document.body.getElementsByTagName('header')[0] &&
 		document.getElementById('headerLinks')
 	) {
-		header?.removeAttribute('headerLinks')
+		header[0]?.removeAttribute('headerLinks')
 	}
 }
 let headerActiveLinks = [],
@@ -549,7 +557,7 @@ let footerWidgets
 let footerWidgetsTitle
 
 if (
-	document.getElementById('footer') &&
+	document.body.getElementsByTagName('footer') &&
 	document.getElementById('footerWidgets') &&
 	document.getElementById('footerWidgetsTitle')
 ) {
@@ -679,4 +687,3 @@ if (
 	let currentDate = new Date().getFullYear()
 	date.innerHTML = ` ${currentDate} `
 }
-console.log(document.body.getElementsByTagName('header')[0].innerHTML)
