@@ -168,7 +168,7 @@ header {
 .headerWrapper .rhs ul li:hover {
   border-bottom: 1px white solid;
   margin: 0 -10px;
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
   opacity: .8;
 }
 
@@ -320,11 +320,11 @@ img.search:hover input.searchField {
     color: black;
   }
 
-  .headerWrapper .rhs ul li a.active {
+  .headerWrapper .rhs ul li.active {
     border-color: black;
   }
 
-  .headerWrapper .rhs ul li a:hover {
+  .headerWrapper .rhs ul li:hover {
     border-bottom: 1px solid black;
   }
 }
