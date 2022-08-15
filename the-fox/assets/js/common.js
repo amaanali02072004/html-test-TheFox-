@@ -424,15 +424,18 @@ if (
 }
 
 if (
-	document?.getElementById('header')?.attributes?.headerLinks?.nodeValue
+	document?.getElementById('header')?.attributes?.headerLinksProps?.nodeValue
 		.length > 0
 ) {
 	let headerProps = JSON.parse(
-		document?.getElementById('header')?.attributes?.headerLinks?.nodeValue
+		document?.getElementById('header')?.attributes?.headerLinksProps?.nodeValue
 	)
 	if (headerProps.length > 0) {
-		// Links = Links.concat(headerProps)
-		Links = headerProps
+		if (document?.getElementById('header')?.attributes?.concat?.value) {
+			Links = Links.concat(headerProps)
+		} else {
+			Links = headerProps
+		}
 	}
 }
 console.log('header links---', Links)
@@ -453,8 +456,8 @@ for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
 	Links[i].title === 'index' && (Links[i].title = 'home')
 	if (Links[i].title === 'home' && Links[i].class === 'active') {
-		document.getElementById('headerImg').removeAttribute('href')
-		document.getElementById('footerImg').removeAttribute('href')
+		document.getElementById('headerImg')?.removeAttribute('href')
+		document.getElementById('footerImg')?.removeAttribute('href')
 	}
 
 	Links[i].title === 'features' &&
@@ -465,17 +468,15 @@ for (let i = 0; i < Links.length; i++) {
 	let uppercase = []
 	uppercase[i] =
 		Links[i]?.title?.charAt(0)?.toUpperCase() + Links[i]?.title?.slice(1)
-	if (
-		document.getElementById('header') &&
-		document.getElementById('headerLinks')
-	) {
-		Links[i].title &&
-			(common += `<li>
+
+	Links[i].title &&
+		(common += `<li ${
+			Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''
+		}>
       <a
         title='${uppercase[i]}'
         id='headerLinks${i}'
-        ${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
-        // ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
+				${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
         ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
         ${
 					disabled[i] !== 'true' &&
@@ -487,9 +488,12 @@ for (let i = 0; i < Links.length; i++) {
       </a>
     </li>
     `)
+	if (
+		document.getElementById('header') &&
+		document.getElementById('headerLinks')
+	) {
 		hUl.innerHTML = common
-	} else {
-		common = 'loading..'
+		header?.removeAttribute('headerLinksProps')
 	}
 
 	if (
@@ -524,7 +528,7 @@ for (let i = 0; i < Links.length; i++) {
 		document.getElementById('header') &&
 		document.getElementById('headerLinks')
 	) {
-		header?.removeAttribute('headerLinks')
+		// header?.removeAttribute('headerLinksProps')
 	}
 }
 let headerActiveLinks = [],

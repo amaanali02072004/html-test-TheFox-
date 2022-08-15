@@ -154,34 +154,38 @@ header {
 }
 
 
-.headerWrapper .rhs ul li a {
-  text-transform: capitalize;
-  cursor: pointer;
-  text-decoration: none;
+.headerWrapper .rhs ul li {
   color: white;
-  font-size: 14px;
   transition: var(--transition) var(--transitionTime1);
   border: 1px rgba(255, 255, 255, 0) solid;
 }
 
-.headerWrapper .rhs ul li a:hover {
+.headerWrapper .rhs ul li:hover {
   border-bottom: 1px white solid;
   margin: 0 -10px;
   padding: 5px 10px;
   opacity: .8;
 }
 
-
-.headerWrapper .rhs ul li a.active {
+.headerWrapper .rhs ul li.active {
   border: 1px white solid;
   margin: 0 -10px;
   padding: 5px 10px;
   border-radius: 5px;
 }
 
-.headerWrapper .rhs ul li a.active:hover {
+.headerWrapper .rhs ul li.active:hover {
   border-radius: 10px;
 }
+
+.headerWrapper .rhs ul li a {
+  text-transform: capitalize;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
 
 .headerWrapper .rhs img {
   width: 35px;
