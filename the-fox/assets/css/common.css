@@ -168,7 +168,7 @@ header {
 .headerWrapper .rhs ul li:hover {
   border-bottom: 1px white solid;
   margin: 0 -10px;
-  /* padding: 5px 10px; */
+  padding: 5px 10px;
   opacity: .8;
 }
 
@@ -322,10 +322,13 @@ img.search:hover input.searchField {
 
   .headerWrapper .rhs ul li.active {
     border-color: black;
+    margin: 0 10px;
   }
 
   .headerWrapper .rhs ul li:hover {
     border-bottom: 1px solid black;
+    margin-left: 15px;
+    padding: 10px 20px;
   }
 }
 
