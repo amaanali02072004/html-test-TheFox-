@@ -231,13 +231,13 @@ let errorTag = document.getElementById('errorTag')
 if (document?.body?.attributes?.page?.nodeValue) {
 	fileName = document?.body?.attributes?.page?.nodeValue
 } else {
-	error404 = `please provide an attribute to the <body> tag -- page="thisPageName"`
+	error404 = `Please provide an attribute to the &lt;body&gt; tag <br> ' page="thisPageName" '`
 	fileName = error404
 	console.error(
 		`${error404}. It may lead to inumerable errors (perhaps styling problems)`
 	)
 	errorTag.classList.add('script')
-	errorTag.innerHTML = `<p>${error404}</p>`
+	errorTag.innerHTML = `<a>${error404}</a>`
 }
 
 if (document.getElementById('head')) {
@@ -288,8 +288,7 @@ if (document.getElementById('header')) {
 				</div>
 				<div class="rhs" id="rhs">
 					<ul id="headerLinks">
-						(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
-						or 'common.js' is imported first, import it last!)
+						
 					</ul>
 					${
 						searchDisplay === false
@@ -321,8 +320,7 @@ if (document.getElementById('footer')) {
 							</a>
 							<div class="lhs" id="fLhs">
 								<ul>
-									(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
-or 'common.js' is imported first, import it last!)
+									
 								</ul>
 							</div>
 							<div class="rhs" id="fRhs">
@@ -343,16 +341,12 @@ or 'common.js' is imported first, import it last!)
 							<div class="footerWidgets">
 								<ul id="footerWidgets">
 
-(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
-or 'common.js' is imported first, import it last!)
 								</ul>
 							</div>
 							<h5 id="footerUsefulLinksTitle"></h5>
 							<div class="footerLinks">
 								<ul id="footerUsefulLinks">
 
-(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
-or 'common.js' is imported first, import it last!)
 								</ul>
 							</div>
 						</div>
@@ -376,9 +370,6 @@ or 'common.js' is imported first, import it last!)
 						</div>
 						<div class="rhs">
 							<ul id="footerLinks">
-
-(dependancy of 'common.js' module is missing, it may lead to errors/bugs, pls import it,
-or 'common.js' is imported first, import it last!)
 							</ul>
 						</div>
 					</div>
@@ -479,8 +470,9 @@ for (let i = 0; i < Links.length; i++) {
 				${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
         ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
         ${
-					disabled[i] !== 'true' &&
-					`href=${`${path + (Links[i].href || Links[i].title) + ext}`}`
+					disabled[i] !== 'true'
+						? `href=${`${path + (Links[i].href || Links[i].title) + ext}`}`
+						: 'disabled'
 				}
         onclick='activeLink(this)'
 			>
@@ -502,33 +494,6 @@ for (let i = 0; i < Links.length; i++) {
 	) {
 		fUl = document.getElementById('footerLinks')
 		fUl.innerHTML = common
-
-		// fUl.innerHTML = ''
-		// fUl.innerHTML += `<li>
-		//   <a
-		//     title='${
-		// 			Links[i].title.charAt(0).toUpperCase() + Links[i].title.slice(1)
-		// 		}'
-		//     id='footerLinks${i}'
-		//     ${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
-		//     ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
-		//     ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
-		//     ${
-		// 			disabled[i] !== 'true' &&
-		// 			`href=${`${path}${Links[i].href || Links[i].title}.html`}`
-		// 		}
-		//     onclick='activeLink(this)'
-		// 	>
-		//     ${Links[i].title}
-		//   </a>
-		// </li>
-		// `
-	}
-	if (
-		document.getElementById('header') &&
-		document.getElementById('headerLinks')
-	) {
-		// header?.removeAttribute('headerLinksProps')
 	}
 }
 let headerActiveLinks = [],

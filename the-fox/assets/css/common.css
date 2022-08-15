@@ -39,13 +39,18 @@ body {
   font-weight: 900;
   text-align: center;
   font-size: 20px;
+  overflow: hidden;
 }
 
+.script>a,
 .script>p {
-  font-family: Cyberpunk;
+  /* font-family: Cyberpunk; */
   padding: 20px 15px;
   background-color: white;
   border-radius: 10px;
+}
+
+.script>p {
   text-transform: capitalize;
 }
 
@@ -521,6 +526,8 @@ ul::-webkit-scrollbar {
   border-bottom: 1px solid #243141;
   width: 100%;
   padding: 7px 0;
+  transition: var(--transition) var(--transitionTime2);
+  color: #89969f;
 }
 
 .primaryFooterInnerWrapper .section3 .footerLinks ul li:last-child {
@@ -539,12 +546,11 @@ ul::-webkit-scrollbar {
 .primaryFooterInnerWrapper .section3 .footerLinks ul li a {
   text-decoration: none;
   text-transform: capitalize;
-  color: #89969f;
-  transition: var(--transition) var(--transitionTime2);
+  color: inherit;
   font-size: 14px;
 }
 
-.primaryFooterInnerWrapper .section3 .footerLinks ul li a:hover {
+.primaryFooterInnerWrapper .section3 .footerLinks ul li:hover {
   color: #1abe9c;
 }
 
@@ -654,27 +660,29 @@ ul::-webkit-scrollbar {
 
 .secondaryFooterInnerWrapper .rhs ul li {
   padding: 5px 8.5px;
-}
-
-.secondaryFooterInnerWrapper .rhs a {
-  text-decoration: none;
-  cursor: pointer;
   color: #a1b2bc;
   transition: var(--transition) var(--transitionTime2);
-  text-transform: capitalize;
+  cursor: pointer;
 }
 
-.secondaryFooterInnerWrapper .rhs a:hover {
+
+.secondaryFooterInnerWrapper .rhs ul li:hover {
   color: #57a193;
 }
 
-.secondaryFooterInnerWrapper .rhs .active {
+.secondaryFooterInnerWrapper .rhs ul li.active {
   color: #1ba186;
   border-bottom: 0px solid #61757100;
 }
 
-.secondaryFooterInnerWrapper .rhs .active:hover {
+.secondaryFooterInnerWrapper .rhs ul li.active:hover {
   border-bottom: 1px solid #57a193;
+}
+
+.secondaryFooterInnerWrapper .rhs a {
+  text-decoration: none;
+  color: inherit;
+  text-transform: capitalize;
 }
 
 @media only screen and (max-width: 900px) {
