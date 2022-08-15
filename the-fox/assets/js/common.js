@@ -1,52 +1,53 @@
 const javascript = 'javascript:;'
-// console.log(window.location.pathname)
-
+let url = window.location.pathname
+let ext = '.html'
+url[1] === 'C' ? (ext = '.html') : (ext = '')
 let Links = [
 	{
 		title: 'index',
 		href: `index`,
-		class: '',
+		// class: '',
 	},
 	{
 		title: 'pages',
 		href: 'pages',
-		class: '',
+		// class: '',
 	},
 	{
 		title: 'portfolio',
 		href: 'portfolio',
-		class: '',
+		// class: '',
 	},
 	{
 		title: 'blog',
 		href: 'blog',
-		class: '',
+		// class: '',
 	},
 	{
 		title: 'shop',
 		href: 'shop',
-		class: '',
+		// class: '',
 	},
 	{
 		title: 'travel',
 		href: 'travel',
-		class: '',
+		// class: '',
 	},
 	{
 		title: 'shortcodes',
 		href: 'shortcodes',
-		class: '',
+		// class: '',
 	},
 	{
 		title: 'features',
 		href: 'features',
-		class: '',
+		// class: '',
 		style: '',
 	},
 	{
 		title: 'contact',
 		href: `contact`,
-		class: '',
+		// class: '',
 	},
 ]
 
@@ -223,7 +224,7 @@ const FS4 = [
 	},
 ]
 let fileName
-const ext = './'
+const path = './'
 let head
 let error404
 let errorTag = document.getElementById('errorTag')
@@ -277,7 +278,7 @@ if (document.getElementById('header')) {
 		<div class="container">
 			<div class="headerWrapper">
 				<div class="lhs">
-					<a href='${indexLink}' title="thefox" id="headerImg">
+					<a href='${indexLink + 'index' + ext}' title="thefox" id="headerImg">
 						<img src="./assets/images/fox-logo.png" class="logo whiteLogo" alt="Logo">
 						<img src="./assets/images/fox-logo-black.png" class="logo blackLogo" alt="Logo">
 					</a>
@@ -315,7 +316,7 @@ if (document.getElementById('footer')) {
 				<div class="primaryFooterInnerWrapper">
 					<div>
 						<div class="footerSection section1">
-							<a href='${indexLink}' title="thefox" id="footerImg">
+							<a href='${indexLink + 'index' + ext}' title="thefox" id="footerImg">
 								<img src="./assets/images/fox-logo.png" alt="logo">
 							</a>
 							<div class="lhs" id="fLhs">
@@ -450,7 +451,6 @@ disabled = []
 let common = ''
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
-
 	Links[i].title === 'index' && (Links[i].title = 'home')
 	if (Links[i].title === 'home' && Links[i].class === 'active') {
 		document.getElementById('headerImg').removeAttribute('href')
@@ -462,30 +462,31 @@ for (let i = 0; i < Links.length; i++) {
 		(Links[i].style = 'color:var(--cyan);font-weight:900;'))
 
 	Links[i].class === 'active' && (disabled[i] = 'true')
-
+	let uppercase = []
+	uppercase[i] =
+		Links[i]?.title?.charAt(0)?.toUpperCase() + Links[i]?.title?.slice(1)
 	if (
 		document.getElementById('header') &&
 		document.getElementById('headerLinks')
 	) {
-		common += `<li>
+		Links[i].title &&
+			(common += `<li>
       <a
-        title='${
-					Links[i].title.charAt(0).toUpperCase() + Links[i].title.slice(1)
-				}'
+        title='${uppercase[i]}'
         id='headerLinks${i}'
         ${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
-        ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
+        // ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
         ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
         ${
 					disabled[i] !== 'true' &&
-					`href=${`${ext}${Links[i].href || Links[i].title}.html`}`
+					`href=${`${path + (Links[i].href || Links[i].title) + ext}`}`
 				}
         onclick='activeLink(this)'
 			>
         ${Links[i].title}
       </a>
     </li>
-    `
+    `)
 		hUl.innerHTML = common
 	} else {
 		common = 'loading..'
@@ -510,7 +511,7 @@ for (let i = 0; i < Links.length; i++) {
 		//     ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
 		//     ${
 		// 			disabled[i] !== 'true' &&
-		// 			`href=${`${ext}${Links[i].href || Links[i].title}.html`}`
+		// 			`href=${`${path}${Links[i].href || Links[i].title}.html`}`
 		// 		}
 		//     onclick='activeLink(this)'
 		// 	>
@@ -528,11 +529,11 @@ for (let i = 0; i < Links.length; i++) {
 }
 let headerActiveLinks = [],
 	footerActiveLinks = []
-for (let i = 0; i <= Links.length; ++i) {
+for (let i = 0; i < Links.length; i++) {
 	headerActiveLinks[i] = document.getElementById(`headerLinks${i}`)
 	footerActiveLinks[i] = document.getElementById(`footerLinks${i}`)
 }
-const activeLink = (element) => {
+const activeLink = element => {
 	for (let i = 0; i < Links.length; i++) {
 		headerActiveLinks[i].classList = ''
 		// footerActiveLinks[i].classList = ''
