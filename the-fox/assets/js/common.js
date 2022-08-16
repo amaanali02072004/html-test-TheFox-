@@ -1,5 +1,6 @@
 const javascript = 'javascript:;'
 let url = window.location.pathname
+console.log('🚀 ~ file: common.js ~ line 3 ~ url', url)
 let ext = '.html'
 url[1] === 'C' ? (ext = '.html') : (ext = '')
 let Links = [
@@ -45,7 +46,7 @@ let Links = [
 		style: '',
 	},
 	{
-		title: 'contact',
+		// title: 'contact',
 		href: `contact`,
 		// class: '',
 	},
