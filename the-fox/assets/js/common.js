@@ -1,6 +1,5 @@
 const javascript = 'javascript:;'
 let url = window.location.pathname
-console.log('🚀 ~ file: common.js ~ line 3 ~ url', url)
 let ext = '.html'
 url[1] === 'C' ? (ext = '.html') : (ext = '')
 let Links = [
@@ -12,43 +11,35 @@ let Links = [
 	{
 		title: 'pages',
 		href: 'pages',
-		// class: '',
 	},
 	{
 		title: 'portfolio',
 		href: 'portfolio',
-		// class: '',
 	},
 	{
 		title: 'blog',
 		href: 'blog',
-		// class: '',
 	},
 	{
 		title: 'shop',
 		href: 'shop',
-		// class: '',
 	},
 	{
 		title: 'travel',
 		href: 'travel',
-		// class: '',
 	},
 	{
 		title: 'shortcodes',
 		href: 'shortcodes',
-		// class: '',
 	},
 	{
 		title: 'features',
 		href: 'features',
-		// class: '',
 		style: '',
 	},
 	{
 		// title: 'contact',
 		href: `contact`,
-		// class: '',
 	},
 ]
 
@@ -228,7 +219,7 @@ let fileName
 const path = './'
 let head
 let error404
-let errorTag = document.getElementById('errorTag')
+let errorTag = document?.getElementById('errorTag')
 if (document?.body?.attributes?.page?.nodeValue) {
 	fileName = document?.body?.attributes?.page?.nodeValue
 } else {
@@ -241,10 +232,10 @@ if (document?.body?.attributes?.page?.nodeValue) {
 	errorTag.innerHTML = `<a>${error404}</a>`
 }
 
-if (document.getElementById('head')) {
-	head = document.getElementById('head')
+if (document?.getElementById('head')) {
+	head = document?.getElementById('head')
 	let title = fileName || error404
-	title = title.charAt(0).toUpperCase() + title.slice(1)
+	title = title?.charAt(0)?.toUpperCase() + title?.slice(1)
 	head.innerHTML = ``
 	head.innerHTML = `
 	<meta charset="UTF-8" />
@@ -264,11 +255,12 @@ if (document.getElementById('head')) {
 let disabled = []
 let indexLink = './'
 let header
-if (document.getElementById('header')) {
-	header = document.getElementById('header')
+if (document?.getElementById('header')) {
+	header = document?.getElementById('header')
 	let searchDisplay = true
 	if (
-		document?.getElementById('header')?.attributes?.search?.nodeValue.length > 0
+		document?.getElementById('header')?.attributes?.search?.nodeValue?.length >
+		0
 	) {
 		searchDisplay = JSON.parse(
 			document?.getElementById('header')?.attributes?.search?.nodeValue
@@ -305,10 +297,15 @@ if (document.getElementById('header')) {
 		</div>
 `
 	header.removeAttribute('search')
+} else {
+	let msg = 'id="header" is necessary in &lt;header&gt; tag'
+	console.error(msg)
+	errorTag.style.display = 'flex'
+	errorTag.innerHTML = `<a>${msg}</a>`
 }
 
-if (document.getElementById('footer')) {
-	let footer = document.getElementById('footer')
+if (document?.getElementById('footer')) {
+	let footer = document?.getElementById('footer')
 	footer.setAttribute('onclick', 'hideMenu(this)')
 	footer.innerHTML = `
 		<div class="primaryFooterOuterWrapper">
@@ -379,7 +376,7 @@ if (document.getElementById('footer')) {
 `
 }
 
-let menuList = document.getElementById('rhs')
+let menuList = document?.getElementById('rhs')
 
 const showMenu = () => {
 	for (let i = 0; i < menuList.classList.length; i++) {
@@ -434,11 +431,11 @@ console.log('header links---', Links)
 
 let hUl
 if (
-	document.getElementById('header') &&
-	document.getElementById('headerLinks')
+	document?.getElementById('header') &&
+	document?.getElementById('headerLinks')
 ) {
-	hUl = document.getElementById('headerLinks')
-	hUl.innerHTML = ''
+	hUl = document?.getElementById('headerLinks')
+	// hUl.innerHTML = ''
 }
 
 let fUl
@@ -448,8 +445,8 @@ for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
 	Links[i].title === 'index' && (Links[i].title = 'home')
 	if (Links[i].title === 'home' && Links[i].class === 'active') {
-		document.getElementById('headerImg')?.removeAttribute('href')
-		document.getElementById('footerImg')?.removeAttribute('href')
+		document?.getElementById('headerImg')?.removeAttribute('href')
+		document?.getElementById('footerImg')?.removeAttribute('href')
 	}
 
 	Links[i].title === 'features' &&
@@ -482,30 +479,31 @@ for (let i = 0; i < Links.length; i++) {
     </li>
     `)
 	if (
-		document.getElementById('header') &&
-		document.getElementById('headerLinks')
+		document?.getElementById('header') &&
+		document?.getElementById('headerLinks')
 	) {
+		hUl.innerHTML = ''
 		hUl.innerHTML = common
 		header?.removeAttribute('headerLinksProps')
 	}
 
 	if (
-		document.getElementById('footer') &&
-		document.getElementById('footerLinks')
+		document?.getElementById('footer') &&
+		document?.getElementById('footerLinks')
 	) {
-		fUl = document.getElementById('footerLinks')
+		fUl = document?.getElementById('footerLinks')
 		fUl.innerHTML = common
 	}
 }
 let headerActiveLinks = [],
 	footerActiveLinks = []
 for (let i = 0; i < Links.length; i++) {
-	headerActiveLinks[i] = document.getElementById(`headerLinks${i}`)
-	footerActiveLinks[i] = document.getElementById(`footerLinks${i}`)
+	headerActiveLinks[i] = document?.getElementById(`headerLinks${i}`)
+	footerActiveLinks[i] = document?.getElementById(`footerLinks${i}`)
 }
 const activeLink = element => {
 	for (let i = 0; i < Links.length; i++) {
-		headerActiveLinks[i].classList = ''
+		// headerActiveLinks[i].classList = ''
 		// footerActiveLinks[i].classList = ''
 		element.classList.add('active')
 
@@ -520,13 +518,13 @@ let footerWidgets
 let footerWidgetsTitle
 
 if (
-	document.getElementById('footer') &&
-	document.getElementById('footerWidgets') &&
-	document.getElementById('footerWidgetsTitle')
+	document?.getElementById('footer') &&
+	document?.getElementById('footerWidgets') &&
+	document?.getElementById('footerWidgetsTitle')
 ) {
-	footerWidgets = document.getElementById('footerWidgets')
+	footerWidgets = document?.getElementById('footerWidgets')
 	footerWidgets.innerHTML = ''
-	footerWidgetsTitle = document.getElementById('footerWidgetsTitle')
+	footerWidgetsTitle = document?.getElementById('footerWidgetsTitle')
 	footerWidgetsTitle.innerHTML = ''
 
 	let footerWidgetLink = []
@@ -538,8 +536,9 @@ if (
 		? (randomNo = FS3Widget.length - 1)
 		: randomNo
 	FS3Widget[randomNo].class = `secondaryButton cyan`
+	let temp = ''
 	for (let i = 1; i < FS3Widget.length; i++) {
-		footerWidgets.innerHTML += `
+		temp += `
 			<li>
 				<a
 					title='${FS3Widget[i].title}'
@@ -552,8 +551,9 @@ if (
 				</a>
 			</li>`
 	}
+	footerWidgets.innerHTML = temp
 	for (let i = 1; i < FS3Widget.length; ++i) {
-		footerWidgetLink[i] = document.getElementById(`FS3Widget${i}`)
+		footerWidgetLink[i] = document?.getElementById(`FS3Widget${i}`)
 	}
 
 	function footerActiveLink(element) {
@@ -563,7 +563,7 @@ if (
 		element.classList = 'secondaryButton cyan'
 	}
 
-	let fLhs = document.getElementById('fLhs')
+	let fLhs = document?.getElementById('fLhs')
 	fLhs.innerHTML = ``
 	fLhs.innerHTML = `
 			<p>
@@ -581,10 +581,11 @@ if (
 			</ul>
 		`
 
-	let fRhs = document.getElementById('fRhs')
+	let fRhs = document?.getElementById('fRhs')
 	fRhs.innerHTML = ``
+	temp = ''
 	for (let i = 0; i < FS1Rhs.length; i++) {
-		fRhs.innerHTML += `
+		temp += `
 		<div class="socialLinks">
 			<div class="linkLhs">
 				<a href=${FS1Rhs[i].href} class="cyan">
@@ -598,12 +599,14 @@ if (
 		</div>
 `
 	}
+	fRhs.innerHTML = temp
 
-	let fs2 = document.getElementById('fs2')
+	let fs2 = document?.getElementById('fs2')
 	fs2.innerHTML = ``
 	fs2.innerHTML = `<h5>${FS2[0]}</h5>`
+	temp = ''
 	for (let i = 1; i < FS2.length; i++) {
-		fs2.innerHTML += `
+		temp += `
 		<div class="blog">
 			<div class="blogLhs">
 				<img src=${FS2[i].img} alt=${FS2[i].alt}>
@@ -616,14 +619,18 @@ if (
 		</div>
 `
 	}
-	let footerUsefulLinks = document.getElementById('footerUsefulLinks')
-	let footerUsefulLinksTitle = document.getElementById('footerUsefulLinksTitle')
+	fs2.innerHTML = temp
+	let footerUsefulLinks = document?.getElementById('footerUsefulLinks')
+	let footerUsefulLinksTitle = document?.getElementById(
+		'footerUsefulLinksTitle'
+	)
 	footerUsefulLinks.innerHTML = ``
 	footerUsefulLinksTitle.innerHTML = ``
 
 	footerUsefulLinksTitle.innerHTML = FS3Useful[0]
+	temp = ''
 	for (let i = 1; i < FS3Useful.length; i++) {
-		footerUsefulLinks.innerHTML += `
+		temp += `
 <li>
 	<a
 		title='${FS3Useful[i].title}'
@@ -634,11 +641,13 @@ if (
 </li>
 `
 	}
-	let fs4 = document.getElementById('fs4')
+	footerUsefulLinks.innerHTML = temp
+	let fs4 = document?.getElementById('fs4')
 	fs4.innerHTML = ``
 	fs4.innerHTML = `<h5>${FS4[0]}</h5>`
+	temp = ''
 	for (let i = 1; i < FS4.length; i++) {
-		fs4.innerHTML += `
+		temp += `
 			<div class="contact">
 				<p class="title">${FS4[i].title}</p>
 				<p>${FS4[i].para}</p>
@@ -646,9 +655,11 @@ if (
 			</div>
 		`
 	}
-	let date = document.getElementById('__date')
+	fs4.innerHTML = temp
+	temp = ''
+	let date = document?.getElementById('__date')
 	let currentDate = new Date().getFullYear()
 	date.innerHTML = ` ${currentDate} `
 }
-// console.log(document.body.getElementsByTagName('header')[0].innerHTML)
-// document.body.innerHTML += `<script src="./assets/js/${fileName}.js"></script>`
+// console.log(document?.body.getElementsByTagName('header')[0].innerHTML)
+// document?.body.innerHTML += `<script src="./assets/js/${fileName}.js"></script>`
