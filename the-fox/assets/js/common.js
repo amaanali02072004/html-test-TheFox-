@@ -608,9 +608,9 @@ if (
 	fRhs.innerHTML = temp
 
 	let fs2 = document?.getElementById('fs2')
-	fs2.innerHTML = ``
-	fs2.innerHTML = `<h5>${FS2[0]}</h5>`
+	// fs2.innerHTML = ``
 	temp = ''
+	temp = `<h5>${FS2[0]}</h5>`
 	for (let i = 1; i < FS2.length; i++) {
 		temp += `
 		<div class="blog">
@@ -649,9 +649,9 @@ if (
 	}
 	footerUsefulLinks.innerHTML = temp
 	let fs4 = document?.getElementById('fs4')
-	fs4.innerHTML = ``
-	fs4.innerHTML = `<h5>${FS4[0]}</h5>`
+	// fs4.innerHTML = ``
 	temp = ''
+	temp = `<h5>${FS4[0]}</h5>`
 	for (let i = 1; i < FS4.length; i++) {
 		temp += `
 			<div class="contact">
