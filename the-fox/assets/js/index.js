@@ -146,7 +146,7 @@ let portfolioLink = []
 for (let i = 0; i < PortfolioHeadLinks.length; ++i) {
 	portfolioLink[i] = document.getElementById(`portfolioLink${i}`)
 }
-const portfolioActiveLink = (element) => {
+const portfolioActiveLink = element => {
 	for (let i = 0; i < PortfolioHeadLinks.length; i++) {
 		portfolioLink[i].classList = 'large primaryButton'
 	}
@@ -157,18 +157,27 @@ let Name = document.getElementById('Name')
 let Email = document.getElementById('Email')
 let Message = document.getElementById('Message')
 
-Name.addEventListener('keypress', (event) => {
-	event.key === 'Enter' && document.getElementById('Submit').click()
-})
-Email.addEventListener('keypress', (event) => {
-	event.key === 'Enter' && document.getElementById('Submit').click()
-})
+function alertSubmit(input) {
+	input.addEventListener('keypress', event => {
+		event.key === 'Enter' && document.getElementById('Submit').click()
+	})
+}
+alertSubmit(Name)
+alertSubmit(Email)
+// alertSubmit(Message)
+
+// Name.addEventListener('keypress', (event) => {
+// 	event.key === 'Enter' && document.getElementById('Submit').click()
+// })
+// Email.addEventListener('keypress', (event) => {
+// 	event.key === 'Enter' && document.getElementById('Submit').click()
+// })
 // Message.addEventListener("keypress",  (event)=> {
 // event.key === 'Enter' && document.getElementById('Submit').click()
 // });
 
 let form = document.getElementById('form')
-const submitForm = (event) => {
+const submitForm = event => {
 	if (Name.value == '') {
 		alert('Enter Your Name!')
 		Name.focus()
@@ -183,9 +192,8 @@ const submitForm = (event) => {
 		// form.setAttribute('action', 'php.php')
 		// form.setAttribute('method', 'post')
 		// form.setAttribute('target', '_blank')
-		console.log(`Name: ${Name.value},
-${Email.value},
-${Message.value}`)
+		let user = { name: Name.value, email: Email.value, message: Message.value }
+		console.log(user)
 		Name.value = ''
 		Email.value = ''
 		Message.value = ''

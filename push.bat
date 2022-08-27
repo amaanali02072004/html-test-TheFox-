@@ -12,7 +12,7 @@ git status
 @echo ----------------------------------------------------------------------------------------
 
 Color 0A
-@echo Pushed and Committed succesfully (%COM%)
+@echo Pushed and Committed succesfully [%COM%]
 
 @echo ----------------------------------------------------------------------------------------
 setlocal

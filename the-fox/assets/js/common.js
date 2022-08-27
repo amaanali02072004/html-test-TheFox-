@@ -1,7 +1,8 @@
 const javascript = 'javascript:;'
 let url = window.location.pathname
+// localStorage.setItem('prepros',true)
 let ext = '.html'
-url[1] === 'C' ? (ext = '.html') : (ext = '')
+url[1] === 'C' || localStorage.getItem('prepros') ? (ext = '.html') : (ext = '')
 let Links = [
 	{
 		title: 'index',
@@ -667,4 +668,4 @@ if (
 	date.innerHTML = ` ${currentDate} `
 }
 // console.log(document?.body.getElementsByTagName('header')[0].innerHTML)
-// document?.body.innerHTML += `<script src="./assets/js/${fileName}.js"></script>`
+// document.body.innerHTML += `<script src="./assets/js/${fileName}.js"></script>`
