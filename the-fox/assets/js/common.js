@@ -275,7 +275,9 @@ if (document?.getElementById('header')) {
 		)
 	}
 	console.log('search icon', searchDisplay)
-
+if (document?.getElementById('header')?.attributes?.hidden?.nodeValue) {
+	header.innerHTML = ``
+} else {
 	header.innerHTML = `
 		<div class="container">
 			<div class="headerWrapper">
@@ -305,7 +307,8 @@ if (document?.getElementById('header')) {
 			</div>
 		</div>
 `
-	header.removeAttribute('search')
+}
+header?.removeAttribute('search')
 }
 //  else {
 // 	let msg = 'id="header" is necessary in &lt;header&gt; tag'
