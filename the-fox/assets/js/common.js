@@ -316,6 +316,9 @@ if (document?.getElementById('header')) {
 
 if (document?.getElementById('footer')) {
 	let footer = document?.getElementById('footer')
+	let repoLink =
+		document?.getElementById('footer')?.attributes?.repoLink?.nodeValue ||
+		'https://github.com/Killer-Amaan-Ali/html-test'
 	footer.setAttribute('onclick', 'hideMenu(this)')
 	footer.innerHTML = `
 		<div class="primaryFooterOuterWrapper">
@@ -371,7 +374,7 @@ if (document?.getElementById('footer')) {
 					<div class="secondaryFooterInnerWrapper">
 						<div class="lhs">
 							<p>Copyright
-							<p id="__date" style="margin: 0 4px;">2014</p> <a href="https://github.com/Killer-Amaan-Ali/html-test"
+							<p id="__date" style="margin: 0 4px;">2014</p> <a href="${repoLink}"
 								target="_blank">the<b>fox</b></a></p>&nbsp|&nbsp
 							<p>All rights reserved</p>&nbsp|&nbsp
 							<p>designed by <a href="https://github.com/Killer-Amaan-Ali/" target="_blank">Amaan</a></p>
