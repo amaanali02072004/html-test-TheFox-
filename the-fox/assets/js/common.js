@@ -387,12 +387,13 @@ if (document?.getElementById('footer')) {
 				</div>
 			</div>
 `
-} else {
-	let msg = 'id="footer" is necessary in &lt;footer&gt; tag'
-	console.error(msg)
-	errorTag.style.display = 'flex'
-	errorTag.innerHTML = `<a>${msg}</a>`
-}
+} 
+// else {
+// 	let msg = 'id="footer" is necessary in &lt;footer&gt; tag'
+// 	console.error(msg)
+// 	errorTag.style.display = 'flex'
+// 	errorTag.innerHTML = `<a>${msg}</a>`
+// }
 
 let menuList = document?.getElementById('rhs')
 
