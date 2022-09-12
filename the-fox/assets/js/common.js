@@ -50,7 +50,9 @@ const FS1Lhs = [
 	javascript,
 	'Read More',
 ]
-const RhsImg = './assets/images/twitter.png'
+const RhsImg =
+	'https://the-fox.netlify.app/the-fox/assets/images/twitter.png' ||
+	'./assets/images/twitter.png'
 const FS1Rhs = [
 	{
 		title: 'Subscribe',
@@ -95,7 +97,9 @@ const FS1Rhs = [
 		href: javascript,
 	},
 ]
-const FS2Img = './assets/images/footer-blog.png'
+const FS2Img =
+	'https://the-fox.netlify.app/the-fox/assets/images/footer-blog.png' ||
+	'./assets/images/footer-blog.png'
 const FS2 = [
 	'latest news',
 	{
@@ -256,6 +260,9 @@ if (document?.getElementById('head')) {
 let disabled = []
 let indexLink = './'
 let header
+let headerLogo =
+	'https://the-fox.netlify.app/the-fox/assets/images/fox-logo.png' ||
+	'./assets/images/fox-logo.png'
 if (document?.getElementById('header')) {
 	header = document?.getElementById('header')
 	let searchDisplay = true
@@ -268,12 +275,13 @@ if (document?.getElementById('header')) {
 		)
 	}
 	console.log('search icon', searchDisplay)
+
 	header.innerHTML = `
 		<div class="container">
 			<div class="headerWrapper">
 				<div class="lhs">
 					<a href='${indexLink + 'index' + ext}' title="thefox" id="headerImg">
-						<img src="./assets/images/fox-logo.png" class="logo whiteLogo" alt="Logo">
+						<img src="${headerLogo}" class="logo whiteLogo" alt="Logo">
 						<img src="./assets/images/fox-logo-black.png" class="logo blackLogo" alt="Logo">
 					</a>
 					<a class="hamburger" id="hamburger" onclick="showMenu(this)">
@@ -298,12 +306,13 @@ if (document?.getElementById('header')) {
 		</div>
 `
 	header.removeAttribute('search')
-} else {
-	let msg = 'id="header" is necessary in &lt;header&gt; tag'
-	console.error(msg)
-	errorTag.style.display = 'flex'
-	errorTag.innerHTML = `<a>${msg}</a>`
 }
+//  else {
+// 	let msg = 'id="header" is necessary in &lt;header&gt; tag'
+// 	console.error(msg)
+// 	errorTag.style.display = 'flex'
+// 	errorTag.innerHTML = `<a>${msg}</a>`
+// }
 
 if (document?.getElementById('footer')) {
 	let footer = document?.getElementById('footer')
@@ -315,7 +324,7 @@ if (document?.getElementById('footer')) {
 					<div>
 						<div class="footerSection section1">
 							<a href='${indexLink + 'index' + ext}' title="thefox" id="footerImg">
-								<img src="./assets/images/fox-logo.png" alt="logo">
+								<img src="${headerLogo}" alt="logo">
 							</a>
 							<div class="lhs" id="fLhs">
 								<ul>
