@@ -435,7 +435,9 @@ if (
 		document?.getElementById('header')?.attributes?.headerLinksProps?.nodeValue
 	)
 	if (headerProps.length > 0) {
-		if (document?.getElementById('header')?.attributes?.concat?.value) {
+		if (
+			document?.getElementById('header')?.attributes?.concat?.value === 'true'
+		) {
 			Links = Links.concat(headerProps)
 		} else {
 			Links = headerProps
