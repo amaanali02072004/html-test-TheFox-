@@ -27,6 +27,9 @@ body {
   height: 5880px; */
 }
 
+[hidden] {
+  display: none;
+}
 .script {
   position: fixed;
   display: flex;
