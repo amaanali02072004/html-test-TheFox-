@@ -430,7 +430,7 @@ if (
 	if (localStorage.getItem('drawer') === 'true') {
 		menuList.classList.add('rhsActive')
 	} else {
-		menuList.classList.remove('rhsActive')
+		menuList?.classList.remove('rhsActive')
 	}
 }
 
