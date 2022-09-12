@@ -275,7 +275,7 @@ if (document?.getElementById('header')) {
 		)
 	}
 	console.log('search icon', searchDisplay)
-if (document?.getElementById('header')?.attributes?.hidden?.nodeValue) {
+if (document?.getElementById('header')?.attributes?.hidden) {
 	header.innerHTML = ``
 } else {
 	header.innerHTML = `
