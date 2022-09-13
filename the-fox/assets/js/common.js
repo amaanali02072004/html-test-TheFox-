@@ -228,13 +228,14 @@ let errorTag = document?.getElementById('errorTag')
 if (document?.body?.attributes?.page?.nodeValue) {
 	fileName = document?.body?.attributes?.page?.nodeValue
 } else {
+if (document?.getElementById('header')?.attributes?.hidden) {}else{
 	error404 = `Please provide an attribute to the &lt;body&gt; tag <br> ' page="thisPageName" '`
 	fileName = error404
 	console.error(
 		`${error404}. It may lead to inumerable errors (perhaps styling problems)`
 	)
-	errorTag.classList.add('script')
-	errorTag.innerHTML = `<a>${error404}</a>`
+	errorTag?.classList?.add('script')
+	errorTag?.innerHTML = `<a>${error404}</a>`}
 }
 
 if (document?.getElementById('head')) {
