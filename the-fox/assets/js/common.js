@@ -419,8 +419,8 @@ const hideMenu = () => {
 if (document?.body.getElementsByTagName('section')) {
 	let section = document?.body.getElementsByTagName('section')
 	for (let i = 0; i < section.length; i++) {
-		// section[i].setAttribute('onclick', 'hideMenu(this)')
-		section[i].addEventListener('click', hideMenu(this))
+		section[i].setAttribute('onclick', 'hideMenu(this)')
+		// section[i].addEventListener('click', hideMenu(this))
 	}
 }
 
