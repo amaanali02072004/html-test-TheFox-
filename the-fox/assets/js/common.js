@@ -162,29 +162,29 @@ const FS3Widget = [
 const FS3Useful = [
 	'Useful Links',
 	{
-		title: 'Web Design Resources',
+		title: 'Subject Table',
 		href: 'https://table-data-base.netlify.app/public/',
 		page: 'table',
 	},
 	{
-		title: 'Web Design Resources',
+		title: 'TheFox Site',
 		href: 'https://the-fox.netlify.app/',
 		page: 'index',
 	},
 	{
-		title: 'Web Design Resources',
+		title: 'Mathematic Problems',
 		href: 'https://mathematic-problems.netlify.app/',
 		page: 'problems',
 	},
 	{
-		title: 'Web Design Resources',
-		href: 'https://react-user-demo.netlify.app/',
-		page: 'user',
-	},
-	{
-		title: 'Web Design Resources',
+		title: 'Expenses List (React)',
 		href: 'https://react-expenses-demo.netlify.app/',
 		page: 'expense',
+	},
+	{
+		title: 'User List (React)',
+		href: 'https://react-user-demo.netlify.app/',
+		page: 'user',
 	},
 	// {
 	// 	title: 'Web Design Resources',
