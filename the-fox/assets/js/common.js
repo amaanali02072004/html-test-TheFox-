@@ -333,7 +333,7 @@ if (document?.getElementById('header')) {
 if (document?.getElementById('footer')) {
 	let footer = document?.getElementById('footer')
 	let repoLink =
-		document?.getElementById('footer')?.attributes?.repoLink?.nodeValue ||
+		footer?.attributes?.repoLink?.nodeValue ||
 		'https://github.com/Killer-Amaan-Ali/html-test'
 	footer.setAttribute('onclick', 'hideMenu(this)')
 	footer.innerHTML = `
@@ -403,6 +403,7 @@ if (document?.getElementById('footer')) {
 				</div>
 			</div>
 `
+	footer?.removeAttribute('repoLink')
 }
 // else {
 // 	let msg = 'id="footer" is necessary in &lt;footer&gt; tag'
@@ -521,8 +522,9 @@ for (let i = 0; i < Links.length; i++) {
 	) {
 		hUl.innerHTML = ''
 		hUl.innerHTML = common
-		header?.removeAttribute('headerLinksProps')
 	}
+	header?.removeAttribute('headerLinksProps')
+	header?.removeAttribute('concat')
 
 	if (
 		document?.getElementById('footer') &&
