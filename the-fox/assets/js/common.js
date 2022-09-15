@@ -163,44 +163,54 @@ const FS3Useful = [
 	'Useful Links',
 	{
 		title: 'Web Design Resources',
-		href: javascript,
+		href: 'https://table-data-base.netlify.app/public/',
+		page: 'table',
 	},
 	{
 		title: 'Web Design Resources',
-		href: javascript,
+		href: 'https://the-fox.netlify.app/',
+		page: 'index',
 	},
 	{
 		title: 'Web Design Resources',
-		href: javascript,
+		href: 'https://mathematic-problems.netlify.app/',
+		page: 'problems',
 	},
 	{
 		title: 'Web Design Resources',
-		href: javascript,
+		href: 'https://react-user-demo.netlify.app/',
+		page: 'user',
 	},
 	{
 		title: 'Web Design Resources',
-		href: javascript,
+		href: 'https://react-expenses-demo.netlify.app/',
+		page: 'expense',
 	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
-	{
-		title: 'Web Design Resources',
-		href: javascript,
-	},
+	// {
+	// 	title: 'Web Design Resources',
+	// 	href: javascript,
+	// page:''
+	// },
+	// {
+	// 	title: 'Web Design Resources',
+	// 	href: javascript,
+	// page:''
+	// },
+	// {
+	// 	title: 'Web Design Resources',
+	// 	href: javascript,
+	// page:''
+	// },
+	// {
+	// 	title: 'Web Design Resources',
+	// 	href: javascript,
+	// page:''
+	// },
+	// {
+	// 	title: 'Web Design Resources',
+	// 	href: javascript,
+	// page:''
+	// },
 ]
 const FS4 = [
 	'Contact Info',
@@ -228,16 +238,16 @@ let errorTag = document?.getElementById('errorTag')
 if (document?.body?.attributes?.page?.nodeValue) {
 	fileName = document?.body?.attributes?.page?.nodeValue
 } else {
-if (document?.getElementById('header')?.attributes?.hidden) {
-} else {
-	error404 = `Please provide an attribute to the &lt;body&gt; tag <br> ' page="thisPageName" '`
-	fileName = error404
-	console.error(
-		`${error404}. It may lead to inumerable errors (perhaps styling problems)`
-	)
-	errorTag?.classList?.add('script')
-	errorTag.innerHTML = `<a>${error404}</a>`
-}
+	if (document?.getElementById('header')?.attributes?.hidden) {
+	} else {
+		error404 = `Please provide an attribute to the &lt;body&gt; tag <br> ' page="thisPageName" '`
+		fileName = error404
+		console.error(
+			`${error404}. It may lead to inumerable errors (perhaps styling problems)`
+		)
+		errorTag?.classList?.add('script')
+		errorTag.innerHTML = `<a>${error404}</a>`
+	}
 }
 
 if (document?.getElementById('head')) {
@@ -278,10 +288,10 @@ if (document?.getElementById('header')) {
 		)
 	}
 	console.log('search icon', searchDisplay)
-if (document?.getElementById('header')?.attributes?.hidden) {
-	header.innerHTML = ``
-} else {
-	header.innerHTML = `
+	if (document?.getElementById('header')?.attributes?.hidden) {
+		header.innerHTML = ``
+	} else {
+		header.innerHTML = `
 		<div class="container">
 			<div class="headerWrapper">
 				<div class="lhs">
@@ -310,8 +320,8 @@ if (document?.getElementById('header')?.attributes?.hidden) {
 			</div>
 		</div>
 `
-}
-header?.removeAttribute('search')
+	}
+	header?.removeAttribute('search')
 }
 //  else {
 // 	let msg = 'id="header" is necessary in &lt;header&gt; tag'
@@ -393,7 +403,7 @@ if (document?.getElementById('footer')) {
 				</div>
 			</div>
 `
-} 
+}
 // else {
 // 	let msg = 'id="footer" is necessary in &lt;footer&gt; tag'
 // 	console.error(msg)
@@ -658,15 +668,19 @@ if (
 	temp = ''
 	for (let i = 1; i < FS3Useful.length; i++) {
 		temp += `
-<li>
-	<a
-		title='${FS3Useful[i].title}'
-		href=${FS3Useful[i].href}
-	>
-	${FS3Useful[i].title}
-	</a>
-</li>
-`
+					${
+						fileName !== FS3Useful[i].page
+							? `<li>
+						<a
+							title='${FS3Useful[i].title}'
+							href=${FS3Useful[i].href}
+						>
+						${FS3Useful[i].title}
+						</a>
+					</li>`
+							: ''
+					}
+					`
 	}
 	footerUsefulLinks.innerHTML = temp
 	let fs4 = document?.getElementById('fs4')
