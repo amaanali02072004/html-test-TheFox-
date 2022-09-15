@@ -676,6 +676,7 @@ if (
 						<a
 							title='${FS3Useful[i].title}'
 							href=${FS3Useful[i].href}
+							target="_blank"
 						>
 						${FS3Useful[i].title}
 						</a>
