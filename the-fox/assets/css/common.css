@@ -121,6 +121,7 @@ code .tag {
 
 header {
   position: absolute;
+  top: 0;
   width: 100%;
   z-index: 1;
 }
@@ -177,10 +178,10 @@ header {
   padding: 5px 10px;
   opacity: .8;
   border-bottom-color: inherit;
-  }
-  
-  li.border-cyan {
-    color: var(--cyan) !important;
+}
+
+li.border-cyan {
+  color: var(--cyan) !important;
 }
 
 .headerWrapper .rhs ul li.active {
@@ -199,7 +200,7 @@ header {
   cursor: pointer;
   text-decoration: none;
   /* color: white; */
-    color: inherit;
+  color: inherit;
   font-size: 14px;
 }
 
