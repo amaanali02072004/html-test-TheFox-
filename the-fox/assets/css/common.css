@@ -326,7 +326,7 @@ img.search:hover input.searchField {
   }
 
   .headerWrapper .rhs ul li {
-    color: black !important;
+    color: black;
     padding: 10px 20px;
   }
 
