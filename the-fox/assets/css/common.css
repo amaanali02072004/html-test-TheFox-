@@ -326,11 +326,12 @@ img.search:hover input.searchField {
   }
 
   .headerWrapper .rhs ul li {
+    color: black !important;
     padding: 10px 20px;
   }
 
   .headerWrapper .rhs ul li a {
-    color: black;
+    color: inherit;
   }
 
   .headerWrapper .rhs ul li.active {
