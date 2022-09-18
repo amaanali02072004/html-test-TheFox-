@@ -304,10 +304,10 @@ if (document?.getElementById('header')) {
 				<div class="lhs">
 					<a href='${indexLink + 'index' + ext}' title="thefox" id="headerImg">
 						<img src="${headerLogo}" class="logo whiteLogo" alt="Logo">
-						<img src="./assets/images/fox-logo-black.png" class="logo blackLogo" alt="Logo">
+						<img src="https://the-fox.netlify.app/the-fox/assets/images/fox-logo-black.png" class="logo blackLogo" alt="Logo">
 					</a>
 					<a class="hamburger" id="hamburger" onclick="showMenu(this)">
-						<img src="./assets/images/hamburger.png" alt="hamburger">
+						<img src="https://the-fox.netlify.app/the-fox/assets/images/hamburger.png" alt="hamburger">
 					</a>
 				</div>
 				<div class="rhs" id="rhs">
