@@ -42,7 +42,7 @@ let Links = [
 	{
 		title: 'features',
 		href: 'features',
-		class: 'border-cyan',
+		color: 'var(--cyan)',
 	},
 	{
 		// title: 'contact',
@@ -312,7 +312,6 @@ if (document?.getElementById('header')) {
 				</div>
 				<div class="rhs" id="rhs">
 					<ul id="headerLinks">
-						
 					</ul>
 					${
 						searchDisplay === false
@@ -321,7 +320,9 @@ if (document?.getElementById('header')) {
 										src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
 										class="search"
 										alt="search"
-									/>`
+									/>
+									<input class="searchField" type="text" placeholder="search.."/>
+					`
 					}
 				</div>
 			</div>
@@ -488,27 +489,29 @@ let common = ''
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
 	Links[i].title === 'index' && (Links[i].title = 'home')
+
 	if (Links[i].title === 'home' && Links[i].class === 'active') {
 		document?.getElementById('headerImg')?.removeAttribute('href')
 		document?.getElementById('footerImg')?.removeAttribute('href')
 	}
 
-	Links[i].title === 'features' &&
-		((Links[i].title = 'features !'),
-		// (Links[i].style = 'color:var(--cyan);font-weight:900;'))
-		(Links[i].style = 'font-weight:900;'))
+	if (Links[i].title === 'features') {
+		Links[i].title = 'features !'
+		Links[i].style = 'font-weight:900;'
+	}
 
 	Links[i].class === 'active' && (Links[i].disabled = 'true')
-	let uppercase = []
-	uppercase[i] =
+
+	Links[i].uppercase =
 		Links[i]?.title?.charAt(0)?.toUpperCase() + Links[i]?.title?.slice(1)
 
 	Links[i].title &&
 		(common += `<li ${
 			Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''
-		}>
+		}
+		${Links[i]?.color?.length > 0 ? `style='color:${Links[i]?.color};'` : ''}>
       <a
-        title='${uppercase[i]}'
+        title='${Links[i].uppercase}'
         id='headerLinks${i}'
 				${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
         ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}

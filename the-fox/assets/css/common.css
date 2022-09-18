@@ -180,15 +180,13 @@ header {
   border-bottom-color: inherit;
 }
 
-li.border-cyan {
-  color: var(--cyan) !important;
-}
 
 .headerWrapper .rhs ul li.active {
   border: 1px white solid;
   margin: 0 -10px;
   padding: 5px 10px;
   border-radius: 5px;
+  border-color: inherit;
 }
 
 .headerWrapper .rhs ul li.active:hover {
@@ -213,19 +211,29 @@ li.border-cyan {
   border-radius: 50%;
 }
 
-input.searchField {
-  opacity: 0;
-}
-
-
 .headerWrapper .rhs img:hover {
   border: 1px white solid;
   padding: 5px;
 }
 
-img.search:hover input.searchField {
+input.searchField {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  /* right: 70px; */
+  left: calc(100vw - 260px);
+  top: 86px;
+  border: 1px black solid;
+  text-transform: capitalize;
+  padding: 2px 5px;
+  border-radius: 3px;
+  transition: var(--transition)var(--transitionTime2);
+}
+
+.searchField:hover,
+.search:hover+.searchField {
+  visibility: visible;
   opacity: 1;
-  border: 1px red solid;
 }
 
 .hamburger {
@@ -337,12 +345,14 @@ img.search:hover input.searchField {
   .headerWrapper .rhs ul li.active {
     border-color: black;
     margin: 0 10px;
+    border-color: inherit;
   }
 
   .headerWrapper .rhs ul li:hover {
     border-bottom: 1px solid black;
     margin-left: 15px;
     padding: 10px 20px;
+    border-bottom-color: inherit;
   }
 }
 
