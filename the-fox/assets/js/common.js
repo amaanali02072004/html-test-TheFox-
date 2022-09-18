@@ -12,35 +12,42 @@ let Links = [
 	{
 		title: 'pages',
 		href: 'pages',
+		hidden: true,
 	},
 	{
 		title: 'portfolio',
 		href: 'portfolio',
+		hidden: true,
 	},
 	{
 		title: 'blog',
 		href: 'blog',
+		hidden: true,
 	},
 	{
 		title: 'shop',
 		href: 'shop',
+		hidden: true,
 	},
 	{
 		title: 'travel',
 		href: 'travel',
+		hidden: true,
 	},
 	{
 		title: 'shortcodes',
 		href: 'shortcodes',
+		hidden: true,
 	},
 	{
 		title: 'features',
 		href: 'features',
-		style: '',
+		class: 'border-cyan',
 	},
 	{
 		// title: 'contact',
 		href: `contact`,
+		hidden: true,
 	},
 ]
 
@@ -477,7 +484,6 @@ if (
 }
 
 let fUl
-disabled = []
 let common = ''
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
@@ -489,9 +495,10 @@ for (let i = 0; i < Links.length; i++) {
 
 	Links[i].title === 'features' &&
 		((Links[i].title = 'features !'),
-		(Links[i].style = 'color:var(--cyan);font-weight:900;'))
+		// (Links[i].style = 'color:var(--cyan);font-weight:900;'))
+		(Links[i].style = 'font-weight:900;'))
 
-	Links[i].class === 'active' && (disabled[i] = 'true')
+	Links[i].class === 'active' && (Links[i].disabled = 'true')
 	let uppercase = []
 	uppercase[i] =
 		Links[i]?.title?.charAt(0)?.toUpperCase() + Links[i]?.title?.slice(1)
@@ -506,7 +513,7 @@ for (let i = 0; i < Links.length; i++) {
 				${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
         ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
         ${
-					disabled[i] !== 'true'
+					Links[i].disabled !== 'true' /* || !Links[i].hidden */
 						? `href=${`${path + (Links[i].href || Links[i].title) + ext}`}`
 						: 'disabled'
 				}

@@ -30,6 +30,7 @@ body {
 [hidden] {
   display: none;
 }
+
 .script {
   position: fixed;
   display: flex;
@@ -175,6 +176,11 @@ header {
   margin: 0 -10px;
   padding: 5px 10px;
   opacity: .8;
+  border-bottom-color: inherit;
+  }
+  
+  li.border-cyan {
+    color: var(--cyan) !important;
 }
 
 .headerWrapper .rhs ul li.active {
@@ -192,7 +198,8 @@ header {
   text-transform: capitalize;
   cursor: pointer;
   text-decoration: none;
-  color: white;
+  /* color: white; */
+    color: inherit;
   font-size: 14px;
 }
 
@@ -528,6 +535,7 @@ footer {
 ul::-webkit-scrollbar {
   width: 2px;
 }
+
 ul::-webkit-scrollbar-track {
   background-color: #1a1c28;
 }
