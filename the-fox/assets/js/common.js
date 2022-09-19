@@ -345,7 +345,7 @@ if (document?.getElementById('header')) {
 let searchField
 
 if (
-	document?.getElementById('header')?.attributes?.hidden &&
+	!document?.getElementById('header')?.attributes?.hidden &&
 	searchDisplay === true
 ) {
 	searchField = document.getElementById('searchField')
