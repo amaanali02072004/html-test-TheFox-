@@ -375,7 +375,7 @@ function alertSubmit(input, button) {
 			event.key === 'Enter' && document.getElementById(button).click()
 		} else {
 			if (
-				document?.getElementById('header')?.attributes?.hidden &&
+				!document?.getElementById('header')?.attributes?.hidden &&
 				event.key === 'Enter'
 			) {
 				searchQuery()
