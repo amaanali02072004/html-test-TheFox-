@@ -342,9 +342,13 @@ if (document?.getElementById('header')) {
 // 	errorTag.style.display = 'flex'
 // 	errorTag.innerHTML = `<a>${msg}</a>`
 // }
+let searchField
 
-let searchField = document.getElementById('searchField')
-searchField.value = localStorage.getItem('search') || ''
+if (searchDisplay === true) {
+	searchField = document.getElementById('searchField')
+	searchField.value = localStorage.getItem('search') || ''
+}
+
 const onFocus = element => {
 	document.getElementById(element).style.visibility = 'visible'
 	document.getElementById(element).style.opacity = '1'
