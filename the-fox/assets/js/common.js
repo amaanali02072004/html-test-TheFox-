@@ -259,15 +259,15 @@ if (document?.body?.attributes?.page?.nodeValue) {
 
 if (document?.getElementById('head')) {
 	head = document?.getElementById('head')
+	head.innerHTML = ``
 	let title = fileName || error404
 	title = title?.charAt(0)?.toUpperCase() + title?.slice(1)
-	head.innerHTML = ``
 	head.innerHTML = `
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>The Fox | ${title}</title>
-	<link rel="icon" href="./assets/images/fox-icon.png">
+	<link rel="icon" href="https://the-fox.netlify.app/the-fox/assets/images/fox-icon.png">
 	<link rel="stylesheet" href="./assets/css/common.css" />
 	${
 		fileName !== error404
