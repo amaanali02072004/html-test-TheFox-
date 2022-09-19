@@ -157,14 +157,9 @@ let Name = document.getElementById('Name')
 let Email = document.getElementById('Email')
 let Message = document.getElementById('Message')
 
-function alertSubmit(input) {
-	input.addEventListener('keypress', event => {
-		event.key === 'Enter' && document.getElementById('Submit').click()
-	})
-}
-alertSubmit(Name)
-alertSubmit(Email)
-// alertSubmit(Message)
+alertSubmit(Name,'Submit')
+alertSubmit(Email,'Submit')
+// alertSubmit(Message,'Submit')
 
 // Name.addEventListener('keypress', (event) => {
 // 	event.key === 'Enter' && document.getElementById('Submit').click()

@@ -284,12 +284,12 @@ if (document?.getElementById('head')) {
 let disabled = []
 let indexLink = './'
 let header
+let searchDisplay = true
 let headerLogo =
 	'https://the-fox.netlify.app/the-fox/assets/images/fox-logo.png' ||
 	'./assets/images/fox-logo.png'
 if (document?.getElementById('header')) {
 	header = document?.getElementById('header')
-	let searchDisplay = true
 	if (
 		document?.getElementById('header')?.attributes?.search?.nodeValue?.length >
 		0
@@ -324,8 +324,9 @@ if (document?.getElementById('header')) {
 										src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
 										class="search"
 										alt="search"
+										onclick="searchQuery()"
 									/>
-									<input class="searchField" type="text" placeholder="search.."/>
+									<input class="searchField" id="searchField" onblur="onBlur('searchField')" onfocus="onFocus('searchField')" type="text" placeholder="search.."/>
 					`
 					}
 				</div>
@@ -341,6 +342,43 @@ if (document?.getElementById('header')) {
 // 	errorTag.style.display = 'flex'
 // 	errorTag.innerHTML = `<a>${msg}</a>`
 // }
+
+let searchField = document.getElementById('searchField')
+searchField.value = localStorage.getItem('search') || ''
+const onFocus = element => {
+	document.getElementById(element).style.visibility = 'visible'
+	document.getElementById(element).style.opacity = '1'
+}
+const onBlur = element => {
+	if (element.value === undefined || element.value.length == 0) {
+		document.getElementById(element).style = ''
+	}
+}
+
+const searchQuery = () => {
+	if (searchField?.value?.length > 0) {
+		localStorage.setItem('search', searchField.value)
+		window.location.href = `./blog${ext}?s=${localStorage.getItem('search')}`
+	}
+}
+
+function alertSubmit(input, button) {
+	input.addEventListener('keypress', event => {
+		if (button?.length > 0 || typeof button !== 'undefined') {
+			event.key === 'Enter' && document.getElementById(button).click()
+		} else {
+			console.log(
+				'Console ~ file: common.js ~ line 366 ~ alertSubmit ~ searchField?.value?.length',
+				searchField?.value?.length
+			)
+			if (event.key === 'Enter') {
+				searchQuery()
+			}
+		}
+	})
+}
+
+searchDisplay === true && alertSubmit(searchField)
 
 if (document?.getElementById('footer')) {
 	let footer = document?.getElementById('footer')
@@ -508,6 +546,7 @@ for (let i = 0; i < Links.length; i++) {
 	Links[i].class === 'active' && (Links[i].disabled = 'true')
 
 	Links[i].uppercase =
+		Links[i].tooltip ||
 		Links[i]?.title?.charAt(0)?.toUpperCase() + Links[i]?.title?.slice(1)
 
 	Links[i].title &&
