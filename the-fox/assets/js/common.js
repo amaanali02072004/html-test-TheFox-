@@ -344,7 +344,10 @@ if (document?.getElementById('header')) {
 // }
 let searchField
 
-if (searchDisplay === true) {
+if (
+	document?.getElementById('header')?.attributes?.hidden &&
+	searchDisplay === true
+) {
 	searchField = document.getElementById('searchField')
 	searchField.value = localStorage.getItem('search') || ''
 }
@@ -371,18 +374,17 @@ function alertSubmit(input, button) {
 		if (button?.length > 0 || typeof button !== 'undefined') {
 			event.key === 'Enter' && document.getElementById(button).click()
 		} else {
-			console.log(
-				'Console ~ file: common.js ~ line 366 ~ alertSubmit ~ searchField?.value?.length',
-				searchField?.value?.length
-			)
-			if (event.key === 'Enter') {
+			if (
+				document?.getElementById('header')?.attributes?.hidden &&
+				event.key === 'Enter'
+			) {
 				searchQuery()
 			}
 		}
 	})
 }
-
 searchDisplay === true && alertSubmit(searchField)
+
 
 if (document?.getElementById('footer')) {
 	let footer = document?.getElementById('footer')
