@@ -275,6 +275,8 @@ if (document?.getElementById('head')) {
 			: ``
 	}
 `
+} else {
+	document.head.innerHTML += `<link rel="stylesheet" href="https://the-fox.netlify.app/the-fox/assets/css/common.css" />`
 }
 
 let disabled = []
