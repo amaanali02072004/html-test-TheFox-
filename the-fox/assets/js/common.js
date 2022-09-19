@@ -383,7 +383,12 @@ function alertSubmit(input, button) {
 		}
 	})
 }
-searchDisplay === true && alertSubmit(searchField)
+if (
+	!document?.getElementById('header')?.attributes?.hidden &&
+	searchDisplay === true
+) {
+	alertSubmit(searchField)
+}
 
 
 if (document?.getElementById('footer')) {
