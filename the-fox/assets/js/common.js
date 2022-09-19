@@ -493,6 +493,7 @@ let common = ''
 for (let i = 0; i < Links.length; i++) {
 	Links[i].title === fileName && (Links[i].class = 'active')
 	Links[i].title === 'index' && (Links[i].title = 'home')
+	Links[i].title === 'problems' && (Links[i].title = 'home')
 
 	if (Links[i].title === 'home' && Links[i].class === 'active') {
 		document?.getElementById('headerImg')?.removeAttribute('href')
