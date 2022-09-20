@@ -32,16 +32,12 @@
 		<footer id="footer"></footer>
 		<script src="./assets/js/common.js"></script>
 		<script>
-			let queryString = window.location.href.split('?s=')
-
-			console.log(
-				'Console ~ file: blog.html ~ line 39 ~ queryString',
-				queryString
-			)
-			if (queryString.length > 1) {
-				document.getElementById(
-					'searchResult'
-				).innerHTML = `No search results found for '${localStorage.getItem('search')}'`
+			let searchResult = document.getElementById('searchResult')
+			let trimSearch = queryString[0].replace(/%20/g, ' ')
+			// console.log('Console ~ file: blog.html ~ line 39 ~ queryString', trimSearch)
+			if (queryString.length > 0) {
+				// searchResult.innerHTML = `No search results found for '${localStorage.getItem('search')}'`
+				searchResult.innerHTML = `No search results found for '${trimSearch}'`
 			}
 		</script>
 	</body>

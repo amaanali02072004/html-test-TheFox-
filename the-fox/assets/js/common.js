@@ -1,8 +1,13 @@
 const javascript = 'javascript:;'
-let url = window.location.pathname
-// localStorage.setItem('prepros',true)
 let ext = '.html'
-url[1] === 'C' || localStorage.getItem('prepros') ? (ext = '.html') : (ext = '')
+let queryString = window.location?.href?.split('?s=')
+let url = queryString[0].split('/the-fox/')
+queryString.shift()
+url[0] === 'http://localhost:8848' ? (ext = '.html') : (ext = '')
+// let url = window.location.pathname
+// localStorage.setItem('prepros',true)
+// url[1] === 'C' || localStorage.getItem('prepros') ? (ext = '.html') : (ext = '')
+
 let Links = [
 	{
 		title: 'index',
@@ -349,7 +354,7 @@ if (
 	searchDisplay === true
 ) {
 	searchField = document.getElementById('searchField')
-	searchField.value = localStorage.getItem('search') || ''
+	// searchField.value = localStorage.getItem('search') || ''
 }
 
 const onFocus = element => {
