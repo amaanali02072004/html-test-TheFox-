@@ -292,7 +292,7 @@ if (document?.getElementById('head')) {
 	document.head.innerHTML += `
 	<link rel="icon" href="https://the-fox.netlify.app/the-fox/assets/images/fox-icon.png">
 	${
-		cssFlag
+		cssFlag === 'true'
 			? '<link rel="stylesheet" href="https://the-fox.netlify.app/the-fox/assets/css/common.css" />'
 			: ''
 	}`
