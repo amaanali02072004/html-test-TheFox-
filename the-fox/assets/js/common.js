@@ -174,19 +174,19 @@ const FS3Widget = [
 const FS3Useful = [
 	'Useful Links',
 	{
-		title: 'Subject Table',
-		href: 'https://table-data-base.netlify.app/public/',
-		page: 'table',
-	},
-	{
 		title: 'TheFox Site',
 		href: 'https://the-fox.netlify.app/',
 		page: 'index',
 	},
 	{
-		title: 'Mathematic Problems',
-		href: 'https://mathematic-problems.netlify.app/',
-		page: 'problems',
+		title: 'Baker',
+		href: 'https://tailwindcss-poc.netlify.app/',
+		page: 'tailwindcss',
+	},
+	{
+		title: 'Subject Table',
+		href: 'https://table-data-base.netlify.app/public/',
+		page: 'table',
 	},
 	{
 		title: 'Expenses List (React)',
@@ -198,6 +198,12 @@ const FS3Useful = [
 		href: 'https://react-user-demo.netlify.app/',
 		page: 'user',
 	},
+	{
+		title: 'Mathematic Problems',
+		href: 'https://mathematic-problems.netlify.app/',
+		page: 'problems',
+	},
+
 	// {
 	// 	title: 'Web Design Resources',
 	// 	href: javascript,
