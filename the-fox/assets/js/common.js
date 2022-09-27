@@ -251,6 +251,7 @@ const FS4 = [
 let fileName
 const path = './'
 let head
+let cssFlag = 'true'
 let error404
 let errorTag = document?.getElementById('errorTag')
 if (document?.body?.attributes?.page?.nodeValue) {
@@ -269,6 +270,7 @@ if (document?.body?.attributes?.page?.nodeValue) {
 }
 
 if (document?.getElementById('head')) {
+	cssFlag = document?.body?.attributes?.cssFlag?.nodeValue || 'true'
 	head = document?.getElementById('head')
 	head.innerHTML = ``
 	let title = fileName || error404
@@ -289,7 +291,11 @@ if (document?.getElementById('head')) {
 } else {
 	document.head.innerHTML += `
 	<link rel="icon" href="https://the-fox.netlify.app/the-fox/assets/images/fox-icon.png">
-	<link rel="stylesheet" href="https://the-fox.netlify.app/the-fox/assets/css/common.css" />`
+	${
+		cssFlag
+			? '<link rel="stylesheet" href="https://the-fox.netlify.app/the-fox/assets/css/common.css" />'
+			: ''
+	}`
 }
 
 let disabled = []
@@ -381,7 +387,7 @@ const searchQuery = () => {
 }
 
 function alertSubmit(input, button) {
-	input.addEventListener('keypress', event => {
+	input?.addEventListener('keypress', event => {
 		if (button?.length > 0 || typeof button !== 'undefined') {
 			event.key === 'Enter' && document.getElementById(button).click()
 		} else {
@@ -400,7 +406,6 @@ if (
 ) {
 	alertSubmit(searchField)
 }
-
 
 if (document?.getElementById('footer')) {
 	let footer = document?.getElementById('footer')
