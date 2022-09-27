@@ -753,6 +753,7 @@ if (
 	footerUsefulLinksTitle.innerHTML = FS3Useful[0]
 	temp = ''
 	for (let i = 1; i < FS3Useful.length; i++) {
+		let blank = '_blank'
 		if (
 			fileName === 'pages' ||
 			'portfolio' ||
@@ -762,7 +763,9 @@ if (
 			'shortcodes' ||
 			'features'
 		) {
-			FS3Useful[i].page === 'index' ? (FS3Useful[i].href = './') : null
+			FS3Useful[i].page === 'index'
+				? ((FS3Useful[i].href = './'), (blank = ''))
+				: null
 		}
 		temp += `
 					${
@@ -771,7 +774,7 @@ if (
 									<a
 										title='${FS3Useful[i].title}'
 										href=${FS3Useful[i].href}
-										target="_blank"
+										target="${blank}"
 									>
 										${FS3Useful[i].title}
 									</a>
