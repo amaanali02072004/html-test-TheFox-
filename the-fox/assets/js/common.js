@@ -269,8 +269,10 @@ if (document?.body?.attributes?.page?.nodeValue) {
 	}
 }
 
+cssFlag =
+	document?.getElementById('footer')?.attributes?.cssFlag?.nodeValue || 'true'
+console.log('Console ~ file: common.js ~ line 274 ~ cssFlag', cssFlag)
 if (document?.getElementById('head')) {
-	cssFlag = document?.body?.attributes?.cssFlag?.nodeValue || 'true'
 	head = document?.getElementById('head')
 	head.innerHTML = ``
 	let title = fileName || error404
@@ -289,6 +291,7 @@ if (document?.getElementById('head')) {
 	}
 `
 } else {
+	console.log('object')
 	document.head.innerHTML += `
 	<link rel="icon" href="https://the-fox.netlify.app/the-fox/assets/images/fox-icon.png">
 	${
