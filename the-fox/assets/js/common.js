@@ -753,18 +753,29 @@ if (
 	footerUsefulLinksTitle.innerHTML = FS3Useful[0]
 	temp = ''
 	for (let i = 1; i < FS3Useful.length; i++) {
+		if (
+			fileName === 'pages' ||
+			'portfolio' ||
+			'blog' ||
+			'shop' ||
+			'travel' ||
+			'shortcodes' ||
+			'features'
+		) {
+			FS3Useful[i].title === 'index' ? (FS3Useful[i].href = './') : null
+		}
 		temp += `
 					${
 						fileName !== FS3Useful[i].page
 							? `<li>
-						<a
-							title='${FS3Useful[i].title}'
-							href=${FS3Useful[i].href}
-							target="_blank"
-						>
-						${FS3Useful[i].title}
-						</a>
-					</li>`
+									<a
+										title='${FS3Useful[i].title}'
+										href=${FS3Useful[i].href}
+										target="_blank"
+									>
+										${FS3Useful[i].title}
+									</a>
+								</li>`
 							: ''
 					}
 					`
