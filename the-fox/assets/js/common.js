@@ -762,7 +762,7 @@ if (
 			'shortcodes' ||
 			'features'
 		) {
-			FS3Useful[i].title === 'index' ? (FS3Useful[i].href = './') : null
+			FS3Useful[i].page === 'index' ? (FS3Useful[i].href = './') : null
 		}
 		temp += `
 					${
