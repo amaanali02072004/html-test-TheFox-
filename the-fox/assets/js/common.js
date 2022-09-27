@@ -179,7 +179,7 @@ const FS3Useful = [
 		page: 'index',
 	},
 	{
-		title: 'Baker',
+		title: 'Baker Site',
 		href: 'https://tailwindcss-poc.netlify.app/',
 		page: 'tailwindcss',
 	},

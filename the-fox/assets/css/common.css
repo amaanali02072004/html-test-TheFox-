@@ -304,6 +304,7 @@ input.searchField {
   }
 
   .headerWrapper .rhs {
+    position: relative;
     transition: var(--transition) var(--transitionTime2);
     opacity: 0;
     max-height: 300px;
@@ -355,6 +356,10 @@ input.searchField {
     padding: 10px 20px;
     border-bottom-color: inherit;
   }
+input.searchField {
+  left: calc(100vw - 280px);
+  top: 23px;
+}
 }
 
 footer {
