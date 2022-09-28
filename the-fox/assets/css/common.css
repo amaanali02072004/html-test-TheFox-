@@ -486,7 +486,7 @@ footer {
 }
 
 .primaryFooterInnerWrapper .section2 .blogLhs img {
-  width: 50px;
+  min-width: 50px;
 }
 
 .primaryFooterInnerWrapper .section2 .blogRhs {
