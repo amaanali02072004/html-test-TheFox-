@@ -322,7 +322,7 @@ if (document?.getElementById('header')) {
 		header.innerHTML = ``
 	} else {
 		header.innerHTML = `
-		<div class="container">
+		<div class="fox-container">
 			<div class="headerWrapper">
 				<div class="lhs">
 					<a href='${indexLink + 'index' + ext}' title="thefox" id="headerImg">
@@ -417,7 +417,7 @@ if (document?.getElementById('footer')) {
 	footer.setAttribute('onclick', 'hideMenu(this)')
 	footer.innerHTML = `
 		<div class="primaryFooterOuterWrapper">
-			<div class="container">
+			<div class="fox-container">
 				<div class="primaryFooterInnerWrapper">
 					<div>
 						<div class="footerSection section1">
@@ -465,7 +465,7 @@ if (document?.getElementById('footer')) {
 			</div>
 
 			<div class="secondaryFooterOuterWrapper">
-				<div class="container">
+				<div class="fox-container">
 					<div class="secondaryFooterInnerWrapper">
 						<div class="lhs">
 							<p>Copyright
@@ -535,6 +535,14 @@ if (
 		document?.getElementById('header')?.attributes?.headerLinksProps?.nodeValue
 	)
 	if (headerProps.length > 0) {
+		// for (let i = 0; i < headerProps.length; i++) {
+		// 	temp = headerProps[i].title
+		// 	console.log('Console ~ file: common.js ~ line 540 ~ headerProps', temp)
+		// 	temp.replace(/-/g, ' ')
+		// 	console.log('Console ~ file: common.js ~ line 540 ~ headerProps', temp)
+		// 	headerProps[i].title = temp
+		// }
+
 		if (
 			document?.getElementById('header')?.attributes?.concat?.value === 'true'
 		) {

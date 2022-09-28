@@ -75,7 +75,7 @@ code .tag {
   color: red;
 }
 
-.container {
+.fox-container {
   margin: 0 auto;
   /* max-width: 860px; */
   max-width: 1150px;
@@ -102,7 +102,7 @@ code .tag {
 }
 
 @media only screen and (max-width: 900px) {
-  .container {
+  .fox-container {
     max-width: 800px;
   }
 
@@ -114,7 +114,7 @@ code .tag {
 }
 
 @media only screen and (max-width: 800px) {
-  .container {
+  .fox-container {
     max-width: 650px;
   }
 }
@@ -555,7 +555,8 @@ ul::-webkit-scrollbar {
 }
 
 ul::-webkit-scrollbar-track {
-  background-color: #1a1c28;
+  /* background-color: #1a1c28; */
+    background-color: inherit;
 }
 
 .primaryFooterInnerWrapper .section3 .footerLinks ul li {
