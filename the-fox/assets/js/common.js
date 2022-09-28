@@ -760,19 +760,19 @@ if (
 	temp = ''
 	for (let i = 1; i < FS3Useful.length; i++) {
 		let blank = '_blank'
-		if (
-			fileName === 'pages' ||
-			'portfolio' ||
-			'blog' ||
-			'shop' ||
-			'travel' ||
-			'shortcodes' ||
-			'features'
-		) {
-			FS3Useful[i].page === 'index'
-				? ((FS3Useful[i].href = './'), (blank = ''))
-				: null
-		}
+		// if (
+		// 	fileName === 'pages' ||
+		// 	'portfolio' ||
+		// 	'blog' ||
+		// 	'shop' ||
+		// 	'travel' ||
+		// 	'shortcodes' ||
+		// 	'features'
+		// ) {
+		// 	FS3Useful[i].page === 'index'
+		// 		? ((FS3Useful[i].href = './'), (blank = ''))
+		// 		: null
+		// }
 		temp += `
 					${
 						fileName !== FS3Useful[i].page
