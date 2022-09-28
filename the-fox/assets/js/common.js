@@ -535,13 +535,10 @@ if (
 		document?.getElementById('header')?.attributes?.headerLinksProps?.nodeValue
 	)
 	if (headerProps.length > 0) {
-		// for (let i = 0; i < headerProps.length; i++) {
-		// 	temp = headerProps[i].title
-		// 	console.log('Console ~ file: common.js ~ line 540 ~ headerProps', temp)
-		// 	temp.replace(/-/g, ' ')
-		// 	console.log('Console ~ file: common.js ~ line 540 ~ headerProps', temp)
-		// 	headerProps[i].title = temp
-		// }
+		for (let i = 0; i < headerProps.length; i++) {
+			let res = headerProps[i].title.replace(/-/g, ' ')
+			headerProps[i].title = res
+		}
 
 		if (
 			document?.getElementById('header')?.attributes?.concat?.value === 'true'
