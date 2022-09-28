@@ -291,7 +291,6 @@ if (document?.getElementById('head')) {
 	}
 `
 } else {
-	console.log('object')
 	document.head.innerHTML += `
 	<link rel="icon" href="https://the-fox.netlify.app/the-fox/assets/images/fox-icon.png">
 	${
