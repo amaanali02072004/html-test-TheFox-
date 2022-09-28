@@ -598,7 +598,9 @@ for (let i = 0; i < Links.length; i++) {
         ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
         ${
 					Links[i].disabled !== 'true' /* || !Links[i].hidden */
-						? `href=${`${path + (Links[i].href || Links[i].title) + ext}`}`
+						? `href=${`${
+								/* path +  */ (Links[i].href || Links[i].title) + ext
+						  }`}`
 						: 'disabled'
 				}
         onclick='activeLink(this)'
