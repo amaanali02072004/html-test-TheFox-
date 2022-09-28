@@ -536,7 +536,7 @@ if (
 	)
 	if (headerProps.length > 0) {
 		for (let i = 0; i < headerProps.length; i++) {
-			let res = headerProps[i].title.replace(/-/g, ' ')
+			let res = headerProps[i]?.title?.replace(/-/g, ' ')
 			headerProps[i].title = res
 		}
 
