@@ -175,7 +175,7 @@ const FS3Useful = [
 	'Useful Links',
 	{
 		title: 'TheFox Site',
-		href: 'https://the-fox.netlify.app/',
+		href: 'https://the-fox.netlify.app/the-fox',
 		page: 'index',
 	},
 	{
@@ -536,7 +536,8 @@ if (
 	)
 	if (headerProps.length > 0) {
 		for (let i = 0; i < headerProps.length; i++) {
-			let res = headerProps[i]?.title?.replace(/-/g, ' ')
+			// let res = headerProps[i]?.title?.replace(/-/g, ' ')
+			let res = headerProps[i]?.title?.replace(/_/g, ' ')
 			headerProps[i].title = res
 		}
 
