@@ -848,6 +848,7 @@
     background-image: url(../images/formBg.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center top;
     padding: 70px 0;
 }
@@ -1008,6 +1009,7 @@
     position: absolute;
     background-image: url(../images/man-using-laptop.png);
     /* background-color: purple; */
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
