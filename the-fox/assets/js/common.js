@@ -585,9 +585,8 @@ for (let i = 0; i < Links.length; i++) {
 		Links[i]?.title?.charAt(0)?.toUpperCase() + Links[i]?.title?.slice(1)
 
 	Links[i].title &&
-		(common += `<li ${
-			Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''
-		}
+		(common += `<li id='headerLinksLi${i}'
+${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
 		${Links[i]?.color?.length > 0 ? `style='color:${Links[i]?.color};'` : ''}>
       <a
         title='${Links[i].uppercase}'
