@@ -356,10 +356,11 @@ input.searchField {
     padding: 10px 20px;
     border-bottom-color: inherit;
   }
-input.searchField {
-  left: calc(100vw - 280px);
-  top: 23px;
-}
+
+                                input.searchField {
+                                  left: calc(100vw - 280px);
+                                  top: 23px;
+                                }
 }
 
 footer {
@@ -420,6 +421,34 @@ footer {
   padding-bottom: 10px;
 }
 
+.primaryFooterInnerWrapper .section1 .lhs p {
+  max-height: calc((3 * 22px) + 5px);
+  overflow: hidden;
+  transition: ease-in-out .5s;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.primaryFooterInnerWrapper .section1 .lhs p::after {
+  content: "...";
+  position: absolute;
+  max-height: fit-content;
+  width: 100%;
+  bottom: -10px;
+  font-size: 20px;
+  left: 0;
+}
+
+.primaryFooterInnerWrapper .section1 .lhs.active p {
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.primaryFooterInnerWrapper .section1 .lhs.active p::after {
+  content: "...";
+  position: absolute;
+  max-height: 0px;
+}
 .primaryFooterInnerWrapper .section1 .rhs {
   display: flex;
   padding-top: 20px;
@@ -556,7 +585,7 @@ ul::-webkit-scrollbar {
 
 ul::-webkit-scrollbar-track {
   /* background-color: #1a1c28; */
-    background-color: inherit;
+  background-color: inherit;
 }
 
 .primaryFooterInnerWrapper .section3 .footerLinks ul li {

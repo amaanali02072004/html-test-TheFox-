@@ -703,7 +703,7 @@ if (
 			</p>
 			<ul>
 				<li>
-					<a href=${FS1Lhs[2]}>
+					<a href=${FS1Lhs[2]} id="readMore">
 						${FS1Lhs[3]}
 					</a>
 				</li>
@@ -811,3 +811,6 @@ if (
 }
 // console.log(document?.body.getElementsByTagName('header')[0].innerHTML)
 // document.body.innerHTML += `<script src="./assets/js/${fileName}.js"></script>`
+document.getElementById('readMore').addEventListener('click', event => {
+	document.getElementById('fLhs').classList.toggle('active')
+})
