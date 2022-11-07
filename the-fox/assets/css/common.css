@@ -95,13 +95,15 @@ code .tag {
   opacity: 0;
 }
 
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
   background: #888;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+*/
 
 @media only screen and (max-width: 900px) {
   .fox-container {
