@@ -6,6 +6,7 @@
   --primary: #58d9ef;
   --primaryHover: #57a193;
   --primaryText: #1abe9c;
+  --secondaryText: #1ba186;
   --height: 50vh;
   --footerPrim: #1a1c28;
   --footerSec: #222534;
@@ -745,12 +746,12 @@ ul::-webkit-scrollbar-track {
 }
 
 .secondaryFooterInnerWrapper .rhs ul li.active {
-  color: #1ba186;
+  color: var(--secondaryText);
   border-bottom: 0px solid #61757100;
 }
 
 .secondaryFooterInnerWrapper .rhs ul li.active:hover {
-  border-bottom: 1px solid #57a193;
+  border-bottom: 1px solid var(--secondaryText);
 }
 
 .secondaryFooterInnerWrapper .rhs a {
