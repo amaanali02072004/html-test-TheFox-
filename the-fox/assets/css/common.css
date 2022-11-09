@@ -3,10 +3,11 @@
   --transitionTime1: .25s;
   --transitionTime2: .5s;
   --transitionTime3: 1s;
-  --cyan: #58d9ef;
+  --primary: #58d9ef;
+  --primaryHover: #57a193;
   --height: 50vh;
   --footerPrim: #1a1c28;
-    --footerSec: #222534;
+  --footerSec: #222534;
 }
 
 ::after,
@@ -361,10 +362,10 @@ input.searchField {
     border-bottom-color: inherit;
   }
 
-    input.searchField {
-      left: calc(100vw - 280px);
-      top: 23px;
-    }
+  input.searchField {
+    left: calc(100vw - 280px);
+    top: 23px;
+  }
 }
 
 footer {
@@ -739,7 +740,7 @@ ul::-webkit-scrollbar-track {
 
 
 .secondaryFooterInnerWrapper .rhs ul li:hover {
-  color: #57a193;
+  color: var(--primaryHover);
 }
 
 .secondaryFooterInnerWrapper .rhs ul li.active {
@@ -822,7 +823,11 @@ ul::-webkit-scrollbar-track {
 }
 
 .cyan {
-  background-color: var(--cyan);
+  background-color: var(--primary);
+}
+
+.cyan:hover {
+  background-color: var(--primaryHover);
 }
 
 .white {
