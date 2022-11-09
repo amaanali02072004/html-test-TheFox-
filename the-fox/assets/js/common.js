@@ -47,7 +47,7 @@ let Links = [
 	{
 		title: 'features',
 		href: 'features',
-		color: 'var(--cyan)',
+		color: 'var(--primary)',
 	},
 	{
 		// title: 'contact',
