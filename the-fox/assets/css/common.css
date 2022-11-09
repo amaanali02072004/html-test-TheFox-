@@ -5,6 +5,7 @@
   --transitionTime3: 1s;
   --primary: #58d9ef;
   --primaryHover: #57a193;
+  --primaryText: #1abe9c;
   --height: 50vh;
   --footerPrim: #1a1c28;
   --footerSec: #222534;
@@ -409,7 +410,7 @@ footer {
 
 .primaryFooterInnerWrapper .section1 .lhs ul li::marker,
 .primaryFooterInnerWrapper .section1 .lhs ul li a {
-  color: #1abe9c;
+  color: var(--primaryText);
   text-decoration: none;
   transition: var(--transition) var(--transitionTime2);
 }
@@ -608,7 +609,7 @@ ul::-webkit-scrollbar-track {
 }
 
 .primaryFooterInnerWrapper .section3 .footerLinks ul li::marker {
-  color: #1abe9c;
+  color: var(--primaryText);
   transition: var(--transition) var(--transitionTime2);
 }
 
@@ -624,7 +625,7 @@ ul::-webkit-scrollbar-track {
 }
 
 .primaryFooterInnerWrapper .section3 .footerLinks ul li:hover {
-  color: #1abe9c;
+  color: var(--primaryText);
 }
 
 .primaryFooterInnerWrapper .section4 h5 {
@@ -714,13 +715,13 @@ ul::-webkit-scrollbar-track {
 }
 
 .secondaryFooterInnerWrapper .lhs a {
-  color: #1abe9c;
+  color: var(--primaryText);
 }
 
 .secondaryFooterInnerWrapper .lhs a:hover {
-  color: #1abe9c;
+  color: var(--primaryText);
   padding-bottom: 2px;
-  border-bottom: 1px solid #1abe9c;
+  border-bottom: 1px solid var(--primaryText);
 }
 
 .secondaryFooterInnerWrapper .rhs ul {
