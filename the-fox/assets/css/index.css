@@ -489,11 +489,9 @@
     width: 83%;
 }
 
-.bargraphsWrapper .bargraph:hover>.g2o,
-.bargraphsWrapper .bargraph:hover>.o2y,
-.bargraphsWrapper .bargraph:hover>.b2g,
-.bargraphsWrapper .bargraph:hover>.p2b {
+.bargraphsWrapper .bargraph:hover>.graph{
     width: 100%;
+    /* background-image: linear-gradient(90deg); */
 }
 
 .servicesInnerWrapper .rhs {

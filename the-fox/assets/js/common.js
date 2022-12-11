@@ -248,6 +248,17 @@ const FS4 = [
 		loc: 'vietnam',
 	},
 ]
+
+const scrollFunc = () =>{
+	if (window.scrollY > 700) {
+		header.classList.add('backgroundColor')
+	} else {
+		header.classList.remove('backgroundColor')
+	}
+}
+
+window.addEventListener("scroll", scrollFunc);
+
 let fileName
 const path = './'
 let head
@@ -426,7 +437,7 @@ if (document?.getElementById('footer')) {
 							</a>
 							<div class="lhs" id="fLhs">
 								<ul>
-									
+
 								</ul>
 							</div>
 							<div class="rhs" id="fRhs">
@@ -492,7 +503,8 @@ if (document?.getElementById('footer')) {
 // }
 
 let menuList = document?.getElementById('rhs')
-
+let scrollable = true
+// scrollable = false
 const showMenu = () => {
 	for (let i = 0; i < menuList.classList.length; i++) {
 		if (menuList.classList[i] === 'rhsActive') {
@@ -502,11 +514,13 @@ const showMenu = () => {
 		}
 	}
 	menuList.classList.toggle('rhsActive')
+	!scrollable ? document.body.style.overflow = 'hidden' :null
 }
 
 const hideMenu = () => {
 	menuList?.classList?.remove('rhsActive')
 	localStorage.setItem('drawer', false)
+	!scrollable ? document.body.style.overflow = 'unset' :null
 }
 
 if (document?.body.getElementsByTagName('section')) {
@@ -807,6 +821,7 @@ if (
 	temp = ''
 	let date = document?.getElementById('__date')
 	let currentDate = new Date().getFullYear()
+	currentDate = '2022'
 	date.innerHTML = ` ${currentDate} `
 }
 // console.log(document?.body.getElementsByTagName('header')[0].innerHTML)
