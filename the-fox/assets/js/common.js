@@ -174,6 +174,11 @@ const FS3Widget = [
 const FS3Useful = [
 	'Useful Links',
 	{
+		title: 'Resume',
+		href: 'https://the-fox-resume.netlify.app/',
+		page: 'resume',
+	},
+	{
 		title: 'TheFox Site',
 		href: 'https://the-fox.netlify.app/the-fox',
 		page: 'index',
@@ -249,11 +254,18 @@ const FS4 = [
 	},
 ]
 
-const scrollFunc = () =>{
-	if (window.scrollY > 700) {
+const scrollFunc = () => {
+	let maxScroll = 5468
+	console.log(window.scrollY)
+	if (window.scrollY > 680  ) {
 		header.classList.add('backgroundColor')
 	} else {
 		header.classList.remove('backgroundColor')
+	}
+	if ( window.scrollY > 5400 ) {
+		header.setAttribute('style', `transform: translate(0px, ${(maxScroll - window.scrollY) - 100}%);`)
+	} else {
+		header.removeAttribute('style')
 	}
 }
 

@@ -127,13 +127,11 @@ code .tag {
 }
 
 header {
-  /* position: absolute; */
   position: fixed;
-  /* background: #0000008c; */
   top: 0;
   width: 100%;
   z-index: 3;
-  transition: ease-in-out .5s;
+  transition: ease-in-out .25s;
 }
 
 header.backgroundColor{
@@ -384,13 +382,18 @@ footer {
   width: 100%;
 }
 
+.primaryFooterOuterWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .primaryFooterInnerWrapper {
   padding: 65px 0;
   display: flex;
   width: 100%;
 }
-
 
 .primaryFooterInnerWrapper .footerSection {
   line-height: 1.7;

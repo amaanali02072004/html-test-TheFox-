@@ -461,37 +461,33 @@
     color: white;
     text-transform: uppercase;
     font-size: 13px;
+    border-radius: inherit;
     font-weight: 700;
     transition: cubic-bezier(0, 0, 0.66, 1.38) var(--transitionTime3);
 }
 
 .bargraphsWrapper .bargraph .g2o {
-    background: rgb(165, 234, 115);
     background: linear-gradient(90deg, rgba(165, 234, 115, 1) 0%, rgba(249, 203, 56, 1) 100%);
     width: 85%;
 }
 
 .bargraphsWrapper .bargraph .o2y {
-    background: rgb(240, 148, 101);
     background: linear-gradient(90deg, rgba(240, 148, 101, 1) 0%, rgba(254, 211, 10, 1) 100%);
     width: 78%;
 }
 
 .bargraphsWrapper .bargraph .b2g {
-    background: rgb(51, 231, 219);
     background: linear-gradient(90deg, rgba(51, 231, 219, 1) 0%, rgba(176, 254, 132, 1) 100%);
     width: 75%;
 }
 
 .bargraphsWrapper .bargraph .p2b {
-    background: rgb(168, 134, 229);
     background: linear-gradient(90deg, rgba(168, 134, 229, 1) 0%, rgba(101, 232, 192, 1) 100%);
     width: 83%;
 }
 
 .bargraphsWrapper .bargraph:hover>.graph{
-    width: 100%;
-    /* background-image: linear-gradient(90deg); */
+    /* width: 100%; */
 }
 
 .servicesInnerWrapper .rhs {
