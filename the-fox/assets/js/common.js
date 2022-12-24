@@ -180,32 +180,32 @@ const FS3Useful = [
 	},
 	{
 		title: 'TheFox Site',
-		href: 'https://the-fox.netlify.app/the-fox',
+		href: 'https://bit.ly/3FTeHil',
 		page: 'index',
 	},
 	{
 		title: 'Baker Site',
-		href: 'https://tailwindcss-poc.netlify.app/',
+		href: 'https://bit.ly/3PTcb05',
 		page: 'tailwindcss',
 	},
 	{
 		title: 'Subject Table',
-		href: 'https://table-data-base.netlify.app/public/',
+		href: 'https://bit.ly/3WBD9LQ',
 		page: 'table',
 	},
 	{
 		title: 'Expenses List (React)',
-		href: 'https://react-expenses-demo.netlify.app/',
+		href: 'https://bit.ly/3jwUtDK',
 		page: 'expense',
 	},
 	{
 		title: 'User List (React)',
-		href: 'https://react-user-demo.netlify.app/',
+		href: 'https://bit.ly/3hQKb0E',
 		page: 'user',
 	},
 	{
 		title: 'Mathematic Problems',
-		href: 'https://mathematic-problems.netlify.app/',
+		href: 'https://bit.ly/3I4jmkb',
 		page: 'problems',
 	},
 
