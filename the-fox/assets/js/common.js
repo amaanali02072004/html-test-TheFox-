@@ -256,7 +256,7 @@ const FS4 = [
 
 const scrollFunc = () => {
 	let maxScroll = 5468
-	console.log(window.scrollY)
+	// console.log(window.scrollY)
 	if (window.scrollY > 680  ) {
 		header.classList.add('backgroundColor')
 	} else {
