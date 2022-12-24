@@ -16,7 +16,7 @@
 ::before,
 * {
   margin: 0;
-  list-style: none;
+  /* list-style: none; */
   padding: 0;
   /* border-style: none; */
   box-sizing: border-box;
@@ -134,7 +134,7 @@ header {
   transition: ease-in-out .25s;
 }
 
-header.backgroundColor{
+header.backgroundColor {
   background: #0000008c;
 }
 
@@ -175,6 +175,7 @@ header.backgroundColor{
   align-items: baseline;
   width: 90%;
   margin-right: 10px;
+  list-style: none;
 }
 
 
@@ -574,6 +575,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 20px;
+  list-style: none;
 }
 
 .primaryFooterInnerWrapper .section3 .footerWidgets ul li {
@@ -740,6 +742,7 @@ ul::-webkit-scrollbar-track {
 }
 
 .secondaryFooterInnerWrapper .rhs ul {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
