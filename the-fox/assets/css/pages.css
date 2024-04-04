@@ -1,1 +1,146 @@
+:root {
+  --height: 200px;
+  --width: 20px;
+  --bg: white;
+  --pos: absolute;
+}
 
+.alphabet-wrapper {
+  position: relative;
+  min-height: 200px;
+  width: 970px;
+  margin: 0 auto;
+}
+
+.A {
+  position: var(--pos);
+  top: 0;
+  left: 40px;
+  border-radius: 20px 0px 0px 0px;
+  height: var(--height);
+  width: var(--width);
+  background-color: var(--bg);
+  transform: rotate(15deg)
+}
+
+.A:after {
+  content: '';
+  background-color: var(--bg);
+  position: var(--pos);
+  height: var(--width);
+  width: 90px;
+  transform: rotate(-15deg);
+  top: 60%;
+  left: 10%;
+}
+
+.A:before {
+  content: '';
+  background-color: var(--bg);
+  position: var(--pos);
+  right: -60px;
+  border-radius: 0 20px 0px 0px;
+  top: -15px;
+  width: var(--width);
+  height: var(--height);
+  transform: rotate(-30deg);
+}
+
+.D {
+  position: var(--pos);
+  background: var(--bg);
+  height: var(--height);
+  width: calc(var(--height) - 50px);
+  left: 0;
+  top: 0;
+  border-radius: 0px 70px 50px 0px;
+}
+
+.D::before {
+  content: '';
+  background: red;
+  height: var(--height);
+  width: 100%;
+  left: 0;
+  transform: scale(.8);
+  top: 0;
+  position: var(--pos);
+  border-radius: 0px 70px 50px 0px;
+}
+
+.M {
+  position: var(--pos);
+  top: 0;
+  left: 0;
+  border-radius: 20px 0px 0px 0px;
+  height: var(--height);
+  width: var(--width);
+  background-color: var(--bg);
+}
+
+.M>div {
+  background: var(--bg);
+  position: var(--pos);
+  height: var(--height);
+  width: var(--width);
+  top: 0;
+  right: -170px;
+  border-radius: 0px 20px 0 0;
+}
+
+.M::after {
+  content: '';
+  position: var(--pos);
+  background: var(--bg);
+  height: 10%;
+  width: 170px;
+  top: 32%;
+  left: -140%;
+  transform: rotate(65deg);
+  border-radius: 20px 0px 20px 0px;
+}
+
+.M::before {
+  content: '';
+  position: var(--pos);
+  background: var(--bg);
+  height: 10%;
+  width: 170px;
+  border-radius: 0px 20px 0px 20px;
+  top: 32%;
+  left: 240%;
+  transform: rotate(-65deg);
+}
+
+.N {
+  position: var(--pos);
+  top: 0;
+  left: 0;
+  border-radius: 20px 0px 0px 0px;
+  height: var(--height);
+  width: var(--width);
+  background-color: var(--bg);
+}
+
+.N::after {
+  content: '';
+  position: var(--pos);
+  top: 0px;
+  left: 100px;
+  border-radius: 0px 0px 0px 10px;
+  height: var(--height);
+  width: var(--width);
+  background-color: var(--bg);
+}
+
+.N::before {
+  content: '';
+  background: var(--bg);
+  height: 225px;
+  width: var(--width);
+  left: 55px;
+  top: -12px;
+  position: var(--pos);
+  transform: rotate(-25deg);
+  border-radius: 0px 20px 0px 20px;
+}

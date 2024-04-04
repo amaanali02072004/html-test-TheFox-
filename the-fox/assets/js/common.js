@@ -175,7 +175,7 @@ const FS3Useful = [
 	'Useful Links',
 	{
 		title: 'Resume',
-		href: 'https://the-fox-resume.netlify.app/',
+		href: 'https://amaan-ali-resume.netlify.app/',
 		page: 'resume',
 	},
 	{
@@ -256,13 +256,12 @@ const FS4 = [
 
 const scrollFunc = () => {
 	let maxScroll = 5468
-	// console.log(window.scrollY)
-	if (window.scrollY > 680  ) {
+	if (window.scrollY > 680) {
 		header.classList.add('backgroundColor')
 	} else {
 		header.classList.remove('backgroundColor')
 	}
-	if ( window.scrollY > 5400 ) {
+	if (window.scrollY > 5400) {
 		header.setAttribute('style', `transform: translate(0px, ${(maxScroll - window.scrollY) - 100}%);`)
 	} else {
 		header.removeAttribute('style')
