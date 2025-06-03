@@ -7,6 +7,7 @@ url[0] === 'http://localhost:8848' ? (ext = '.html') : (ext = '')
 // let url = window.location.pathname
 // localStorage.setItem('prepros',true)
 // url[1] === 'C' || localStorage.getItem('prepros') ? (ext = '.html') : (ext = '')
+const gitUrl = 'https://github.com/amaanali02072004/'
 
 let Links = [
 	{
@@ -268,7 +269,7 @@ const scrollFunc = () => {
 	}
 }
 
-window.addEventListener("scroll", scrollFunc);
+window.addEventListener("scroll", scrollFunc)
 
 let fileName
 const path = './'
@@ -306,20 +307,18 @@ if (document?.getElementById('head')) {
 	<title>The Fox | ${title}</title>
 	<link rel="icon" href="./assets/images/fox-icon.png">
 	<link rel="stylesheet" href="./assets/css/common.css" />
-	${
-		fileName !== error404
+	${fileName !== error404
 			? `<link rel="stylesheet" href="./assets/css/${fileName}.css" />`
 			: ``
-	}
+		}
 `
 } else {
 	document.head.innerHTML += `
 	<link rel="icon" href="https://the-fox.netlify.app/the-fox/assets/images/fox-icon.png">
-	${
-		cssFlag === 'true'
+	${cssFlag === 'true'
 			? '<link rel="stylesheet" href="https://the-fox.netlify.app/the-fox/assets/css/common.css" />'
 			: ''
-	}`
+		}`
 }
 
 let disabled = []
@@ -358,10 +357,9 @@ if (document?.getElementById('header')) {
 				<div class="rhs" id="rhs">
 					<ul id="headerLinks">
 					</ul>
-					${
-						searchDisplay === false
-							? ''
-							: `<img
+					${searchDisplay === false
+				? ''
+				: `<img
 										src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/2048px-Search_Icon.svg.png"
 										class="search"
 										alt="search"
@@ -369,7 +367,7 @@ if (document?.getElementById('header')) {
 									/>
 									<input class="searchField" id="searchField" onblur="onBlur('searchField')" onfocus="onFocus('searchField')" type="text" placeholder="search.."/>
 					`
-					}
+			}
 				</div>
 			</div>
 		</div>
@@ -435,7 +433,7 @@ if (document?.getElementById('footer')) {
 	let footer = document?.getElementById('footer')
 	let repoLink =
 		footer?.attributes?.repoLink?.nodeValue ||
-		'https://github.com/Killer-Amaan-Ali/html-test'
+		`${gitUrl}html-test-TheFox-`
 	footer.setAttribute('onclick', 'hideMenu(this)')
 	footer.innerHTML = `
 		<div class="primaryFooterOuterWrapper">
@@ -494,7 +492,7 @@ if (document?.getElementById('footer')) {
 							<p id="__date" style="margin: 0 4px;">2014</p> <a href="${repoLink}"
 								target="_blank">the<b>fox</b></a></p>&nbsp|&nbsp
 							<p>All rights reserved</p>&nbsp|&nbsp
-							<p>designed by <a href="https://github.com/Killer-Amaan-Ali/" target="_blank">Amaan</a></p>
+							<p>designed by <a href="${gitUrl}" target="_blank">Amaan</a></p>
 						</div>
 						<div class="rhs">
 							<ul id="footerLinks">
@@ -525,13 +523,13 @@ const showMenu = () => {
 		}
 	}
 	menuList.classList.toggle('rhsActive')
-	!scrollable ? document.body.style.overflow = 'hidden' :null
+	!scrollable ? document.body.style.overflow = 'hidden' : null
 }
 
 const hideMenu = () => {
 	menuList?.classList?.remove('rhsActive')
 	localStorage.setItem('drawer', false)
-	!scrollable ? document.body.style.overflow = 'unset' :null
+	!scrollable ? document.body.style.overflow = 'unset' : null
 }
 
 if (document?.body.getElementsByTagName('section')) {
@@ -618,13 +616,12 @@ ${Links[i]?.class?.length > 0 ? `class='${Links[i]?.class}'` : ''}
         id='headerLinks${i}'
 				${Links[i]?.style?.length > 0 ? `style='${Links[i]?.style}'` : ''}
         ${Links[i]?.target?.length > 0 ? `target='${Links[i]?.target}'` : ''}
-        ${
-					Links[i].disabled !== 'true' /* || !Links[i].hidden */
-						? `href=${`${
+        ${Links[i].disabled !== 'true' /* || !Links[i].hidden */
+				? `href=${`${
 								/* path +  */ (Links[i].href || Links[i].title) + ext
-						  }`}`
-						: 'disabled'
-				}
+				}`}`
+				: 'disabled'
+			}
         onclick='activeLink(this)'
 			>
         ${Links[i].title}
@@ -664,7 +661,7 @@ const activeLink = element => {
 		headerActiveLinks[i]?.classList == 'active'
 			? footerActiveLinks[i]?.classList.add('active')
 			: footerActiveLinks[i]?.classList == 'active' &&
-			  headerActiveLinks[i]?.classList.add('active')
+			headerActiveLinks[i]?.classList.add('active')
 	}
 }
 
@@ -687,8 +684,8 @@ if (
 	randomNo <= 0
 		? (randomNo = 1)
 		: randomNo === FS3Widget.length
-		? (randomNo = FS3Widget.length - 1)
-		: randomNo
+			? (randomNo = FS3Widget.length - 1)
+			: randomNo
 	FS3Widget[randomNo].class = `secondaryButton cyan`
 	let temp = ''
 	for (let i = 1; i < FS3Widget.length; i++) {
@@ -799,9 +796,8 @@ if (
 		// 		: null
 		// }
 		temp += `
-					${
-						fileName !== FS3Useful[i].page
-							? `<li>
+					${fileName !== FS3Useful[i].page
+				? `<li>
 									<a
 										title='${FS3Useful[i].title}'
 										href=${FS3Useful[i].href}
@@ -810,8 +806,8 @@ if (
 										${FS3Useful[i].title}
 									</a>
 								</li>`
-							: ''
-					}
+				: ''
+			}
 					`
 	}
 	footerUsefulLinks.innerHTML = temp
@@ -839,4 +835,13 @@ if (
 // document.body.innerHTML += `<script src="./assets/js/${fileName}.js"></script>`
 document.getElementById('readMore').addEventListener('click', event => {
 	document.getElementById('fLhs').classList.toggle('active')
+	let toggle = document.getElementById('fLhs').classList.contains('active')
+	let oldHeight
+	let newHeight
+	setTimeout(() => {
+		oldHeight = document.getElementById('fLhs').children[0].offsetHeight
+		newHeight = document.getElementById('fLhs').children[0].offsetHeight
+	}, 100)
+	event.target.innerHTML = event?.target?.innerHTML.trim().replace((!toggle ? 'Less' : 'More'), (toggle ? 'Less' : 'More'))
+	document.getElementById('fLhs').children[0].style.maxHeight = (toggle ? newHeight : oldHeight) + 'px'
 })

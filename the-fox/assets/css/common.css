@@ -384,7 +384,7 @@ footer {
 }
 
 .primaryFooterOuterWrapper {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -450,11 +450,18 @@ footer {
 .primaryFooterInnerWrapper .section1 .lhs p::after {
   content: "...";
   position: absolute;
+  transition: ease-in-out .5s;
   max-height: fit-content;
   width: 100%;
+  width: fit-content;
   bottom: -10px;
   font-size: 20px;
-  left: 0;
+  background: var(--footerPrim);
+  right: 10px;
+  bottom: 0;
+  text-align: right;
+  visibility: visible;
+  opacity: 1;
 }
 
 .primaryFooterInnerWrapper .section1 .lhs.active p {
@@ -463,9 +470,9 @@ footer {
 }
 
 .primaryFooterInnerWrapper .section1 .lhs.active p::after {
-  content: "...";
-  position: absolute;
   max-height: 0px;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .primaryFooterInnerWrapper .section1 .rhs {
